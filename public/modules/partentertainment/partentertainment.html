@@ -1,0 +1,170 @@
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+<div id="partentertainCtrlImg" ng-controller="partentertainmentController" ng-init="getpartentertainmentList(catename)">
+    <div class="container">
+    <div class="row row-m">
+        <div class="col-sm-12 main-content col-p">
+            <div class="theiaStickySidebar">
+                <!-- START CONTACT FORM AREA -->
+                <div class="contact_form_inner">
+                    <div class="panel_inner">
+                        <div class="panel_header">
+                            <h4><strong>World Wide Entertainment Experts</strong></h4>
+                        </div>
+                        <div class="panel_body home-www">
+                               <a href="#"  class="btn btn-news btn-lg text-uppercase"> <strong>Request a Call</strong></a>
+                                <a href="#"  class="btn btn-news btn-lg text-uppercase"> <strong>Request a Quick Quote</strong></a>
+                        </div>
+                        <div class="panel_body home-www">
+                            <a href=""><i class="fa fa-facebook-square"></i></a> <a href=""><i class="fa fa-twitter-square"></i></a> <a href=""><i class="fa fa-instagram"></i></a> <a href=""><i class="fa fa-pinterest-square"></i></a> <a href=""><i class="fa fa-google-plus-square"></i></a> <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF CONTACT FORM AREA -->
+            </div>
+        </div>
+        </div>
+        </div>
+<div class="menu-fil">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="menu-list">
+                    <ul class="video-popular-wrapper">
+                        <li><a href="" ng-click="sortPopular()">POPULAR</a></li>
+                        <li><a href="" ng-click="sortImage()">A <> Z</a></li>
+                        <li><div class="dropdown">
+
+                        <select class="select-two-video" ng-model="selectlocation" ng-change="selectlocations()" >
+                            <option value=""  selected="selected" >All country</option>   
+                            <option ng-repeat="x in countrynames" value="{{x}}">{{x}}</option>
+                          </select>
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div  >
+   <div class="container">
+    <div class="row row-m">
+        <!-- START MAIN CONTENT -->
+        <div class="col-sm-12 col-p  main-content">
+            <div class="theiaStickySidebar">
+                    <div id="loadingContents" ng-hide="loadingContents">
+                            <h3>Loading Entertainments...</h3>
+                    </div>
+                    <div id="noresultContents" ng-hide="noresultContents">
+                            <h3>Entertainment doesn't exist</h3>
+                    </div>
+                <div class="post-inner categoty-style-1" id="imagegallery" ng-hide="imagegallery">
+                    <!-- post body -->
+                    <div class="post-body" >
+                        <div class="row row-m" >
+                            <div class="col-sm-3 col-p" style="height: 360px;"ng-repeat="image in images | orderBy:sortstring">
+                                <article class="text-parent">
+                                    <figure>
+                                        <a href="/entertainment/{{image.id}}" ng-click="myclick(image.id,image.title)"><img ng-src="{{image.url}}" style="height:242px; width:345px; object-fit:cover;" alt="" class="img-responsive"></a>
+                                        <p class="video-text-cstm">{{image.reasontobook}}</p>
+                                    </figure>
+                                    <div class="post-info">
+                                        <h3><a href="#">{{image.title}}</a></h3>
+                                        <ul class="authar-info">
+                                            <li><i class="ti-timer"></i> May 15, 2016</li>
+                                            <li><a href="#" class="link"><i class="ti-thumb-up"></i>15 likes</a></li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            </div>  
+                                
+                        </div>
+                    </div>
+                    <!-- Post footer -->
+                    <div class="post-footer"> 
+                        <div class="row thm-margin">
+                            <div class="col-xs-12 col-sm-12 col-md-12 thm-padding ">
+                                <!-- pagination -->
+                                <div class="text-center">
+                                <ul ng-if="pager.pages.length" class="pagination">
+                                        <li ng-class="{disabled:pager.currentPage === 1}">
+                                            <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">First</a>
+                                            <a ng-if="pager.currentPage != 1" ng-click="setPage(1)" style="cursor: pointer;">First</a>
+                                        </li>
+                                        <li ng-class="{disabled:pager.currentPage === 1}" >
+                                            
+                                            <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">Previous</a>
+                                            <a ng-if="pager.currentPage != 1" ng-click="setPage(pager.currentPage - 1)" style="cursor: pointer;">Previous</a>
+                                        
+                                        </li>
+                                        <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                                            <a ng-click="setPage(page)" style="cursor: pointer;">{{page}}</a>
+                                        </li>                
+                                        <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                                            <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Next</a>
+                                            <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.currentPage + 1)" style="cursor: pointer;">Next</a>
+                                        </li>
+                                        <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                                            <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Last</a>
+                                            <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.totalPages)" style="cursor: pointer;">Last</a>
+                                        </li>
+                                    </ul> <!-- /.pagination -->
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /.Post footer-->
+                </div>
+            </div>
+        </div>
+        <!-- END OF /. MAIN CONTENT -->
+    </div>
+</div>
+</div>    
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 main-content col-p">
+                
+                        <!-- post body -->
+                        <div class="post-body">
+                            <div class="news-list-item articles-list">
+                                <div class="col-md-4">
+                                    <a href="#" class="thumb"><img src="/images/wowza.jpg" alt="" class="img-responsive"></a>
+                                </div>
+                                <div class="col-md-8">
+                                   <div class="panel_header">
+                            <h2><strong>Featured Act</strong> Type of the month </h2>
+                        </div>
+                                    <p class="panel_body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley...</p>
+                                </div>
+                            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        
+    <div class="row row-m">
+        <div class="col-sm-12 main-content col-p">
+            <div class="theiaStickySidebar">
+                <!-- START CONTACT FORM AREA -->
+                <div class="contact_form_inner">
+                    <div class="panel_inner">
+                        <div class="panel_header">
+                            <h2><strong>Information</strong></h2>
+                        </div>
+                        <div class="panel_body text-center">
+                           <h2><strong>CAN'T FIND WHAT YOU ARE LOOKING FOR?</strong></h2>
+                            <h3>Please call 0044 (0) 1626 572 072 or Email the team, alternatively fill out the following search</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF CONTACT FORM AREA -->
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+</div>
+  

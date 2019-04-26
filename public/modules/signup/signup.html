@@ -1,0 +1,1172 @@
+<form ng-submit="ClickSubmit()" name="signupForm" ng-controller="signupController" ng-init="signupinit()">
+        <section class="pdg-mbl">
+				 <div class="container container-custom-pdg">                    
+					<div class="row">
+						<div class="breadcumb-wrapper">
+							<a href="">Global</a> &#8594; Artists Registration Form
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="pdg-mbl">
+				 <div class="container container-custom-pdg">                    
+					<div class="row">
+						<div class="sign-up-form-wrapper">
+							<h1>ARTISTS REGISTRATION FORM</h1>
+							<p>At Scarlett Entertainment we are always looking out for new, unique and exciting acts to add to our growing roster of entertainment.</p>
+							<p>If you are interested in working with us please read our terms of business and complete the form below. Please note that Scarlett Entertainment specialise in supplying one-off event entertainment for corporate events, parties and weddings internationally - we do not specialise in long term contracts or residency work however we occasionally will have requests for this. </p>
+							<p>Due to the volume of act submissions, we are only able to respond to successful applicants. Please note before submitting your act to Artist Sign-Up that we may, at our discretion, market or advertise your act under a slightly different name - this is to protect us from clients contacting you directly.</p>
+							<p>We will require your act to have valid Public Liability Insurance and a PAT certificate for all electrical equipment. </p>
+							<p>Once established with Scarlett Entertainment our artists are provided with a tailor made profile which is advertised on our website.  We do not require any payment or exclusivity rights. </p>
+							<p>What we need to feature you on our website:</p>
+							<ul class="sign-up-list">
+								<li>A biography / description of what you offer</li>
+								<li>High resolution unbranded images</li>
+								<li>High quality (preferably HD) unbranded videos </li>
+								<li>Sample Set-List or a copy of your Full Repertoire - if applicable</li>
+								<li>Testimonials</li>
+								<li>Previous client list</li>
+								<li>Your guide prices</li>
+								<li>The geographical area you are based in and prepared to cover</li>
+							</ul>
+							<p class="p-center">Be aware that if you are uploading large files (such as images) it can take some time before the form will successfully submit.</p>
+							<p class="p-center">* Please be patient if you refresh the page it will cancel the upload. </p>
+						</div>
+					</div>
+				</div>
+			</section >
+				
+			<section class="pdg-mbl">
+				 <div class="container sign-up-details-wrapper">                    
+					<div class="row pdg-mbl">
+						<h2>CONTACT DETAILS</h2>
+						
+						<div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Act Name <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="Artists_Name" name="Artists_Name" ng-model="Artists_Name" required>
+							</div>
+						  </div>
+						
+						
+						<div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Contact Person Name <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="ContactPersonName" required>
+							</div>
+						  </div>
+						
+						<div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Contact Email Address <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="email" class="form-control"   ng-model="email1" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Second Email Address</label>
+							<div class="col-sm-10">
+							  <input type="email" class="form-control"   ng-model="email2">
+							</div>
+						  </div>
+
+						   <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Contact Phone Number<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <input type="number" min="100000000000" max="999999999999"class="form-control"   ng-model="phonenumber1" required>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">Other Number<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <input type="number" min="100000000000" max="9999999999999"class="form-control"   ng-model="phonenumber2" required>
+							</div>
+						  </div>
+						  
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Skype Address</label>
+							<div class="col-sm-4">
+							  <input type="text" class="form-control"   ng-model="skype">
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">Webo or QQ</label>
+							<div class="col-sm-4">
+							  <input type="text" class="form-control"   ng-model="webo">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Country Based <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							<select name="Country_Based"  ng-model="country" required>         
+								<option value="">Please Select
+								</option>         
+								<option value="Afghanistan">Afghanistan
+								</option>         
+								<option value="Albania">Albania
+								</option>         
+								<option value="Algeria">Algeria
+								</option>         
+								<option value="American Samoa">American Samoa
+								</option>         
+								<option value="Andorra">Andorra
+								</option>         
+								<option value="Angola">Angola
+								</option>         
+								<option value="Anguilla">Anguilla
+								</option>         
+								<option value="Antarctica">Antarctica
+								</option>         
+								<option value="Antigua and Barbuda">Antigua and Barbuda
+								</option>         
+								<option value="Argentina">Argentina
+								</option>         
+								<option value="Armenia">Armenia
+								</option>         
+								<option value="Aruban">Aruban
+								</option>         
+								<option value="Australia">Australia
+								</option>         
+								<option value="Austria">Austria
+								</option>         
+								<option value="Azerbaijan">Azerbaijan
+								</option>         
+								<option value="Bahamas">Bahamas
+								</option>         
+								<option value="Bahrain">Bahrain
+								</option>         
+								<option value="Bangladesh">Bangladesh
+								</option>         
+								<option value="Barbados">Barbados
+								</option>         
+								<option value="Belarus">Belarus
+								</option>         
+								<option value="Belgium(Dutch)">Belgium(Dutch)
+								</option>         
+								<option value="Belgium(French)">Belgium(French)
+								</option>         
+								<option value="Belize">Belize
+								</option>         
+								<option value="Benin">Benin
+								</option>         
+								<option value="Bermuda">Bermuda
+								</option>         
+								<option value="Bhutan">Bhutan
+								</option>         
+								<option value="Bolivia">Bolivia
+								</option>         
+								<option value="Bosnia and Herzegovina">Bosnia and Herzegovina
+								</option>         
+								<option value="Botswana">Botswana
+								</option>         
+								<option value="Bouvet Island">Bouvet Island
+								</option>         
+								<option value="Brazil">Brazil
+								</option>         
+								<option value="British Indian Ocean Territory">British Indian Ocean Territory
+								</option>         
+								<option value="British Virgin Islands">British Virgin Islands
+								</option>         
+								<option value="Brunei">Brunei
+								</option>         
+								<option value="Bulgaria">Bulgaria
+								</option>         
+								<option value="Burkina Faso">Burkina Faso
+								</option>         
+								<option value="Burundi">Burundi
+								</option>         
+								<option value="Cambodia">Cambodia
+								</option>         
+								<option value="Cameroon">Cameroon
+								</option>         
+								<option value="Canada(English)">Canada(English)
+								</option>         
+								<option value="Canada(French)">Canada(French)
+								</option>         
+								<option value="Cape Verde">Cape Verde
+								</option>         
+								<option value="Cayman Islands">Cayman Islands
+								</option>         
+								<option value="Cendival African Republic">Cendival African Republic
+								</option>         
+								<option value="Chad">Chad
+								</option>         
+								<option value="Chile">Chile
+								</option>         
+								<option value="China">China
+								</option>         
+								<option value="Christmas Island">Christmas Island
+								</option>         
+								<option value="Cocos Islands">Cocos Islands
+								</option>         
+								<option value="Colombia">Colombia
+								</option>         
+								<option value="Comoros">Comoros
+								</option>         
+								<option value="Congo">Congo
+								</option>         
+								<option value="Cook Islands">Cook Islands
+								</option>         
+								<option value="Costa Rica">Costa Rica
+								</option>         
+								<option value="Croatia">Croatia
+								</option>         
+								<option value="Cuba">Cuba
+								</option>         
+								<option value="Cyprus">Cyprus
+								</option>         
+								<option value="Czech Republic">Czech Republic
+								</option>         
+								<option value="Cote dIvoire">Cote dIvoire
+								</option>         
+								<option value="Denmark">Denmark
+								</option>         
+								<option value="Djibouti">Djibouti
+								</option>         
+								<option value="Dominica">Dominica
+								</option>         
+								<option value="Dominican Republic">Dominican Republic
+								</option>         
+								<option value="Ecuador">Ecuador
+								</option>         
+								<option value="Egypt">Egypt
+								</option>         
+								<option value="El Salvador">El Salvador
+								</option>         
+								<option value="Equatorial Guinea">Equatorial Guinea
+								</option>         
+								<option value="Eridivea">Eridivea
+								</option>         
+								<option value="Estonia">Estonia
+								</option>         
+								<option value="Ethiopia">Ethiopia
+								</option>         
+								<option value="Falkland Islands">Falkland Islands
+								</option>         
+								<option value="Faroe Islands">Faroe Islands
+								</option>         
+								<option value="Fiji">Fiji
+								</option>         
+								<option value="Finland">Finland
+								</option>         
+								<option value="France">France
+								</option>         
+								<option value="French Guiana">French Guiana
+								</option>         
+								<option value="French Polynesia">French Polynesia
+								</option>         
+								<option value="French Southern Territories">French Southern Territories
+								</option>         
+								<option value="Gabon">Gabon
+								</option>         
+								<option value="Gambia">Gambia
+								</option>         
+								<option value="Georgia">Georgia
+								</option>         
+								<option value="Germany">Germany
+								</option>         
+								<option value="Ghana">Ghana
+								</option>         
+								<option value="Gibraltar">Gibraltar
+								</option>         
+								<option value="Greece">Greece
+								</option>         
+								<option value="Greenland">Greenland
+								</option>         
+								<option value="Grenada">Grenada
+								</option>         
+								<option value="Guadeloupe">Guadeloupe
+								</option>         
+								<option value="Guam">Guam
+								</option>         
+								<option value="Guatemala">Guatemala
+								</option>         
+								<option value="Guernsey">Guernsey
+								</option>         
+								<option value="Guinea">Guinea
+								</option>         
+								<option value="GuineaBissau">GuineaBissau
+								</option>         
+								<option value="Guyana">Guyana
+								</option>         
+								<option value="Haiti">Haiti
+								</option>         
+								<option value="Heard Island And McDonald Islands">Heard Island And McDonald Islands
+								</option>         
+								<option value="Honduras">Honduras
+								</option>         
+								<option value="Hong Kong">Hong Kong
+								</option>         
+								<option value="Hungary">Hungary
+								</option>         
+								<option value="Iceland">Iceland
+								</option>         
+								<option value="India">India
+								</option>         
+								<option value="Indonesia">Indonesia
+								</option>         
+								<option value="Iran">Iran
+								</option>         
+								<option value="Iraq">Iraq
+								</option>         
+								<option value="Ireland">Ireland
+								</option>         
+								<option value="Israel">Israel
+								</option>         
+								<option value="Italy">Italy
+								</option>         
+								<option value="Jamaica">Jamaica
+								</option>         
+								<option value="Japan">Japan
+								</option>         
+								<option value="Jersey">Jersey
+								</option>         
+								<option value="Jordan">Jordan
+								</option>         
+								<option value="Kazakhstan">Kazakhstan
+								</option>         
+								<option value="Kenya">Kenya
+								</option>         
+								<option value="Kiribati">Kiribati
+								</option>         
+								<option value="Kuwait">Kuwait
+								</option>         
+								<option value="Kyrgyzstan">Kyrgyzstan
+								</option>         
+								<option value="Laos">Laos
+								</option>         
+								<option value="Latvia">Latvia
+								</option>         
+								<option value="Lebanon">Lebanon
+								</option>         
+								<option value="Lesotho">Lesotho
+								</option>         
+								<option value="Liberia">Liberia
+								</option>         
+								<option value="Libya">Libya
+								</option>         
+								<option value="Liechtenstein">Liechtenstein
+								</option>         
+								<option value="Lithuania">Lithuania
+								</option>         
+								<option value="Luxembourg(French)">Luxembourg(French)
+								</option>         
+								<option value="Luxembourg(German)">Luxembourg(German)
+								</option>         
+								<option value="Macao">Macao
+								</option>         
+								<option value="Macedonia">Macedonia
+								</option>         
+								<option value="Madagascar">Madagascar
+								</option>         
+								<option value="Malawi">Malawi
+								</option>         
+								<option value="Malaysia">Malaysia
+								</option>         
+								<option value="Maldives">Maldives
+								</option>         
+								<option value="Mali">Mali
+								</option>         
+								<option value="Malta">Malta
+								</option>         
+								<option value="Marshall Islands">Marshall Islands
+								</option>         
+								<option value="Martinique">Martinique
+								</option>         
+								<option value="Mauritania">Mauritania
+								</option>         
+								<option value="Mauritius">Mauritius
+								</option>         
+								<option value="Mayotte">Mayotte
+								</option>         
+								<option value="Mexico">Mexico
+								</option>         
+								<option value="Micronesia">Micronesia
+								</option>         
+								<option value="Moldova">Moldova
+								</option>         
+								<option value="Monaco">Monaco
+								</option>         
+								<option value="Mongolia">Mongolia
+								</option>         
+								<option value="Montenegro">Montenegro
+								</option>         
+								<option value="Montserrat">Montserrat
+								</option>         
+								<option value="Morocco">Morocco
+								</option>         
+								<option value="Mozambique">Mozambique
+								</option>         
+								<option value="Myanmar">Myanmar
+								</option>         
+								<option value="Namibia">Namibia
+								</option>         
+								<option value="Nauru">Nauru
+								</option>         
+								<option value="Nepal">Nepal
+								</option>         
+								<option value="Netherlands">Netherlands
+								</option>         
+								<option value="Netherlands Antilles">Netherlands Antilles
+								</option>         
+								<option value="New Caledonia">New Caledonia
+								</option>         
+								<option value="New Zealand">New Zealand
+								</option>         
+								<option value="Nicaragua">Nicaragua
+								</option>         
+								<option value="Niger">Niger
+								</option>         
+								<option value="Nigeria">Nigeria
+								</option>         
+								<option value="Niue">Niue
+								</option>         
+								<option value="Norfolk Island">Norfolk Island
+								</option>         
+								<option value="North Korea">North Korea
+								</option>         
+								<option value="Northern Mariana Islands">Northern Mariana Islands
+								</option>         
+								<option value="Norway">Norway
+								</option>         
+								<option value="Oman">Oman
+								</option>         
+								<option value="Pakistan">Pakistan
+								</option>         
+								<option value="Palau">Palau
+								</option>         
+								<option value="Palestine">Palestine
+								</option>         
+								<option value="Panama">Panama
+								</option>         
+								<option value="Papua New Guinea">Papua New Guinea
+								</option>         
+								<option value="Paraguay">Paraguay
+								</option>         
+								<option value="Peru">Peru
+								</option>         
+								<option value="Philippines">Philippines
+								</option>         
+								<option value="Pitcairn">Pitcairn
+								</option>         
+								<option value="Poland">Poland
+								</option>         
+								<option value="Portugal">Portugal
+								</option>         
+								<option value="Puerto Rico">Puerto Rico
+								</option>         
+								<option value="Qatar">Qatar
+								</option>         
+								<option value="Reunion">Reunion
+								</option>         
+								<option value="Romania">Romania
+								</option>         
+								<option value="Russia">Russia
+								</option>         
+								<option value="Rwanda">Rwanda
+								</option>         
+								<option value="Saint Helena">Saint Helena
+								</option>         
+								<option value="Saint Kitts And Nevis">Saint Kitts And Nevis
+								</option>         
+								<option value="Saint Lucia">Saint Lucia
+								</option>         
+								<option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon
+								</option>         
+								<option value="Saint Vincent And The Grenadines">Saint Vincent And The Grenadines
+								</option>         
+								<option value="Samoa">Samoa
+								</option>         
+								<option value="San Marino">San Marino
+								</option>         
+								<option value="Sao Tome And Principe">Sao Tome And Principe
+								</option>         
+								<option value="Saudi Arabia">Saudi Arabia
+								</option>         
+								<option value="Senegal">Senegal
+								</option>         
+								<option value="Serbia">Serbia
+								</option>         
+								<option value="Serbia and Montenegro">Serbia and Montenegro
+								</option>         
+								<option value="Seychelles">Seychelles
+								</option>         
+								<option value="Sierra Leone">Sierra Leone
+								</option>         
+								<option value="Singapore">Singapore
+								</option>         
+								<option value="Slovakia">Slovakia
+								</option>         
+								<option value="Slovenia">Slovenia
+								</option>         
+								<option value="Solomon Islands">Solomon Islands
+								</option>         
+								<option value="Somalia">Somalia
+								</option>         
+								<option value="South Africa">South Africa
+								</option>         
+								<option value="South Georgia And The South Sandwich Islands">South Georgia And The South Sandwich Islands
+								</option>         
+								<option value="South Korea">South Korea
+								</option>         
+								<option value="Spain(Catalan)">Spain(Catalan)
+								</option>         
+								<option value="Spain(Spanish)">Spain(Spanish)
+								</option>         
+								<option value="Sri Lanka">Sri Lanka
+								</option>         
+								<option value="Sudan">Sudan
+								</option>         
+								<option value="Suriname">Suriname
+								</option>         
+								<option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen
+								</option>         
+								<option value="Swaziland">Swaziland
+								</option>         
+								<option value="Sweden">Sweden
+								</option>         
+								<option value="Switzerland(French)">Switzerland(French)
+								</option>         
+								<option value="Switzerland(German)">Switzerland(German)
+								</option>         
+								<option value="Switzerland(Italian)">Switzerland(Italian)
+								</option>         
+								<option value="Syria">Syria
+								</option>         
+								<option value="Taiwan">Taiwan
+								</option>         
+								<option value="Tajikistan">Tajikistan
+								</option>         
+								<option value="Tanzania">Tanzania
+								</option>         
+								<option value="Thailand">Thailand
+								</option>         
+								<option value="The Democratic Republic Of Congo">The Democratic Republic Of Congo
+								</option>         
+								<option value="Timor-Leste">Timor-Leste
+								</option>         
+								<option value="Togo">Togo
+								</option>         
+								<option value="Tokelau">Tokelau
+								</option>         
+								<option value="Tonga">Tonga
+								</option>         
+								<option value="divinidad and Tobago">divinidad and Tobago
+								</option>         
+								<option value="Tunisia">Tunisia
+								</option>         
+								<option value="Turkey">Turkey
+								</option>         
+								<option value="Turkmenistan">Turkmenistan
+								</option>         
+								<option value="Turks And Caicos Islands">Turks And Caicos Islands
+								</option>         
+								<option value="Tuvalu">Tuvalu
+								</option>         
+								<option value="Virgin Islands">Virgin Islands
+								</option>         
+								<option value="Uganda">Uganda
+								</option>         
+								<option value="Ukraine">Ukraine
+								</option>         
+								<option value="United Arab Emirates">United Arab Emirates
+								</option>         
+								<option value="United Kingdom">United Kingdom
+								</option>         
+								<option value="United States">United States
+								</option>         
+								<option value="United States Minor Outlying Islands">United States Minor Outlying Islands
+								</option>         
+								<option value="Uruguay">Uruguay
+								</option>         
+								<option value="Uzbekistan">Uzbekistan
+								</option>         
+								<option value="Vanuatu">Vanuatu
+								</option>         
+								<option value="Vatican">Vatican
+								</option>         
+								<option value="Venezuela">Venezuela
+								</option>         
+								<option value="Vietnam">Vietnam
+								</option>         
+								<option value="Wallis And Futuna">Wallis And Futuna
+								</option>         
+								<option value="Western Sahara">Western Sahara
+								</option>         
+								<option value="Yemen">Yemen
+								</option>         
+								<option value="Zambia">Zambia
+								</option>         
+								<option value="Zimbabwe">Zimbabwe
+								</option>         
+								<option value="Aland Islands">Aland Islands
+								</option>         
+							  </select>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">If USA- State based in</label>
+							<div class="col-sm-4">
+							<select name="If_USA_State_based_in" ng-model="IfUsaStateBasedIN">       
+								<option value="">Please Select
+								</option>       
+								<option value="Alabama">Alabama
+								</option>       
+								<option value="Alaska">Alaska
+								</option>       
+								<option value="Arizona">Arizona
+								</option>       
+								<option value="Arkansas">Arkansas
+								</option>       
+								<option value="California">California                
+								</option>       
+								<option value="Colorado">Colorado       
+								</option>       
+								<option value="Connecticut">Connecticut
+								</option>       
+								<option value="Delawar">Delawar
+								</option>       
+								<option value="Florida">Florida
+								</option>       
+								<option value="Georgia">Georgia
+								</option>       
+								<option value="Hawaii">Hawaii
+								</option>       
+								<option value="Idaho">Idaho
+								</option>       
+								<option value="Illinois">Illinois
+								</option>       
+								<option value="Indiana">Indiana
+								</option>       
+								<option value="Iowa">Iowa
+								</option>       
+								<option value="Kansas">Kansas
+								</option>       
+								<option value="Kentucky">Kentucky
+								</option>       
+								<option value="Louisiana">Louisiana
+								</option>       
+								<option value="Maine">Maine
+								</option>       
+								<option value="Maryland">Maryland
+								</option>       
+								<option value="Massachusetts">Massachusetts
+								</option>       
+								<option value="Michigan">Michigan
+								</option>       
+								<option value="Minnesota">Minnesota
+								</option>       
+								<option value="Mississippi">Mississippi
+								</option>       
+								<option value="Missouri">Missouri
+								</option>       
+								<option value="Montana">Montana
+								</option>       
+								<option value="Nebraska">Nebraska
+								</option>       
+								<option value="Nevada">Nevada
+								</option>       
+								<option value="New Hampshire">New Hampshire
+								</option>       
+								<option value="New Jersey">New Jersey
+								</option>       
+								<option value="New Mexico">New Mexico
+								</option>       
+								<option value="New York">New York
+								</option>       
+								<option value="North Carolina">North Carolina
+								</option>       
+								<option value="North Dakota">North Dakota
+								</option>       
+								<option value="Ohio">Ohio
+								</option>       
+								<option value="Oklahoma">Oklahoma
+								</option>       
+								<option value="Oregon">Oregon
+								</option>       
+								<option value="Pennsylvania">Pennsylvania
+								</option>       
+								<option value="Rhode Island">Rhode Island
+								</option>       
+								<option value="South Carolina">South Carolina
+								</option>       
+								<option value="South Dakota">South Dakota
+								</option>       
+								<option value="Tennessee">Tennessee
+								</option>       
+								<option value="Texas">Texas
+								</option>       
+								<option value="Utah">Utah
+								</option>       
+								<option value="Vermont">Vermont
+								</option>       
+								<option value="Virginia">Virginia
+								</option>       
+								<option value="Washington">Washington
+								</option>   
+								<option value="Washington D.C.">Washington D.C. (District of Columbia)
+								</option>       
+								<option value="West Virginia">West Virginia
+								</option>       
+								<option value="Wisconsin">Wisconsin
+								</option>       
+								<option value="Wyoming">Wyoming
+								</option>       
+							  </select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Mailing Address 1<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="mailing1" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Mailing Address 2<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="mailing2" required>
+							</div>
+						  </div>
+
+						<div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">City <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <input type="text" class="form-control"   ng-model="city" required>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">Post Code <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <input type="text" class="form-control"   ng-model="postcode" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Best Method to contact for a quick response<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <select name="Quick_Response"  ng-model="quickresponse" required>                            
+								  <option value="">Please Select
+								  </option>                           
+								  <option value="Telephone_Call">Telephone Call
+								  </option>                           
+								  <option value="Email">Email
+								  </option>               
+								  <option value="Text_SMS">Text/SMS
+								  </option>             
+								  <option value="What's App">What's App
+								  </option>               
+								  <option value="Other">Other
+								  </option>               
+								</select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Website<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="website" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Facebook Page<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="facebook" required>
+							</div>
+						  </div>
+
+						
+			</div>
+
+			</div>
+			</section>
+			<section class="pdg-mbl">
+				 <div class="container sign-up-details-wrapper padding-topc">                    
+					<div class="row pdg-mbl">
+						<h2>PERFORMANCE INFO</h2>
+
+						<div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Best way to sell your act/ service? <span style="color:red;">*
+                            </span> <a href="#" data-toggle="tooltip" class="toolTipc" title=" Please detail why your act/ service is different from other similar acts/services, include any tips to help our sales team sell you and describe your performance or service so that it is clear what we are selling">?</a></label>
+							<div class="col-sm-10">
+							  <textarea  class="form-control" ng-model="bestwayforsell" required></textarea>
+							</div>
+						  </div>
+						  
+						   <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Roaming/Stage/Both<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control"   ng-model="roaming" required>
+							</div>
+						  </div>
+
+
+						<div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Logistics or Special Requirements <span style="color:red;">*
+                            </span> <a href="#" data-toggle="tooltip" class="toolTipc" title=" Please detail any special requirements that you will expect the client to provide.  For example; your act can only perform on ground floor level or with lift access.">?</a></label>
+							<div class="col-sm-10">
+							  <textarea  class="form-control" ng-model="logistics" required></textarea>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Performance/ Set Length <span style="color:red;">*
+                            </span> </label>
+							<div class="col-sm-10">
+							  <textarea  class="form-control" ng-model="performance" required></textarea>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Line up Options available <span style="color:red;">*
+                            </span> </label>
+							<div class="col-sm-10">
+							  <textarea  class="form-control" ng-model="Lineup" required></textarea>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Price Guide for Domestic 
+								Events <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <select id="currency_name" name="Minimum_Fee_Currency" ng-model="priceguide" required>             
+								  <option value="">Please Select Currency
+								  </option>             
+								  <option value="USD">USD $
+								  </option>             
+								  <option value="GBP">GBP £
+								  </option>             
+								  <option value="SGD">SGD $
+								  </option>             
+								  <option value="AED">AED
+								  </option>             
+								  <option value="EUR">EUR €
+								  </option>           
+								</select>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">Minimum Fee <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							  <select id="budget" name="Minimum_Fee" ng-model="MinimumFee" required><option value="">Please Select</option><option value="$499">USD up to $499</option><option value="$500-$999">USD $500-$999</option><option value="$1000-$1499">USD $1000-$1499</option><option value="$1500-$1999">USD $1500-$1999</option><option value="$2000-$2999">USD $2000-$2999</option><option value="$3000-$4999">USD $3000-$4999</option><option value="$5000+">USD $5000+</option></select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Are you available to perform overseas <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+							 <select name="Are_you_available_overseas"  ng-model="available" required>             
+									<option value="">Please Select
+									</option>             
+									<option value="Yes">Yes
+									</option>             
+									<option value="No">No
+									</option>           
+								</select>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">Are you interested in Residency contracts? <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+                              <select name="Residency_contracts" ng-model="Residency_contracts" required>             
+                              <option value="">Please Select
+                              </option>             
+                              <option value="Yes- Maximum 1 Week">Yes- Maximum 1 Week
+                              </option>             
+                              <option value="Yes- Maximum 1 Month">Yes- Maximum 1 Month
+                              </option>             
+                              <option value="Yes- Maximum 3 Months">Yes- Maximum 3 Months
+                              </option>             
+                              <option value="Yes Maximum 6 Months">Yes Maximum 6 Months
+                              </option>             
+                              <option value="No">No
+                              </option>             
+                              <option value="Not sure- Contact me with opportunities">Not sure- Contact me with opportunities
+                              </option>           
+                            </select>
+							</div>
+						  </div>
+
+						 <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Have you performed in the Middle East before? <span style="color:red;">*
+                            </span> </label>
+							<div class="col-sm-10">
+							  <select name="Middle_East_before" ng-model="MiddleEastbefore" required>             
+                                  <option value="">Please Select
+                                  </option>             
+                                  <option value="Yes">Yes
+                                  </option>             
+                                  <option value="No">No
+                                  </option>           
+                                </select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Are you interested in our management services? <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+								 <select name="management_services"  ng-model="managementservices" required>             
+                                    <option value="">Please Select
+                                    </option>             
+                                    <option value="Yes">Yes
+                                    </option>             
+                                    <option value="No">No
+                                    </option>             
+                                    <option value="Possibly in the Future">Possibly in the Future
+                                    </option>           
+                                  </select>
+							</div>
+
+							<label for="" class="col-sm-2 col-form-label">If Yes which region <span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-4">
+								  <select name="which_region"  ng-model="whichregion" required>              
+									<option value="">Please Select
+									</option>             
+									<option value="UK &amp; Ireland"> UK &amp; Ireland
+									</option>             
+									<option value="Europe (exc UK)"> Europe (exc UK)
+									</option>             
+									<option value="USA &amp; Canada">USA &amp; Canada
+									</option>             
+									<option value="Middle East">Middle East
+									</option>             
+									<option value="Asia">Asia
+									</option>             
+									<option value="Global Management">Global Management
+									</option>             
+									<option value="Other">Other
+									</option>           
+								  </select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Do you have Public Liability/ General Insurance<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+							  <select name="General_Insurance"  ng-model="GeneralInsurance" required>             
+                                      <option value="">Please Select
+                                      </option>             
+                                      <option value="Yes">Yes
+                                      </option>             
+                                      <option value="No">No
+                                      </option>           
+                                    </select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Confirmed terms of being Self Employed<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+								  <select name="Self_Employed"  ng-model="SelfEmployed" required>             
+                                  <option value="">Please Select
+                                  </option>             
+                                  <option value="Yes">Yes
+                                  </option>             
+                                  <option value="No">No
+                                  </option>           
+                                </select>
+							</div>
+						  </div>
+
+
+
+					</div>
+				</div>
+			</section>
+			
+			<section class="pdg-mbl">
+				 <div class="container sign-up-details-wrapper padding-topc">                    
+					<div class="row pdg-mbl">
+						<h2>FEATURING YOU ON OUR WEBSITE</h2>
+						
+						<div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Is there promo material on your website?<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+								  <select name="yr_website"  ng-model="yrwebsite" required>              
+								  <option value="">Please Select
+								  </option>             
+								  <option value="Yes">Yes
+								  </option>             
+								  <option value="No">No
+								  </option>             
+								</select>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">URL for promo material<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+								   <input type="text" class="form-control"   ng-model="promomaterialurl" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Link to a Youtube video (preferably HD quality)<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+								   <input type="text" class="form-control"   ng-model="Youtube1" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-2 col-form-label">Second Youtube video you would like to show (preferably HD quality)<span style="color:red;">*
+                            </span></label>
+							<div class="col-sm-10">
+								   <input type="text" class="form-control"   ng-model="Youtube2" required>
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-2 col-form-label">Recommended Search Terms <span style="color:red;">*
+                            </span> <a href="#" data-toggle="tooltip" class="toolTipc" title=" Please enter several keywords followed by a comma, this will be used by our sales team to find your act/ service in our database.  ">?</a></label>
+							<div class="col-sm-10">
+							  <textarea  class="form-control" ng-model="RecommendedSearchTerms" required></textarea>
+							</div>
+						  </div>
+
+
+					</div>
+				</div>
+			</section>
+			
+			<section class="pdg-mbl">
+				 <div class="container sign-up-details-wrapper padding-topc">                    
+					<div class="row pdg-mbl">
+						<h2>PROMOTIONAL MATERIAL</h2>
+						<div class="form-group row">
+							<label for="Artists_Name" class="col-sm-3 col-form-label">Profile Image <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-9">
+							  <input type="file" name="upload_profilefile" id="upload_profilefile"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						<div class="form-group row">
+							<label for="" class="col-sm-3 col-form-label">Images 1 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								 <input type="file" name="upload_imagefile_1"  id="upload_imagefile_1"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+
+							<label for="" class="col-sm-3 col-form-label">Images 4 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								<input type="file" name="upload_imagefile_4" id="upload_imagefile_4"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-3 col-form-label">Images 2 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								 <input type="file" name="upload_imagefile_2" id="upload_imagefile_2" style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+
+							<label for="" class="col-sm-3 col-form-label">Images 5 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								<input type="file" name="upload_imagefile_5" id="upload_imagefile_5"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="" class="col-sm-3 col-form-label">Images 3 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								 <input type="file" name="upload_imagefile_3" id="upload_imagefile_3"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+
+							<label for="" class="col-sm-3 col-form-label">Images 6 (preferably unbranded) <a href="#" data-toggle="tooltip" class="toolTipc" title=" Total File(s) size should not exceed 20 MB.  Must be a least 450x450 and should preferably be unbranded">?</a></label>
+							<div class="col-sm-3">
+								<input type="file" name="upload_imagefile_6" id="upload_imagefile_6"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-3 col-form-label">Rider <a href="#" data-toggle="tooltip" class="toolTipc" title="The Artist can attach an rider.  Total File(s) size should not exceed 20 MB. ">?</a></label>
+							<div class="col-sm-9">
+							  <input type="file" name="upload_file_rider" id="upload_file_rider"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-3 col-form-label">Set List <a href="#" data-toggle="tooltip" class="toolTipc" title="The Artist can attach an rider.  Total File(s) size should not exceed 20 MB. ">?</a></label>
+							<div class="col-sm-9">
+							  <input type="file" name="upload_file_setlist" id="upload_file_setlist"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						   <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-3 col-form-label">Previous clients <a href="#" data-toggle="tooltip" class="toolTipc" title="The Artist can attach an rider.  Total File(s) size should not exceed 20 MB. ">?</a></label>
+							<div class="col-sm-9">
+							  <input type="file" name="upload_file_prviousclients" id="upload_file_prviousclients"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+						  <div class="form-group row">
+							<label for="Artists_Name" class="col-sm-3 col-form-label">Testimonials <a href="#" data-toggle="tooltip" class="toolTipc" title="The Artist can attach an rider.  Total File(s) size should not exceed 20 MB. ">?</a></label>
+							<div class="col-sm-9">
+							  <input type="file" name="upload_file_testimonials" id="upload_file_testimonials"  style="float:left;padding:0px;border:none;"  accept="image/*">
+							</div>
+						  </div>
+
+							<div class="form-group row text-center">
+							<input class="lg-btn-custom" style="background-color:#0973ba;" type="submit"  value="Submit">
+							<input class="lg-btn-custom reset-btn" style="background-color:#0973ba;" type="reset" value="Reset">
+						  </div>
+					</div>
+				</div>
+			</section>
+      <section>
+				<div class="container">                    
+				<div class="row row-m">
+						<div class="col-sm-12 main-content col-p">
+								<div class="theiaStickySidebar">
+										<!-- START CONTACT FORM AREA -->
+										<div class="contact_form_inner">
+												<div class="panel_inner">
+														<div class="panel_header">
+															
+														</div>
+														<div class="panel_body text-center">
+															<h2><strong>CAN'T FIND WHAT YOU ARE LOOKING FOR?</strong></h2>
+																<h3>Please call 0044 (0) 1626 572 072 or Email the team, alternatively fill out the following search</h3>
+														</div>
+												</div>
+										</div>
+										<!-- END OF CONTACT FORM AREA -->
+								</div>
+						</div>
+						</div>
+				</div>
+		</section>
+	  <!-- Modal -->
+		<div class="myalertpopup-overlay">
+				<!--Creates the popup content-->
+				 <div class="myalertpopup-content">
+						<h3>Data Save State</h3>
+						<h3> {{datasavestate}}</h3>
+					 <!--popup's close button-->
+					 <input type="button" id="close" class="lg-btn-custom" style="width:50px " name="close" ng-click="saveok()" value="ok"/>
+					</div>
+			</div>
+	</form>
+
+    </body>
+</html>

@@ -1,0 +1,159 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+            <div class="user-profile">
+                    <!-- User profile image -->
+                    <div > <img style="width:230px; padding:20px" src="/images/logo.png"  />
+                    </div>
+            </div>
+        <!-- User profile -->
+        <div class="user-profile">
+            <!-- User profile image -->
+            <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                <!-- this is blinking heartbit-->
+                <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+            </div>
+            <!-- User profile text-->
+            <div class="profile-text">
+                <h5>Markarn Doe</h5>
+                 <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul >
+                <li class="nav-small-cap">Menu</li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/signup" aria-expanded="false"><span class="hide-menu">Sign Up Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/entertainment" aria-expanded="false"><span class="hide-menu">Content Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/frontcms" aria-expanded="false"><span class="hide-menu">FrontPage Data</span></a>
+                 </li>
+              
+              </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper" style="color:black;font-size: 12px; ">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="container-fluid"  ng-controller="entertainmentCtrl" >
+        <div class="row">
+          <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Entertainment Content list</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                    <th></th>
+                                    <th >id</th>
+                                    <th >title</th>
+                                    <!-- <th >profileimage</th>
+                                    <th >profileurl</th>
+                                    <th >tag</th>
+                                    <th >events type</th>
+                                    <th >reason</th>
+                                    <th>location</th>
+                                    <th>video</th>
+                                    <th>images</th>
+                                    <th>Biography</th>
+                                    <th>PreviousClients</th>
+                                    <th>Testimonials</th>
+                                    <th>SetList</th> -->
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        </div>    
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+               
+            </div>
+        <!-- </div>
+       -->
+        <!-- <dialog id="responsive-modal" class="modal fade"  style="overflow: scroll; display: block;height: 80%;width:80%" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: inline-block;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title"style="color:black;font-weight:700;"> Content Managemant</h6>
+                        <button id="closemodal" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" style="font-size: 12px;color:black;font-weight:700;" class="control-label">id:</label>
+                                <input type="text" style="font-size: 12px;color:black;font-weight:700;" class="form-control" ng-model="id">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">title:</label>
+                                <input type="text"  style="font-size: 12px;color:black;font-weight:700;"class="form-control" ng-model="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">profileurl:</label>
+                                <input type="text"  style="font-size: 12px;color:black;font-weight:700;"class="form-control" ng-model="profileurl">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" style="font-size: 12px;color:black;font-weight:700;" class="control-label">tag:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="tag">
+                            </div>
+                         
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">events type:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="eventstype">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">reason:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="reason">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">location:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="location">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">video:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="vediosrc">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">images:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="images">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Biography:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Biography">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">PreviousClients:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="PreviousClients">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Testimonials:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Testimonials">
+                            </div>
+                           <div class="form-group">
+                                <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">SetList:</label>
+                                <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="SetList">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="closemodal1" class="btn-sm btn btn-default waves-effect" data-dismiss="modal" style="font-size: 12px;color:black;font-weight:700;background-color: #1976d2;">Close</button>
+                        <button type="button" id="savemodal" class="btn-sm btn waves-effect waves-light" ng-click="saveContent()"style="font-size: 12px;color:black;font-weight:700;background-color: #1976d2;" >Save changes</button>
+                    </div>
+                 </div>
+        </dialog> -->
+    <!-- </div>
+    
+</div>

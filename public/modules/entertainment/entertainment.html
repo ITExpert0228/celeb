@@ -1,0 +1,238 @@
+<script src="js/jquery.lightbox.js"></script>
+<link href="/css/tab.css" rel="stylesheet" type="text/css"/>
+
+<link rel="stylesheet" href="/css/lightbox.min.css">
+<div id="entertain" ng-controller="entertainmentAllController" ng-init="getentertainmentbyid()">
+    <section class="pdg-mbl">
+        <div class="container container-custom-pdg">                    
+            <div class="row">
+                <div class="breadcumb-wrapper">
+                    <div >
+                    <a href="/partentertainment/{{tag}}" ng-repeat="tag in tags" data-ng-click="getEntertainments(tag)" >{{tag}} &nbsp; </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+    
+    <section class="pdg-mbl">
+               <div class="container container-custom-pdg">                    
+                  <div class="row">
+                      <div class="sign-up-form-wrapper contact-wrapper">
+                          <h1>{{title}}</h1>
+                          <a href="" ng-repeat="tag in tags">{{tag}} &nbsp; </a>
+                  </div>
+                  </div>
+              </div>
+          </section >
+          <section class="pdg-mbl">
+               <div class="container address-section padding-topc entertaintment-reason-to">             
+                  <div class="row pdg-mbl">
+                      <div class="col-sm-6">							
+                          <img src="{{bigImage}}" style="max-width:350px;max-height:400px; object-fit:cover;"class="img-responsive">
+                      </div>
+                      <div class="col-sm-6">
+                          <h3 class="reason-to-book-heading">REASONS TO BOOK THIS ACT</h3>
+                          <ul class="reason-to-book-ul">
+                              <li ng-repeat="reason in reasons">{{reason}}</li>
+                          </ul>
+                          <a href="" class="add-to-enquiry">ADD TO ENQUIRY  <i class="fa fa-plus"></i></a>
+                      </div>
+                  </div>
+              </div>
+
+          </section>
+          
+          
+         
+          <section class="pdg-mbl" ng-if="videocheck">
+               <div class="container padding-topc entertainment-video">
+                   <div class="row pdg-mbl">
+                      <div class="col-sm-12">
+                          <h2>{{title}}&nbsp; VIDEOS</h2>
+                          <ul>
+                              <li ng-repeat="video in videos track by $index"><img ng-src="{{video}}" style="width:260px;height:200px; object-fit:cover;"><i class="fa fa-play-circle"></i></li>
+                          </ul>
+                      </div>
+                   </div>
+              </div>
+          </section>
+
+
+          <section class="pdg-mbl">
+               <div class="container padding-topc entertainment-video">
+                   <div class="row pdg-mbl">
+                      <div class="col-sm-12">
+                          <h2>{{title}}&nbsp; PHOTOS</h2>
+                          <div id="loadingimages">
+                                <h3>Loading images...</h3>
+                          </div>
+                         <ul class="gallery" id="imagegallery">
+                             <li ng-repeat="image in images track by $index" style="width:260px; height:160px; " >
+                                <a href="{{image.url}}">
+                                <img id="{{image.id}}" ng-src="{{image.url}}" style="width:260px; height:160px;object-fit:cover;">
+                                </a>
+                              </li>
+                            </ul>
+                      </div>
+                   </div>
+              </div>
+
+          </section>
+          <section class="pdg-mbl">
+              <div class="container padding-topc">
+              <hr class="hr1 contactus-border">
+              </div>
+          </section>
+          <section class="pdg-mbl">
+               <div class="container padding-topc entertainment-tabs">
+                   <div class="row pdg-mbl">
+                      <div class="col-sm-12">
+                
+
+                          <div class="container1">
+
+                            <ul class="tabs">
+                                <li class="tab-link current" ng-if="tabvar1" data-tab="tab-1">BIOGRAPHY</li>
+                                <li class="tab-link"  ng-if="tabvar2" data-tab="tab-2">PREVIOUS CLIENTS</li>
+                           </ul>
+                        
+                            <div id="tab-1" style="background-color: white" class="tab-content current">
+                                <p>{{biography}}</p>
+                            </div>
+                            <div id="tab-2" style="background-color: white" class="tab-content">
+                                <p>{{previous}}</p>	
+                            </div>
+                          
+                        
+                        </div>  
+
+
+                        </div>
+                      </div>
+                   </div>
+
+
+                </div>
+          </section>
+
+          <section class="pdg-mbl">
+              <div class="container padding-topc">
+              <hr class="hr1 contactus-border">
+              </div>
+          </section>
+
+          <section class="pdg-mbl">
+               <div class="container padding-topc you-may-also-like">
+                   <div class="row pdg-mbl">
+                      
+                          <h2>YOU MAY ALSO LIKE...</h2>
+                          <div class="col-sm-4 text-parent">
+                              <img src="/images/Gingerbread-Installations.jpg" class="img-responsive">
+                              <div class="bg-black">
+                                  <div>
+                                  <span class="sm-heading latest-title"><a href="/page/gingerbread-installations">Gingerbread Installations</a></span>
+                                   <a href="#"><i class="fa fa-chevron-circle-right"></i></i></a>
+                                  </div>
+                                  <p class="hide1">Creative baker creates beautiful and complex installations completely made of gingerbread</p>
+                              </div>								
+                          </div>
+                          <div class="col-sm-4 text-parent">
+                              <img src="/images/Corporate-Gingerbread-Food-Art.jpg" class="img-responsive">
+                              <div class="bg-black">
+                                  <div>
+                                  <span class="sm-heading latest-title"><a href="/page/gingerbread-installations">Gingerbread Installations</a></span>
+                                   <a href="#"><i class="fa fa-chevron-circle-right"></i></i></a>
+                                  </div>
+                                  <p class="hide1">Creative baker creates beautiful and complex installations completely made of gingerbread</p>
+                              </div>
+                          </div>
+                          <div class="col-sm-4 text-parent">
+                              <img src="/images/Gingerbread-Wedding-Cakes.jpg" class="img-responsive">
+                              <div class="bg-black">
+                                  <div>
+                                  <span class="sm-heading latest-title"><a href="/page/gingerbread-installations">Gingerbread Installations</a></span>
+                                   <a href="#"><i class="fa fa-chevron-circle-right"></i></i></a>
+                                  </div>
+                                  <p class="hide1">Creative baker creates beautiful and complex installations completely made of gingerbread</p>
+                              </div>
+                          </div>					
+                   </div>
+              </div>
+          </section>
+
+          <section class="pdg-mbl">
+               <div class="container padding-topc bottom-boxes">
+                   <div class="row pdg-mbl">
+                      
+                          <div class="col-md-6 col-sm-6 text-parent">
+                              <img src="/images/LED-Freestyle-Basketball-Show.jpg" class="img-responsive">
+                              <a href="">Entertainment to Create a Hype at Major and Corporate Sporting...</a>
+                              <p>Sports are one of those activities that not only gathers together millions of people..</p>
+                              <hr class="hr1 contactus-border">
+                          </div>
+                          <div class="col-md-6 col-sm-6 text-parent">
+                              <img src="/images/Seville-Event.jpg" class="img-responsive">
+                              <a href="">Entertainment to Create a Hype at Major and Corporate Sporting...</a>
+                              <p>Sports are one of those activities that not only gathers together millions of people..</p>
+                              <hr class="hr1 contactus-border">
+                          </div>
+                      
+                   </div>
+              </div>
+          </section>
+
+          <section class="pdg-mbl">
+               <div class="container padding-topc bottom-locations">
+                   <div class="row pdg-mbl">	
+                          <ul>
+                          <li>
+                              <img src="/images/fr.jpg" class="img-responsive">
+                              <div class="country-name">FRANCE</div>						
+                          </li>
+                          <li>
+                              <img src="/images/it.jpg" class="img-responsive">
+                              <div class="country-name">ITALY</div>
+                          </li>
+                          <li >
+                              <img src="/images/uk.jpg" class="img-responsive">						<div class="country-name">UK</div>			
+                          </li>
+                          <li >
+                              <img src="/images/usa.jpg" class="img-responsive">					<div class="country-name">USA</div>			
+                          </li>
+                          <li >
+                              <a href="">ALL LOCATIONS</a>
+
+                          </li>
+                   </div>
+              </div>
+          </section>
+          
+          <section>
+              <div class="container">
+                  
+              <div class="row row-m">
+                  <div class="col-sm-12 main-content col-p">
+                      <div class="theiaStickySidebar">
+                          <!-- START CONTACT FORM AREA -->
+                          <div class="contact_form_inner">
+                              <div class="panel_inner">
+                                  <div class="panel_header">
+                                      <h2><strong>Information</strong></h2>
+                                  </div>
+                                  <div class="panel_body text-center">
+                                     <h2><strong>CAN'T FIND WHAT YOU ARE LOOKING FOR?</strong></h2>
+                                      <h3>Please call 0044 (0) 1626 572 072 or Email the team, alternatively fill out the following search</h3>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- END OF CONTACT FORM AREA -->
+                      </div>
+                  </div>
+                  </div>
+              </div>
+          </section>
+         
+</div>
+
+ 

@@ -1,0 +1,76 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+            <div class="user-profile">
+                    <!-- User profile image -->
+                    <div > <img style="width:230px; padding:20px" src="/images/logo.png"  />
+                    </div>
+            </div>
+        <!-- User profile -->
+        <div class="user-profile">
+            <!-- User profile image -->
+            <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                <!-- this is blinking heartbit-->
+                <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+            </div>
+            <!-- User profile text-->
+            <div class="profile-text">
+                <h5>Markarn Doe</h5>
+                <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul >
+                <li class="nav-small-cap">Menu</li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/signup" aria-expanded="false"><span class="hide-menu">Sign Up Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/entertainment" aria-expanded="false"><span class="hide-menu">Content Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/frontcms" aria-expanded="false"><span class="hide-menu">FrontPage Data</span></a>
+                 </li>
+              
+              </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper" style="color:black;font-size: 12px; ">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="container-fluid"  ng-controller="userCtrl">
+        <div class="row">
+          <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">User list</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <div class="table-responsive">
+                                <table id="example" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>loginEmail</th>
+                                                <th>firstName</th>
+                                                <th>lastName</th>
+                                                <th>role</th>
+                                             </tr>
+                                        </thead>
+                                  </table>
+                          </div>
+                        </div>    
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+  
+  
+</div>

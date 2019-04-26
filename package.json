@@ -1,0 +1,46 @@
+{
+  "name": "nhs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serve.js"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-sanitize": "^1.6.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "datatables.net": "^1.10.19",
+    "datatables.net-dt": "^1.10.19",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.1",
+    "express-validator": "^3.1.2",
+    "handlebars": "^4.1.1",
+    "hbs": "^4.0.3",
+    "imagesloaded": "^4.1.4",
+    "is-valid-date": "0.0.1",
+    "lightbox2": "^2.10.0",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.36",
+    "mongoose": "^4.8.5",
+    "multer": "^1.4.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "serve-favicon": "^2.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

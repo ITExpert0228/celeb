@@ -1,0 +1,289 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- User profile -->
+        <div class="user-profile">
+            <!-- User profile image -->
+            <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                <!-- this is blinking heartbit-->
+                <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+            </div>
+            <!-- User profile text-->
+            <div class="profile-text">
+                <h5>Markarn Doe</h5>
+                <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul >
+                <li class="nav-small-cap">Menu</li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/signup" aria-expanded="false"><span class="hide-menu">Sign Up Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/entertainment" aria-expanded="false"><span class="hide-menu">Content Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                 </li>
+                 <li> <a class=" waves-effect waves-dark" href="admin/frontcms" aria-expanded="false"><span class="hide-menu">FrontPage Data</span></a>
+                 </li>
+            
+              </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper" style="color:black;font-size: 12px; ">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="container-fluid"   >
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Contact Emplyee list</h4>
+                            <div class="modal-content" ng-controller="signupcheckCtrl" ng-init="signupcheckinit()">
+                                
+                                <div class="modal-body">
+                              
+                                        <div class="form-group">
+                                            <label for="recipient-name" style="font-size: 12px;color:black;font-weight:700;" class="control-label">Act Name:</label>
+                                            <input type="text" style="font-size: 12px;color:black;font-weight:700;" class="form-control" ng-model="actname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Contact Person Name:</label>
+                                            <input type="text"  style="font-size: 12px;color:black;font-weight:700;"class="form-control" ng-model="contactpersonname">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Email:</label>
+                                            <input type="text"  style="font-size: 12px;color:black;font-weight:700;"class="form-control" ng-model="email1">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" style="font-size: 12px;color:black;font-weight:700;" class="control-label">Second Email:</label>
+                                            <input type="text" id="email2" name="email2" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="email2">
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Phone Number:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="phonenumber">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Other Number:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="othernumber">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Skype Address:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="skype">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Webo or QQ:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Webo">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Country Based:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="CountryBased">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">If USA- State based in:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="IfUSAStatebasedin">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Mailing Address 1:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="MailingAddress1">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Mailing Address 2:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="MailingAddress2">
+                                        </div>
+                                       <div class="form-group">
+                                             <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">City:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="City">
+                                        </div> 
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Post Code:</label>
+                                           <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="PostCode">
+                                       </div> 
+                                       <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Best Method to contact:</label>
+                                           <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="BestMethodtocontact">
+                                         </div> 
+                                        <div class="form-group">
+                                        <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Website:</label>
+                                        <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Website">
+                                        </div> 
+                                        <div class="form-group">
+                                        <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Facebook Page:</label>
+                                        <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Facebook">
+                                        </div> 
+                                        <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Best way to sell:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Bestwaytosell">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">>Roaming/Stage/Both:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Roaming">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Logistics or Special Requirements:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Logistics">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Performance/ Set Length:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Performance">
+                                            </div> 
+               
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Line up Options available:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="LineupOptions">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Price Guide for Domestic Events:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="PriceGuide">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Minimum Fee:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="MinimumFee">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Are you available to perform overseas:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="overseas">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Are you interested in Residency contracts?:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Residencycontracts">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Have you performed in the Middle East before?:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="performedintheMiddleEast">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Are you interested in our management services?:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="managementservices">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">If Yes which region:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="whichregion">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Do you have Public Liability/ General Insurance:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="LiabilityGeneralInsurance">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Confirmed terms of being Self Employed:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="SelfEmployed">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Is there promo material on your website?:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="promomaterial">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">URL for promo material:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="URLforpromomaterial">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Link to a Youtube video (preferably HD quality):</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Youtubevideo">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Second Youtube video you would like to show (preferably HD quality):</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="SecondYoutubevideo">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Recommended Search Terms:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="RecommendedSearchTerms">
+                                            </div> 
+                                            <!-- <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Profile Image:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="ProfileImage">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 1:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images1">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 2:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images2">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 3:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images3">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 4:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images4">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 5:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images5">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Images 6:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Images6">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Rider:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Rider">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Set List:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="SetList">
+                                            </div> 
+
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Previous clients:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Previousclients">
+                                            </div> 
+                                            <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Testimonials:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Testimonials">
+                                            </div>  -->
+                                           
+                                             <div class="form-group">
+                                            <label for="recipient-name"  style="font-size: 12px;color:black;font-weight:700;"class="control-label">Check:</label>
+                                            <input type="text" class="form-control" style="font-size: 12px;color:black;font-weight:700;" ng-model="Check">
+                                            </div> 
+                                          
+                                             <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 col-md-6" ng-repeat="Image in Images">
+                                                        <div class="card">
+                                                            <div class="el-card-item">
+                                                                <div class="el-card-avatar el-overlay-1"> <img style="width:260px; height:160px;object-fit:cover;" src="uploads/{{Image.image}}" alt="user" />
+                                                                    <!-- <div class="el-overlay">
+                                                                        <ul class="el-info">
+                                                                            <li><a class="btn default btn-outline image-popup-vertical-fit" href="../assets/images/users/1.jpg"><i class="icon-magnifier"></i></a></li>
+                                                                            <li><a class="btn default btn-outline" href="javascript:void(0);"><i class="icon-link"></i></a></li>
+                                                                        </ul>
+                                                                    </div> -->
+                                                                </div>
+                                                                <div class="el-card-content">
+                                                                    <h3 class="box-title text-center">{{Image.Title}}</h3>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                </div>    
+                                            </div>                                                                                                                                                                                 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="closemodal1" class="btn-sm btn btn-default waves-effect" ng-click="deleteContent()" style="font-size: 12px;color:black;font-weight:700;background-color: #1976d2;">Cancel</button>
+                                    <button type="button" id="savemodal" class="btn-sm btn waves-effect waves-light" ng-click="saveContent()"style="font-size: 12px;color:black;font-weight:700;background-color: #1976d2;" >Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div> 

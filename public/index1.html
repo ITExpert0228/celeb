@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c8b657a950369001b4d1115&product=inline-share-buttons' async='async'></script>
+  
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>ALTUS Entertainment</title>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/images/ico/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" type="image/x-icon" href="/images/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+
+        <!-- jquery ui css -->
+        <link href="/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!--Animate css-->
+        <link href="/css/animate.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Navigation css-->
+        <link href="/bootsnav/css/bootsnav.css" rel="stylesheet" type="text/css"/>
+        <!-- youtube css -->
+        <link href="/css/RYPP.css" rel="stylesheet" type="text/css"/>
+        <!-- font awesome -->
+        <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <!-- themify-icons -->
+        <link href="/themify-icons/themify-icons.css" rel="stylesheet" type="text/css"/>
+        <!-- weather-icons -->
+        <link href="/weather-icons/css/weather-icons.min.css" rel="stylesheet" type="text/css"/>
+        <!-- flat icon -->
+        <link href="/css/flaticon.css" rel="stylesheet" type="text/css"/>
+        <!-- Important Owl stylesheet -->
+        <link href="/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css"/>
+        <!-- Default Theme -->
+        <link href="/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css"/>
+        <!-- owl transitions -->
+        <link href="/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css"/>
+        <!-- add this -->
+        <link href="/css/responsive.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="/css/mega-menu.css" rel="stylesheet" type="text/css"/>
+        <!-- style css -->
+        <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/jquery.lightbox.css" rel="stylesheet" type="text/css"/>
+
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+     <!--  <script src="/js/RYPP.js"></script>-->
+                   
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/theia-sticky-sidebar.js"></script>
+        <script src="/js/skycons.js"></script>
+        <script src="/owl-carousel/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="/js/jquery.menu-aim.js"></script> 
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="js/jquery.lightbox.js"></script>  
+
+        <script src="/modules/app.js"></script>
+        <script src="/modules/partentertainment/partentertainmentCtrl.js"></script>
+        <script src="/modules/partentertainment/partentertainmentService.js"></script>
+        <script src="/modules/entertainment/entertainmentCtrl.js"></script>
+        <script src="/modules/entertainment/entertainmentService.js"></script>
+        <script src="/modules/contactus/contactusCtrl.js"></script>
+        <script src="/modules/contactus/contactusService.js"></script>
+        <script src="/modules/signup/signupCtrl.js"></script>
+        <script src="/modules/signup/signupService.js"></script>
+        <script src="/modules/home/homeCtrl.js"></script>
+        <script src="/modules/home/homeService.js"></script>
+ <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+   <!-- add this -->
+
+    </head>
+
+    <body class="home_seven" ng-app="mainApp">
+        <!-- PAGE LOADER -->
+        <div class="se-pre-con"></div>
+        <!-- *** START PAGE HEADER SECTION *** -->
+        <header>
+            <!-- START HEADER TOP SECTION -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-9 col-sm-12 col-lg-9">
+                            <!-- Start top left menu -->
+                            <div class="top-left-menu">
+                                <ul>
+                                    <li>World Wide Entertainment Experts </li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="/signup">Talent Sign Up</a></li>
+                                    <li><a href="#">Meet The Team </a></li>
+                                    <li><a href="/contactus">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- End of /. top left menu -->
+                        </div>
+                        <!-- Start header top right menu -->
+                        <div class="hidden-xs col-md-3 col-sm-12 col-lg-3">
+                            <div class="header-right-menu">
+                                    <!-- Start header social -->
+                                    <div class="header-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                            <li class="hidden-xs"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                            <li class="hidden-xs"><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- End of /. header social -->
+                            </div>
+                        </div> <!-- end of /. header top right menu -->
+                    </div> <!-- end of /. row -->
+                </div> <!-- end of /. container -->
+            </div>
+            <!-- END OF /. HEADER TOP SECTION -->
+            <!-- START MIDDLE SECTION -->
+            <div class="header-mid hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="logo">
+                                <a href="/index.html"><img src="/images/logo.png" class="img-responsive" alt=""></a>
+
+                            </div>
+                        </div>
+                        <!-- <div class="col-sm-8 logo-links">
+                           <ul class="nav navbar-nav navbar-right" data-in="" data-out="">
+                               
+                            <li><a href="about.html"><span class="blank-s"></span> <span class="larg-font">Blog</span></a></li>
+                            <li><a href="faq.html"><span class="blank-s"></span> <span class="larg-font">News</span></a></li>
+                       
+                           </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- END OF /. MIDDLE SECTION -->
+            <!-- START NAVIGATION -->
+            <nav class="navbar navbar-default navbar-sticky navbar-mobile"  ng-controller="getEntertainmentCtrl">
+                    <!-- Start Top Search -->
+                    <div class="top-search">
+                        <div class="container">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" id="searchkeyword"  name="searchkeyword" ng-model="searchkeyword" ng-model-options="{ updateOn: 'change' }" ng-keyup="search($event)" class="form-control"  placeholder="Search for keywords">
+                                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Top Search -->
+                                      <!-- Modal -->
+                    <div class="myalertpopup-overlay1">
+                        <!--Creates the popup content-->
+                          <div class="myalertpopup-content1">
+                            <h3>Search State</h3>
+                            <h3> {{searchstate}}</h3>
+                            <!--popup's close button-->
+                            <input type="button"  class="lg-btn-custom" ng-click="searchok()" style="width:50px "  value="ok"/>
+                        </div>
+                      </div>
+                <div class="container">      
+                        <!-- Start Atribute Navigation -->
+                        <div class="attr-nav">
+                            <ul>
+                                <li class="search"><a href="#"><i class="fa fa-search"></i> SEARCH</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Atribute Navigation -->      
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                        <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="#brand"><img src="/images/logo.png" class="logo" alt=""></a>
+                    </div>
+                    <!-- End Header Navigation -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse js-navbar-collapse" ng-controller="getTagCtrl" ng-init="getTagInit()">
+                      <ul class="nav navbar-nav">
+                          <li class="dropdown mega-dropdown" id="Category">
+                            <a href="" class="dropdown-toggle"  data-toggle="dropdown">Search By <strong class="big-font">Category</strong> </a>
+                            <ul class="dropdown-menu mega-dropdown-menu row"   role="menu">
+                                <li class="col-sm-9">
+                                    <ul class="first-ul">
+                                      <li ng-repeat="tag in tags"><a  href="/partentertainment/{{tag.tag}}" >{{tag.tag}}</a>
+                                          <ul class="second-ul half-list">
+                                            <li ng-repeat="subtags in tag.subtag track by $index"><a  href="/partentertainment/{{subtags}}" >{{subtags}}</a></li>
+                                          </ul>
+                                      </li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                  <ul class="pop-listing pop-listing-full">
+                                    <li class="dropdown-header">POPULAR</li>
+                                    <li>
+                                      <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                                      </div>
+                                    </li>
+                            <li>
+                                      <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown mega-dropdown" id="Destination"> 
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Search By <strong class="big-font">DESTINATION</strong> </a>
+                        <ul class="dropdown-menu mega-dropdown-menu row">
+                        <li class="col-sm-4">
+                          <ul>
+                            <li class="dropdown-header">Europe & Middle East</li>
+                            <li><a href="/partentertainment/location/uk">UK</a></li>
+                            <li><a href="/partentertainment/location/Germany">Germany</a></li>
+                            <li><a href="/partentertainment/location/France">France</a></li>
+                            <li><a href="/partentertainment/location/Spain">Spain</a></li>
+                            <li><a href="/partentertainment/location/Italy">Italy</a></li>
+                            <li><a href="/partentertainment/location/UAE & Middle East">UAE & Middle East</a></li>
+                            <li><a href="/partentertainment/location/Holland">Holland</a></li>
+                            <li><a href="/partentertainment/location/Switzerland">Switzerland</a></li>
+                            <li><a href="/partentertainment/location/Russia & Eastern Europe">Russia & Eastern Europe</a></li>
+                            <li><a href="/partentertainment/location/Portugal">Portugal</a></li>				
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Asia Pacific</li>
+                            <li><a href="/partentertainment/location/India">India</a></li>
+                            <li><a href="/partentertainment/location/Singapore">Singapore</a></li>
+                            <li><a href="/partentertainment/location/China & Hong Kong">China & Hong Kong</a></li>
+                            <li><a href="/partentertainment/location/Japan">Japan</a></li>
+
+                          </ul>
+                        </li>
+                        <li class="col-sm-4">
+                          <ul>
+                            <li class="dropdown-header">REST OF THE WORLD</li>
+                            <li><a href="/partentertainment/location/South Africa">South Africa</a></li>
+                          </ul>
+                        </li>
+                        <li class="col-sm-4">
+                          <ul>
+                            <li class="dropdown-header">THE AMERICAS</li>
+                            <li><a href="/partentertainment/location/USA">USA</a></li>
+                            <li><a href="/partentertainment/location/CANADA">CANADA</a></li>
+                            <li><a href="/partentertainment/location/SOUTH AMARICA">SOUTH AMARICA </a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                        </li>
+                        <li class="dropdown mega-dropdown" id="Eventtype">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Search By <strong class="big-font">Event Type</strong> </a>
+                        <ul class="dropdown-menu mega-dropdown-menu row">
+                          <li class="col-sm-7">
+                            <ul class="first-ul">
+                      <li><a href="#">Corporate Entertainment</a>
+                        <ul class="second-ul">
+                          <li><a href="#">After Dinner Shows</a></li>
+                                  <li><a href="#">Background Music</a></li>
+                                  <li><a href="#">Comperes, Event Hosts & Speakers</a></li>
+                                  <li><a href="#">Cutting Edge Entertainment</a></li>
+                                  <li><a href="#">Dance The Night Away</a></li>
+                                  <li><a href="#">Exhibitions</a></li>
+                                </ul>
+                          </li>
+                              <li><a href="#">Special Events</a>
+                      <ul class="second-ul">
+                  
+                              <li><a href="#">Children's Entertainment</a></li>
+                              <li><a href="#">Entertainers for advertising</a></li>
+                              <li><a href="#">Exclusive VIP parties</a></li>
+                              <li><a href="#">Family Shows for Malls</a></li>
+                              <li><a href="#">Footfall Drivers</a></li>
+                            </ul>
+                      </li>
+                      <li><a href="#">Wedding Entertainment</a>
+                      <ul class="second-ul">
+                          <li><a href="#">Ceremony Music</a></li>
+                          <li><a href="#">Drinks Reception</a></li>
+                          <li><a href="#">Evening Party</a></li>
+                      </ul>
+                      </li>               
+                              
+                      </ul>
+                  </li>
+                  <li class="col-sm-5">
+                    <ul class="pop-listing">
+                      <li class="dropdown-header">POPULAR</li>
+                      <li>
+                        <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                          <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                          <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                          <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="field-content"> <a href="/page/vertical-sport-performance-team"><img src="https://www.scarlettentertainment.com/sites/default/files/styles/196x198/public/Vertical-Sport-Performance-Team-%5BMain%5D.jpg?itok=zJOQjsua" alt="" title=""></a>
+                          <div class="views-field views-field-title"> <span class="field-content"><a href="/page/vertical-sport-performance-team">Vertical Sport Performance Team</a></span> </div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </li>
+                </ul>
+                        </li>		  
+                      </ul>
+                    </div>
+                </div>
+      
+            
+            
+            
+            </nav>
+            <!-- END OF/. NAVIGATION -->
+        </header>
+        <!-- *** END OF /. PAGE HEADER SECTION *** -->
+        <!-- *** START PAGE MAIN CONTENT *** -->
+     
+         <main class="page_main_wrapper">
+            
+             <ng-view></ng-view>
+         </main>
+        <!-- *** END OF /. PAGE MAIN CONTENT *** -->
+        <!-- *** START FOOTER *** -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <!-- START FOOTER BOX (About) -->
+                    <div class="col-sm-3 footer-box">
+                        <div class="about-inner">
+                            <img src="/images/logo-white.png" class="img-responsive" alt=""/>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
+                            <ul>
+                                <li><i class="ti-location-arrow"></i>1234 Heaven Stress, Beverly Hill.</li>
+                                <li><i class="ti-mobile"></i>(800) 123 456 789</li>
+                                <li><i class="ti-email"></i>Contact@altus.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--  END OF /. FOOTER BOX (About) -->
+                    <!-- START FOOTER BOX (Twitter feeds) -->
+                    <div class="col-sm-3 footer-box">
+                            <h3 class="wiget-title">Company </h3>
+                            <ul class="menu-services">
+                                <li><a href="#">About us </a>
+                                </li>
+                                <li><a href="#">Meet the team</a>
+                                </li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Report abuse</a></li>
+                            </ul>
+                    </div>
+                    <!-- END OF /. FOOTER BOX (Twitter feeds) -->
+                    <!-- START FOOTER BOX (Category) -->
+                    <div class="col-sm-3 footer-box">
+                        <h3 class="wiget-title">Website</h3>
+                        <ul class="menu-services">
+                            <li><a href="#">terms & conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">sitemape</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- START FOOTER BOX (Category) -->
+                    <div class="col-sm-3 footer-box">
+                        <h3 class="wiget-title">connect with us </h3>
+                        <ul class="menu-services">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">YouTube</a></li>
+                            <li><a href="#">linkedin</a></li>
+                            <li><a href="#">Pintrest</a></li>
+                        </ul>
+                    </div>
+                    <!-- END OF /. FOOTER BOX (Category) -->
+                </div>
+            </div>
+        </footer>
+        <!-- *** END OF /. FOOTER *** -->
+        <!-- *** START SUB FOOTER *** -->
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5 col-md-5">
+                        <div class="copy">Copyright @ 2019 ALTUS Entertainment</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 col-md-7">
+                        <ul class="footer-nav">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+ </body>
+</html>
