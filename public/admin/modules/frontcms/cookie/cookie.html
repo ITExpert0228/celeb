@@ -1,0 +1,78 @@
+
+
+ <div ng-controller="cookieCtrl" ng-init="cookieinit()">
+
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <div class="user-profile">
+                    <!-- User profile image -->
+                    <div > <img style="width:230px; padding:20px" src="/images/adminlogo.png"  />
+                    </div>
+            </div>
+            <!-- User profile -->
+            <div class="user-profile">
+                <!-- User profile image -->
+                <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                    <!-- this is blinking heartbit-->
+                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </div>
+                <!-- User profile text-->
+                <div class="profile-text">
+                    <h5>{{adminName}}</h5>
+                    <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                </div>
+            </div>
+            <!-- End User profile text-->
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul >
+                    <li class="nav-small-cap">Menu</li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/request" aria-expanded="false"><span class="hide-menu">Request Data</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/performers" aria-expanded="false"><span class="hide-menu">Content Data</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/frontcms/process" aria-expanded="false"><span class="hide-menu">ProcessPage CMS</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/frontcms/privacy" aria-expanded="false"><span class="hide-menu">PrivacyPage CMS</span></a>
+                    </li>
+                    <li> <a class=" waves-effect waves-dark" href="admin/frontcms/cookie" aria-expanded="false"><span class="hide-menu">CookiePage CMS</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <div class="page-wrapper" style="color:black;font-size: 12px; ">
+    <div class="container-fluid" >
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+    <div class="card-body">
+    <h4 class="card-title">Cookie Page CMS</h4>
+    <section class=" about-page section_padding_70 section_padding_bottom_60 columns_padding_25"> 
+        <div style="background-color:white;">
+            <div class="row">
+
+                <div class="col-md-12 ">
+
+                     <div  style="border: 2px;  padding: 2px;  border-color: black;"><textarea name="editor1" ng-model="editor1"></textarea></div>
+                        
+                </div>
+            </div>
+        </div>
+        <input type="button" style="float: right; width:70px;" ng-model="saveButton" ng-click="saveContent()" value="save">
+    </section>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div   ng-controller="performersCtrl" ng-init="performersInit()">
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+            <div class="user-profile">
+                    <!-- User profile image -->
+                    <div > <img style="width:230px; padding:20px" src="/images/adminlogo.png"  />
+                    </div>
+            </div>
+        <!-- User profile -->
+        <div class="user-profile">
+            <!-- User profile image -->
+            <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                <!-- this is blinking heartbit-->
+                <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+            </div>
+            <!-- User profile text-->
+            <div class="profile-text">
+                <h5>{{adminName}}</h5>
+                <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul >
+                <li class="nav-small-cap">Menu</li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/request" aria-expanded="false"><span class="hide-menu">Request Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/performers" aria-expanded="false"><span class="hide-menu">Content Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/process" aria-expanded="false"><span class="hide-menu">ProcessPage CMS</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/privacy" aria-expanded="false"><span class="hide-menu">PrivacyPage CMS</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/cookie" aria-expanded="false"><span class="hide-menu">CookiePage CMS</span></a>
+                </li>
+              </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper" style="color:black;font-size: 12px; ">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="container-fluid"  ng-controller="performersCtrl">
+        <div class="row">
+          <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Contant list</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <div class="table-responsive">
+                                <table id="example" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Name</th>
+                                                <th>Url</th>
+                                                <th>Category</th>
+                                                <th>Type</th>
+                                                <th>Profile Image</th>
+                                                <th>Profile Text</th>
+                                                <th>Price</th>
+                                                <th>Faq1 question</th>
+                                                <th>Faq1 answer</th>
+                                                <th>Faq2 question</th>
+                                                <th>Faq2 answer</th>
+                                                <th>Faq3 question</th>
+                                                <th>Faq3 answer</th>
+                                                <th>Faq4 question</th>
+                                                <th>Faq4 answer</th>
+                                            </tr>
+                                        </thead>
+                                  </table>
+                          </div>
+                        </div>    
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+            </div>
+  
+</div>

@@ -1,76 +1,60 @@
-app.controller('contactusCtrl',['$scope', '$location','contactusService','authService', function($scope,$location, contactusService,authService) {
+app.controller('contactusCtrl',['$scope', '$location','$cookieStore','contactusService','authService', function($scope,$location,$cookieStore, contactusService,authService) {
  
     $scope.$on('$viewContentLoaded', function(){
+        editor = new $.fn.dataTable.Editor( {
+            table: "#example",
+            ajax: "/api/contact/deleteContent",
+            idSrc:  '_id',
+            fields: [ 
+                {
+                   label: "Id:",
+                    name: "_id",
+                    type: "hidden"
+                }
+            ]
+        } );
         function format ( d ) {
             // `d` is the original data object for the row
             return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
                 '<tr>'+
-                    '<td>Client Country Based:</td>'+
-                    '<td>'+d.clientcountry+'</td>'+
+                    '<td>Contact_City:</td>'+
+                    '<td>'+d.City+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>If US Client-State:</td>'+
-                    '<td>'+d.uiclientstate+'</td>'+
+                    '<td>Contact_State:</td>'+
+                    '<td>'+d.State+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Company Website:</td>'+
-                    '<td>'+d.CompanyWebsite+'</td>'+
+                    '<td>Contact_Zip:</td>'+
+                    '<td>'+d.Zip+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Industry:</td>'+
-                    '<td>'+d.Industry+'</td>'+
+                    '<td>Contact_Country:</td>'+
+                    '<td>'+d.Country+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Events per year:</td>'+
-                    '<td>'+d.Events+'</td>'+
+                    '<td>What_The_Booking_Is_For:</td>'+
+                    '<td>'+d.Booking+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Service Required:</td>'+
-                    '<td>'+d.Service+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Type of Event:</td>'+
-                    '<td>'+d.TypeofEvent+'</td>'+
+                    '<td>Event_Location:</td>'+
+                    '<td>'+d.Location+'</td>'+
                 '</tr>'+
                 '<tr>'+
                     '<td>Event Date:</td>'+
-                    '<td>'+d.EventDate+'</td>'+
+                    '<td>'+d.Date+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Event Country:</td>'+
-                    '<td>'+d.EventCountry+'</td>'+
+                    '<td>Fee_Range_Min:</td>'+
+                    '<td>'+d.Fee_Range_A+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>If US Event - State:</td>'+
-                    '<td>'+d.IfUSEventState+'</td>'+
+                    '<td>Fee_Range_Max:</td>'+
+                    '<td>'+d.Fee_Range_B+'</td>'+
                 '</tr>'+
                 '<tr>'+
-                    '<td>Event City:</td>'+
-                    '<td>'+d.EventCity+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Event Venue Name & Address:</td>'+
-                    '<td>'+d.EventVenueName+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Event Number of Guests:</td>'+
-                    '<td>'+d.EventNumberofGuests+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Budget Currency:</td>'+
-                    '<td>'+d.BudgetCurrency+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Budge:</td>'+
-                    '<td>'+d.Budget+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Additional Comments:</td>'+
-                    '<td>'+d.AdditionalComments+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Subscribe to E-News:</td>'+
-                    '<td>'+d.SubscribetoENews+'</td>'+
+                    '<td>Additional_Information:</td>'+
+                    '<td>'+d.Additional_Information+'</td>'+
                 '</tr>'+
             '</table>';
         }
@@ -81,10 +65,10 @@ app.controller('contactusCtrl',['$scope', '$location','contactusService','authSe
                   'copyHtml5',
                   'excelHtml5',
                   'csvHtml5',
-                 
+                  { extend: "remove", editor: editor }
               ],
               "pageLength": 10,
-              "ajax": "/api/contactus/getAll",
+              "ajax": "/api/contact/getAll",
               "scrollX": true,
               columnDefs: [
                 { "width": "20px", "targets": '0' } 
@@ -132,44 +116,11 @@ app.controller('contactusCtrl',['$scope', '$location','contactusService','authSe
                           "targets": 15,
                           "orderable": true,
                           "visible": false,
-                       },      {
+                       },{
                           "targets": 16,
                           "orderable": true,
                           "visible": false,
-                       },
-                       {
-                           "targets": 17,
-                           "orderable": true,
-                           "visible": false,
-                        },
-                        {
-                           "targets": 18,
-                           "orderable": true,
-                           "visible": false,
-                        },      {
-                           "targets": 19,
-                           "orderable": true,
-                           "visible": false,
-                        },
-                        {
-                            "targets": 20,
-                            "orderable": true,
-                            "visible": false,
-                         },
-                         {
-                            "targets": 21,
-                            "orderable": true,
-                            "visible": false,
-                         },      {
-                            "targets": 22,
-                            "orderable": true,
-                            "visible": false,
-                         },
-                         {
-                             "targets": 23,
-                             "orderable": true,
-                             "visible": false,
-                          }
+                       }
                 ],
                "columns": [
                 {
@@ -178,29 +129,22 @@ app.controller('contactusCtrl',['$scope', '$location','contactusService','authSe
                     "data":           null,
                     "defaultContent": ''
                 },
-                { "data": "company" },
-                { "data": "firstname" },
-                { "data": "lastname" },
-                { "data": "emails" },
-                { "data": "phonenumber" },
-                { "data": "mobile" },
-                { "data": "clientcountry" },
-                { "data": "uiclientstate" },
-                { "data": "CompanyWebsite" },
-                { "data": "Industry" },
-                { "data": "Events" },
-                { "data": "Service" },
-                { "data": "TypeofEvent" },
-                { "data": "EventDate" },
-                { "data": "EventCountry" },
-                { "data": "IfUSEventState" },
-                { "data": "EventCity" },
-                { "data": "EventVenueName" },
-                { "data": "EventNumberofGuests" },
-                { "data": "BudgetCurrency" },
-                { "data": "Budget" },
-                {"data":"AdditionalComments"},
-                {"data":"SubscribetoENews"}
+                { "data": "Organization" },
+                { "data": "First_Name" },
+                { "data": "Last_Name" },
+                { "data": "Email" },
+                { "data": "Office_Phone" },
+                { "data": "Address" },
+                { "data": "City" },
+                { "data": "State" },
+                { "data": "Zip" },
+                { "data": "Country" },
+                { "data": "Booking" },
+                { "data": "Location" },
+                { "data": "Date" },
+                { "data": "Fee_Range_A" },
+                { "data": "Fee_Range_B" },
+                { "data": "Additional_Information" }
             ],
           select: {
               style: 'single'
@@ -234,6 +178,11 @@ app.controller('contactusCtrl',['$scope', '$location','contactusService','authSe
     }).finally(function() {
         
     });
+}
+$scope.contactusInit=function(){
+    $scope.username = $cookieStore.get('user');
+    console.log($scope.username);
+    $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
 }
 $scope.logout = function() {
     authService.logout().then(function() {

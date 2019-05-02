@@ -1,4 +1,4 @@
-app.controller('userCtrl',['$scope','$timeout', '$location','userService','authService', function($scope, $timeout,$location,userService,authService) {
+app.controller('userCtrl',['$scope','$timeout', '$location','$cookieStore','userService','authService', function($scope, $timeout,$location,$cookieStore,userService,authService) {
  
     $scope.$on('$viewContentLoaded', function(){
      
@@ -106,6 +106,11 @@ app.controller('userCtrl',['$scope','$timeout', '$location','userService','authS
         $location.path('/admin/login');
       //  window.location.href = '/admin/login';
     });
+}
+$scope.userInit=function(){
+    $scope.username = $cookieStore.get('user');
+    console.log($scope.username);
+    $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
 }
 //   $scope.SetData=function(_id,title,profileurl,tag,eventstype,reason,location,vediosrc,images,Biography,PreviousClients,Testimonials,SetList){
 //       $scope.id=_id;

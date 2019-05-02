@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/ico/favicon.png">
-    <title> ALTUS Entertainment Admin Panel </title>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+    <title> C - E - L - E - B Admin Panel </title>
     
     <!-- morris CSS -->
     <base href="/" />
@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="admin/assets/plugins/html5-editor/bootstrap-wysihtml5.css" />
     <!-- datatable CSS --> 
     
+    
+    <link rel="stylesheet" href="css/main.css" id="color-switcher-link">
+  
+    <link rel="stylesheet" href="css/fonts.css">
+
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -93,7 +98,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    
+    <script src="https://cdn.ckeditor.com/4.11.4/standard-all/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>  
@@ -114,15 +119,15 @@
     <script src="admin/modules/contactus/contactusCtrl.js"></script>
     <script src="admin/modules/contactus/contactusService.js"></script>
     
-    <script src="admin/modules/signup/signupCtrl.js"></script>
-    <script src="admin/modules/signup/signupService.js"></script>
-
+    <script src="admin/modules/request/requestCtrl.js"></script>
+    <script src="admin/modules/request/requestService.js"></script>
+<!-- 
     <script src="admin/modules/signup/check/signupcheckCtrl.js"></script>
     <script src="admin/modules/signup/check/signupcheckService.js"></script>
+ -->
 
-
-    <script src="admin/modules/entertainment/entertainmentCtrl.js"></script>
-    <script src="admin/modules/entertainment/entertainmentService.js"></script>
+    <script src="admin/modules/performers/performersCtrl.js"></script>
+    <script src="admin/modules/performers/performersService.js"></script>
 
 
     <script src="admin/modules/auth/authCtrl.js"></script>
@@ -131,8 +136,14 @@
     <script src="admin/modules/user/userCtrl.js"></script>
     <script src="admin/modules/user/userService.js"></script>
 
-    <script src="admin/modules/frontcms/frontcmsCtrl.js"></script>
-    <script src="admin/modules/frontcms/frontcmsService.js"></script>
+    <script src="admin/modules/frontcms/process/processCtrl.js"></script>
+    <script src="admin/modules/frontcms/process/processService.js"></script>
+
+    <script src="admin/modules/frontcms/privacy/privacyCtrl.js"></script>
+    <script src="admin/modules/frontcms/privacy/privacyService.js"></script>
+
+    <script src="admin/modules/frontcms/cookie/cookieCtrl.js"></script>
+    <script src="admin/modules/frontcms/cookie/cookieService.js"></script>
 
     <!-- Bootstrap tether Core JavaScript -->
     <script src="admin/assets/plugins/bootstrap/js/popper.min.js"></script>
@@ -147,6 +158,9 @@
     <script src="admin/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="admin/js/custom.min.js"></script>
+
+
+
 
 
     <script src="admin/assets/plugins/html5-editor/wysihtml5-0.3.0.js"></script>
@@ -169,6 +183,8 @@
     <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
     <script src="admin/assets/plugins/dropify/dist/js/dropify.min.js"></script>
 
+    <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+ -->
 
   </body>
 

@@ -21,7 +21,7 @@ app.controller('AuthCtrl', ['$scope', '$rootScope', '$cookieStore', '$location',
                 //     userService.updateToken(data.id).then(function (response) {
           //  if (data.role == 'admin') window.location.href = '/admin';
          //   else window.location.href = '/manager';
-         window.location.href = '/admin/contactus';
+          window.location.href = '/admin/contactus';
                 //     });
                 // } else {
                 //     if (data.role == 'administrator') $state.go('home.dashboard');

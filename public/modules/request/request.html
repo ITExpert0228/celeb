@@ -1,0 +1,525 @@
+<div ng-controller="requestController">
+    <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center text-sm-left darklinks">
+                    <h2>Request Information</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ds request-page section_padding_70 section_padding_bottom_60 columns_padding_25" >
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-12 ">
+
+                        <h3 class="">General Booking Request Forms</h3>
+                        
+                        <div>
+                            <div class="container" style="padding-left:0px !important;">
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="mainftver" id="buyer_sheet_desc">
+                                            <b>If you are on a smart phone or tablet, or do not have all the major information yet and want to quickly contact CTI, then please fill out this shorter form.</b>
+                                        </div>
+
+                                        <div style="width:100%; margin:0px auto; padding:0px;">
+                                            <div>
+                                                <form >
+                                                    <input type="hidden" name="step"  value="single">
+
+                                                    <input type="hidden" name="Talent_Requested[]" value="Aaron Taylor-Johnson">
+
+                                                    <input type="hidden" name="_subject" value="1">
+                                                    <div align="center" style="margin-top:20px;" class="mainftver">
+
+
+
+                                                        <input type="hidden" name="HEADER_1" value="CLIENT INFORMATION">
+                                                        <fieldset>
+                                                            <h3 class="text-left">Contact Information</h3>
+
+                                                            <div style="width:100%; margin:0px auto; padding-bottom:20px;">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="tallist_profile_form">First Name<span class="red-c">*</span></td>
+                                                                            <td class="tallist_profile_form">Last Name<span class="red-c">*</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left"><input type="text" name="Contact_First_Name" class="textfield" value="" style="width:70% !important;" ng-model="Contact_First_Name"></td>
+                                                                            <td align="left"><input type="text" name="Contact_Last_Name" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Last_Name"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="tallist_profile_form">Position<span class="red-c">*</span></td>
+                                                                            <td class="tallist_profile_form">Company / Organization:<span class="red-c">*</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left"><input type="text" name="Contact_Title" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Title"></td>
+                                                                            <td align="left"><input type="text" name="Contact_Organization" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Organization"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="tallist_profile_form">Phone<span class="red-c">*</span></td>
+                                                                            <td class="tallist_profile_form">Email<span class="red-c">*</span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left"><input type="number" name="Contact_Office_Phone" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Office_Phone"></td>
+                                                                            <td align="left"><input type="email" name="Contact_Email" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Email"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    <input type="hidden" name="HEADER_2" value="EVENT INFORMATION">
+                                                    <div align="center" style="padding-bottom:20px; margin-top:20px;" class="mainftver">
+                                                        <fieldset>
+                                                            <h3 class="text-left">Event Information</h3>
+                                                            <table border="0" cellspacing="0" cellpadding="2" width="100%">
+
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="tallist_profile_form">What The Booking Is For<span class="red-c">*</span></td>
+                                                                        <td class="tallist_profile_form">Venue Name<span class="red-c">*</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left">
+                                                                            <select name="What_The_Booking_Is_For" ng-model="What_The_Booking_Is_For">
+                                                                                <option value="null">--- Select ---</option>
+                                                                                <option value="College or University">College or University</option>
+                                                                                <option value="Convention or Tradeshow">Convention or Tradeshow</option>
+                                                                                <option value="Corporate Event">Corporate Event</option>
+                                                                                <option value="Endorsement Project">Endorsement Project</option>
+                                                                                <option value="Fair or Festival">Fair or Festival</option>
+                                                                                <option value="Fundraising Event">Fundraising Event</option>
+                                                                                <option value="International Event">International Event</option>
+                                                                                <option value="Night Club">Night Club</option>
+                                                                                <option value="Private Party">Private Party</option>
+                                                                                <option value="Public Concert">Public Concert</option>
+                                                                            </select></td>
+                                                                        <td align="left"><input type="text" name="Event_Name" class="textfield" value="" style="width:70% !important;" ng-model="Event_Name"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="tallist_profile_form">Location<span class="red-c">*</span></td>
+                                                                        <td class="tallist_profile_form">Date<span class="red-c">*</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"><input type="text" name="Event_Location" class="textfield" value="" style="width:70% !important;" ng-model="Event_Location"></td>
+                                                                        <td align="left"><input name="Event_Date_1" type="date" class="textfield" value="" id="popup_container_1" style="width:70% !important;" ng-model="Event_Date_1"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </fieldset>
+                                                    </div>
+                                                    <input type="hidden" name="HEADER_3" value="TALENT INFORMATION">
+                                                    <div align="center" style="padding-bottom:20px; margin-top:20px;" class="mainftver">
+                                                        <fieldset>
+                                                            <h3 class="text-left">Budget and Talent</h3>
+                                                            <div style="text-align:left; padding-bottom:20px;">
+                                                                NOTE: Please Review fees in our Talent Library section, so you can set the fee range correctly for the appropriate talent for your event. International events will have a much higher fee for all US celebrities than is listed.
+                                                                <table>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="left" class="tallist_profile_form">Fee Range<span class="red-c">*</span></td>
+                                                                            <td align="left">$
+                                                                                <select name="Fee_Range_A" ng-model="Fee_Range_A">
+                                                                                    <option value="null">--- Select ---</option>
+                                                                                    <option value="10,000">10,000</option>
+                                                                                    <option value="20,000">20,000</option>
+                                                                                    <option value="30,000">30,000</option>
+                                                                                    <option value="40,000">40,000</option>
+                                                                                    <option value="50,000">50,000</option>
+                                                                                    <option value="60,000">60,000</option>
+                                                                                    <option value="75,000">75,000</option>
+                                                                                    <option value="100,000">100,000</option>
+                                                                                    <option value="150,000">150,000</option>
+                                                                                    <option value="200,000">200,000</option>
+                                                                                    <option value="250,000">250,000</option>
+                                                                                    <option value="350,000">350,000</option>
+                                                                                    <option value="500,000">500,000</option>
+                                                                                    <option value="750,000">750,000</option>
+                                                                                    <option value="1,000,000">1,000,000</option>
+                                                                                </select> to $
+                                                                                <select name="Fee_Range_B" ng-model="Fee_Range_B">
+                                                                                    <option value="null">--- Select ---</option>
+                                                                                    <option value="20,000">20,000</option>
+                                                                                    <option value="30,000">30,000</option>
+                                                                                    <option value="40,000">40,000</option>
+                                                                                    <option value="50,000">50,000</option>
+                                                                                    <option value="60,000">60,000</option>
+                                                                                    <option value="75,000">75,000</option>
+                                                                                    <option value="100,000">100,000</option>
+                                                                                    <option value="150,000">150,000</option>
+                                                                                    <option value="200,000">200,000</option>
+                                                                                    <option value="250,000">250,000</option>
+                                                                                    <option value="350,000">350,000</option>
+                                                                                    <option value="500,000">500,000</option>
+                                                                                    <option value="750,000">750,000</option>
+                                                                                    <option value="1,000,000">1,000,000</option>
+                                                                                    <option value="1,500,000">1,500,000</option>
+                                                                                    <option value="2,000,000">2,000,000</option>
+                                                                                </select></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <table border="0" cellspacing="0" cellpadding="4" width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td colspan="2" align="left" class="tallist_profile_form">Please list additional names and/or types of styles of celebrities you are interested in:<span class="red-c">*</span> </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2" align="left"><textarea name="Specific_Talent_of_Interest" ng-model="Specific_Talent_of_Interest" class="textarea" style="width:85%; height:50px;">Aaron Taylor-Johnson </textarea></td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                        </fieldset>
+                                                    </div>
+
+                                                    <input type="hidden" name="HEADER_6" value="ADDITIONAL INFORMATION">
+                                                    <div align="center" style="margin-top:20px;" class="mainftver">
+                                                        <fieldset>
+                                                            <h3 class="text-left">Additional Event Information</h3>
+                                                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td colspan="2" align="left"><span>Please provide a brief summary of the event and any other details we should know upfront.<span class="red-c">*</span></span><br><textarea name="Additional_Information" class="textarea" ng-model="Additional_Information" style="width:85%; height:50px;"></textarea></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </fieldset>
+                                                    </div>
+
+
+                                                    <div style="padding-top:20px; text-align:center;">
+                                                        <input type="submit" name="Submit" value="Submit" ng-click="onSubmit()" class="theme_button color1 bottommargin_0">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ds ms section_padding_top_80 columns_padding_0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="owl-carousel blog-carousel theme-owl-carousel" 
+                        data-margin="30" 
+                        data-nav="false" 
+                        data-dots="true" 
+                        data-center="true" 
+                        data-loop="true" 
+                        data-items="5" 
+                        data-autoplay="false" 
+                        data-responsive-xs="1" 
+                        data-responsive-sm="2" 
+                        data-responsive-md="4" 
+                        data-responsive-lg="5" 
+                        data-responsive-xlg="5">
+
+                        <article class="vertical-item post format-video text-center">
+
+                            <div class="entry-thumbnail">
+                                <div class="embed-responsive embed-responsive-3by2">
+                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+
+                                        <img src="images/gallery/17.jpg" alt="">
+                                        <div class="media-links"></div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                </span>
+
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-slider text-center">
+
+                            <div class="entry-thumbnail">
+
+                                <div id="carousel-generic" class="carousel slide">
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="images/gallery/18.jpg" alt="image">
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/gallery/03.jpg" alt="image">
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/gallery/04.jpg" alt="image">
+                                        </div>
+                                    </div>
+
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                        <span class="icon-prev"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                        <span class="icon-next"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Sediam nonumy eirmod tempor invidunt ut labore</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">23 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/19.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/04.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/16.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+
+                        <article class="vertical-item post format-video text-center">
+
+                            <div class="entry-thumbnail">
+                                <div class="embed-responsive embed-responsive-3by2">
+                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+
+                                        <img src="images/gallery/17.jpg" alt="">
+                                        <div class="media-links"></div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                </span>
+
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/19.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/04.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+
+                        <article class="vertical-item post format-standard text-center">
+
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/16.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
