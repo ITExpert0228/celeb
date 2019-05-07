@@ -125,8 +125,13 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
       var table = $('#example').DataTable( {
         dom: 'Bfrtip',
        "pageLength": 10,
-       "deferRender": true,
-        buttons: [
+       //"deferRender": true,
+       'processing': true,
+      'language': {
+          'loadingRecords': '&nbsp;',
+          "processing": '<div class="loader"></div>'
+      },
+       buttons: [
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
@@ -160,10 +165,10 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
           { "data": "faq4.answ" },
          
         ],
-         columnDefs: [
+        columnDefs: [
             { "width": "20px", "targets": '0' } 
              ],
-         columnDefs: [
+        columnDefs: [
             {
                 "targets": 5,
                 "orderable": true,
@@ -236,6 +241,7 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
             }
         } );
         });
+      
     });
 
     $scope.performersInit=function(){

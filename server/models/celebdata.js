@@ -48,5 +48,6 @@ var CelebdataSchema = new Schema({
 });
 CelebdataSchema.set("toJSON", {virtuals: true});
 CelebdataSchema.set("toObject", {virtuals: true});
+CelebdataSchema.index({name: 'text'});
 module.exports  = mongoose.model('Celebdata', CelebdataSchema);
 

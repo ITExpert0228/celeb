@@ -12,8 +12,9 @@ app.controller('privacyCtrl',['$scope', '$location','$rootScope','authService','
           //  console.log(data[0]);
             $scope.id=data.id;
           //  ckeidtor= angular.element(document.querySelector("#editor1"));
-            $scope.editor1=data.privacy;
+        //    $scope.editor1=data.privacy;
             $scope.editorbuf=data.privacy;
+            CKEDITOR.instances.editor1.setData($scope.editorbuf);
         }
         }, function(err) {
             console.log(err);
@@ -51,7 +52,7 @@ app.controller('privacyCtrl',['$scope', '$location','$rootScope','authService','
         $(document).ready(function() {
             ckeidtor.on('instanceReady', function(evt) {
                 $scope.$apply(function() {
-                    ckeidtor.setData($scope.editorbuf);
+            //        ckeidtor.setData($scope.editorbuf);
                 });
                
                 // You can also get the editor from the event

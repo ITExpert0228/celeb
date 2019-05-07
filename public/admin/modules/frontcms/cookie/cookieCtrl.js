@@ -14,6 +14,7 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
           //  ckeidtor= angular.element(document.querySelector("#editor1"));
           $scope.editor1=data.cookie;    
           $scope.editorbuf=data.cookie;
+          CKEDITOR.instances.editor1.setData($scope.editorbuf);
         }
         }, function(err) {
             console.log(err);
@@ -52,7 +53,7 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
             console.log('abc');
              ckeidtor.on('instanceReady', function(evt) {
                 $scope.$apply(function() {
-                    ckeidtor.setData($scope.editorbuf);
+               //     ckeidtor.setData($scope.editorbuf);
                 });
                
                 // You can also get the editor from the event

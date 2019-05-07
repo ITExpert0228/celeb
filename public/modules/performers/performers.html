@@ -1,415 +1,421 @@
 <div ng-controller="performersController" ng-init="performersinit()">
-    <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center text-sm-left darklinks">
-                    <h2>{{cate}}</h2>
+    <div ng-show="loaderShow" style="background-color:black;width:100%;height:700px;">
+        <div class="loader_make" ></div>
+    </div>
+    <div ng-show="loaderContent">
+        <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center text-sm-left darklinks">
+                        <h2>{{cate}}</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section class="ds performers-page section_padding_70 section_padding_bottom_60 columns_padding_25">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <section class="ds performers-page section_padding_70 section_padding_bottom_60 columns_padding_25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
 
-                    <div class="row"><div class="col-sm-12 col-md-8"><span class="grey" style="font-size:12pt">Showing All {{cate}} - <font class="mainftsmver">Page {{currentPage}} of {{totalPages}} {{SearchResult}}</font></span></div>
-                        
-                        <div class="col-sm-12 col-md-4 text-right">
+                        <div class="row"><div class="col-sm-12 col-md-8"><span class="grey" style="font-size:12pt">Showing All {{cate}} - <font class="mainftsmver">Page {{currentPage}} of {{totalPages}} {{SearchResult}}</font></span></div>
+                            
+                            <div class="col-sm-12 col-md-4 text-right">
 
-                                <div class="dropdown">
-                                    <button class="theme_button color1 bottommargin_0 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Sort
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu text-left" aria-labelledby="dropdownMenu1">
-                                        <!-- <li><a href="" ng-click="sortName('high')">Sorted By Fee: High to Low</a></li>
-                                        <li><a href="" ng-click="sortName('low')">Sorted By Fee: Low to High</a></li> -->
-                                        <li><a href="" ng-click="sortName('a')">Sorted By A to Z</a></li>
-                                        <li><a href="" ng-click="sortName('z')">Sorted By: Z to A</a></li>
-                                    </ul>
+                                    <div class="dropdown">
+                                        <button class="theme_button color1 bottommargin_0 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Sort
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu text-left" aria-labelledby="dropdownMenu1">
+                                            <!-- <li><a href="" ng-click="sortName('high')">Sorted By Fee: High to Low</a></li>
+                                            <li><a href="" ng-click="sortName('low')">Sorted By Fee: Low to High</a></li> -->
+                                            <li><a href="" ng-click="sortName('a')">Sorted By A to Z</a></li>
+                                            <li><a href="" ng-click="sortName('z')">Sorted By: Z to A</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                    </div>
-                    <div class="border"></div>
-
-                    <div>
-                        <div class="container inner-area">
-                            <div class="row">
-                                <div class="col-md-6" ng-repeat="content in performers | orderBy:sortstring" style="height: 330px;">
-                                    <div class="talent_profile">
-                                        <div class="entry">
-                                            <h2><a href="/model/{{content._id}}" title="Hire {{content.name}} for your next event with a CTI Booking Agent."><b>{{content.name}}</b></a></h2>
-                                            <div class="bthumb2">
-                                                <img src="{{content.image}}" alt="{{content.name}} for your next event." style="border:1px solid #333333;height: 120px;" class="img-responsive">
+                        </div>
+                        <div class="border"></div>
+                        
+                        <div ng-show="conent_result">    
+                        <div>
+                            <div class="container inner-area">
+                                <div class="row">
+                                    <div class="col-md-6" ng-repeat="content in performers" style="height: 330px;">
+                                        <div class="talent_profile">
+                                            <div class="entry">
+                                                <h2><a  href="/model/{{content._id}}" target="_blank" title="Hire {{content.name}} for your next event with a CTI Booking Agent."><b>{{content.name}}</b></a></h2>
+                                                <div class="bthumb2">
+                                                    <img src="{{content.image}}" alt="{{content.name}} for your next event." style="border:1px solid #333333;height: 120px;" class="img-responsive">
+                                                </div>
+                                                <p style="height:96px;overflow: hidden;">{{content.profiletext}}</p><a href="/model/{{content._id}}" target="_blank" title="{{content.name}} for your next event."><i>read full bio</i></a>
+                                                <div class="clearfix"></div>
                                             </div>
-                                            <p style="height:96px;overflow: hidden;">{{content.profiletext}}</p><a href="#1677/10,000-maniacs/" title="{{content.name}} for your next event."><i>read full bio</i></a>
-                                            <div class="clearfix"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="text-center">
+                        <ul ng-if="pager.pages.length" class="pagination">
+                            <li ng-class="{disabled:pager.currentPage === 1}">
+                                <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">First</a>
+                                <a ng-if="pager.currentPage != 1" ng-click="setPage(1)" style="cursor: pointer;">First</a>
+                            </li>
+                            <li ng-class="{disabled:pager.currentPage === 1}" >
+                                
+                                <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">Previous</a>
+                                <a ng-if="pager.currentPage != 1" ng-click="setPage(pager.currentPage - 1)" style="cursor: pointer;">Previous</a>
+                            
+                            </li>
+                            <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                                <a ng-click="setPage(page)" style="cursor: pointer;">{{page}}</a>
+                            </li>                
+                            <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                                <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Next</a>
+                                <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.currentPage + 1)" style="cursor: pointer;">Next</a>
+                            </li>
+                            <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                                <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Last</a>
+                                <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.totalPages)" style="cursor: pointer;">Last</a>
+                            </li>
+                        </ul> <!-- /.pagination -->
+                        </div>    
+                        </div>
+                        
+                        <div class="well" style="margin-top:20px">Celebrity Talent International is a booking agent to help you hire performers for corporate functions, business or private parites, fairs or festivals, weddings, speaking engangments, print or online advertising campaigns, media events, endorsements, fundraisers, or appearances. Contact CTI by calling 760-729-2000 today or <a href="#">submitting a request</a> in order to book talent like 070 Shake, 10 Years, 10,000 Maniacs, 112, 12 Stones, 12th Planet, 1964-The Tribute (Tribute To The Beatles), 2 Cellos, 2 Chainz, 2 Dope Queens, 21 Savage, 24hrs, 2:54, 2AM Club, 2manydjs / Soulwax, 3 Blacque Chix, 3 Doors Down, 3 Redneck Tenors , 311, 360 and more!</div>
+
+                        <span id="popup_container_1"></span>
+                        <div align="right" class="pagination-c"><b>Browse Alphabetically</b><br>
+                            <a href="" ng-click="indexOf('a')">A</a> |
+                            <a href="" ng-click="indexOf('b')">B</a> |
+                            <a href="" ng-click="indexOf('c')">C</a> |
+                            <a href="" ng-click="indexOf('d')">D</a> |
+                            <a href="" ng-click="indexOf('e')">E</a> |
+                            <a href="" ng-click="indexOf('f')">F</a> |
+                            <a href="" ng-click="indexOf('g')">G</a> |
+                            <a href="" ng-click="indexOf('h')">H</a> |
+                            <a href="" ng-click="indexOf('i')">I</a> |
+                            <a href="" ng-click="indexOf('j')">J</a> |
+                            <a href="" ng-click="indexOf('k')">K</a> |
+                            <a href="" ng-click="indexOf('l')">L</a> |
+                            <a href="" ng-click="indexOf('m')">M</a> |
+                            <a href="" ng-click="indexOf('n')">N</a> |
+                            <a href="" ng-click="indexOf('o')">O</a> |
+                            <a href="" ng-click="indexOf('p')">P</a> |
+                            <a href="" ng-click="indexOf('q')">Q</a> |
+                            <a href="" ng-click="indexOf('r')">R</a> |
+                            <a href="" ng-click="indexOf('s')">S</a> |
+                            <a href="" ng-click="indexOf('t')">T</a> |
+                            <a href="" ng-click="indexOf('u')">U</a> |
+                            <a href="" ng-click="indexOf('v')">V</a> |
+                            <a href="" ng-click="indexOf('w')">W</a> |
+                            <a href="" ng-click="indexOf('x')">X</a> |
+                            <a href="" ng-click="indexOf('y')">Y</a> |
+                            <a href="" ng-click="indexOf('z')">Z</a> 
+                        </div>
                     </div>
 
-                    <div class="text-center">
-                    <ul ng-if="pager.pages.length" class="pagination">
-                        <li ng-class="{disabled:pager.currentPage === 1}">
-                            <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">First</a>
-                            <a ng-if="pager.currentPage != 1" ng-click="setPage(1)" style="cursor: pointer;">First</a>
-                        </li>
-                        <li ng-class="{disabled:pager.currentPage === 1}" >
-                            
-                            <a ng-if="pager.currentPage === 1" ng-click="" style="cursor: pointer;">Previous</a>
-                            <a ng-if="pager.currentPage != 1" ng-click="setPage(pager.currentPage - 1)" style="cursor: pointer;">Previous</a>
-                        
-                        </li>
-                        <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
-                            <a ng-click="setPage(page)" style="cursor: pointer;">{{page}}</a>
-                        </li>                
-                        <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
-                            <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Next</a>
-                            <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.currentPage + 1)" style="cursor: pointer;">Next</a>
-                        </li>
-                        <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
-                            <a ng-if="pager.currentPage === pager.totalPages" ng-click="" style="cursor: pointer;">Last</a>
-                            <a ng-if="pager.currentPage != pager.totalPages" ng-click="setPage(pager.totalPages)" style="cursor: pointer;">Last</a>
-                        </li>
-                    </ul> <!-- /.pagination -->
-                    </div>    
-
-                    <div class="well" style="margin-top:20px">Celebrity Talent International is a booking agent to help you hire performers for corporate functions, business or private parites, fairs or festivals, weddings, speaking engangments, print or online advertising campaigns, media events, endorsements, fundraisers, or appearances. Contact CTI by calling 760-729-2000 today or <a href="#">submitting a request</a> in order to book talent like 070 Shake, 10 Years, 10,000 Maniacs, 112, 12 Stones, 12th Planet, 1964-The Tribute (Tribute To The Beatles), 2 Cellos, 2 Chainz, 2 Dope Queens, 21 Savage, 24hrs, 2:54, 2AM Club, 2manydjs / Soulwax, 3 Blacque Chix, 3 Doors Down, 3 Redneck Tenors , 311, 360 and more!</div>
-
-                    <span id="popup_container_1"></span>
-                    <div align="right" class="pagination-c"><b>Browse Alphabetically</b><br>
-                        <a href="" ng-click="indexOf('a')">A</a> |
-                        <a href="" ng-click="indexOf('b')">B</a> |
-                        <a href="" ng-click="indexOf('c')">C</a> |
-                        <a href="" ng-click="indexOf('d')">D</a> |
-                        <a href="" ng-click="indexOf('e')">E</a> |
-                        <a href="" ng-click="indexOf('f')">F</a> |
-                        <a href="" ng-click="indexOf('g')">G</a> |
-                        <a href="" ng-click="indexOf('h')">H</a> |
-                        <a href="" ng-click="indexOf('i')">I</a> |
-                        <a href="" ng-click="indexOf('j')">J</a> |
-                        <a href="" ng-click="indexOf('k')">K</a> |
-                        <a href="" ng-click="indexOf('l')">L</a> |
-                        <a href="" ng-click="indexOf('m')">M</a> |
-                        <a href="" ng-click="indexOf('n')">N</a> |
-                        <a href="" ng-click="indexOf('o')">O</a> |
-                        <a href="" ng-click="indexOf('p')">P</a> |
-                        <a href="" ng-click="indexOf('q')">Q</a> |
-                        <a href="" ng-click="indexOf('r')">R</a> |
-                        <a href="" ng-click="indexOf('s')">S</a> |
-                        <a href="" ng-click="indexOf('t')">T</a> |
-                        <a href="" ng-click="indexOf('u')">U</a> |
-                        <a href="" ng-click="indexOf('v')">V</a> |
-                        <a href="" ng-click="indexOf('w')">W</a> |
-                        <a href="" ng-click="indexOf('x')">X</a> |
-                        <a href="" ng-click="indexOf('y')">Y</a> |
-                        <a href="" ng-click="indexOf('z')">Z</a> 
-                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section class="ds ms section_padding_top_80 columns_padding_0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
+        <section class="ds ms section_padding_top_80 columns_padding_0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
 
-                    <div class="owl-carousel blog-carousel theme-owl-carousel" data-margin="30" data-nav="false" data-dots="true" data-center="true" data-loop="true" data-items="5" data-autoplay="false" data-responsive-xs="1" data-responsive-sm="2" data-responsive-md="4" data-responsive-lg="5" data-responsive-xlg="5">
+                        <div class="owl-carousel blog-carousel theme-owl-carousel" data-margin="30" data-nav="false" data-dots="true" data-center="true" data-loop="true" data-items="5" data-autoplay="false" data-responsive-xs="1" data-responsive-sm="2" data-responsive-md="4" data-responsive-lg="5" data-responsive-xlg="5">
 
-                        <article class="vertical-item post format-video text-center">
+                            <article class="vertical-item post format-video text-center">
 
-                            <div class="entry-thumbnail">
-                                <div class="embed-responsive embed-responsive-3by2">
-                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+                                <div class="entry-thumbnail">
+                                    <div class="embed-responsive embed-responsive-3by2">
+                                        <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
 
-                                        <img src="images/gallery/17.jpg" alt="">
-                                        <div class="media-links"></div>
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
-                                </span>
-
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                                </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
-
-                        <article class="vertical-item post format-slider text-center">
-
-                            <div class="entry-thumbnail">
-
-                                <div id="carousel-generic" class="carousel slide">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <img src="images/gallery/18.jpg" alt="image">
-                                        </div>
-                                        <div class="item">
-                                            <img src="images/gallery/03.jpg" alt="image">
-                                        </div>
-                                        <div class="item">
-                                            <img src="images/gallery/04.jpg" alt="image">
-                                        </div>
+                                            <img src="images/gallery/17.jpg" alt="">
+                                            <div class="media-links"></div>
+                                        </a>
                                     </div>
 
-                                    <!-- Controls -->
-                                    <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
-                                        <span class="icon-prev"></span>
-                                    </a>
-                                    <a class="right carousel-control" href="#carousel-generic" data-slide="next">
-                                        <span class="icon-next"></span>
-                                    </a>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Sediam nonumy eirmod tempor invidunt ut labore</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">23 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                    </span>
+
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
+                            <article class="vertical-item post format-slider text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/19.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                <div class="entry-thumbnail">
+
+                                    <div id="carousel-generic" class="carousel slide">
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img src="images/gallery/18.jpg" alt="image">
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/gallery/03.jpg" alt="image">
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/gallery/04.jpg" alt="image">
+                                            </div>
+                                        </div>
+
+                                        <!-- Controls -->
+                                        <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                            <span class="icon-prev"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                            <span class="icon-next"></span>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Sediam nonumy eirmod tempor invidunt ut labore</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">23 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
+                            <article class="vertical-item post format-standard text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/04.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/19.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
+                            <article class="vertical-item post format-standard text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/16.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/04.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
+                            <article class="vertical-item post format-standard text-center">
 
-                        <article class="vertical-item post format-video text-center">
-
-                            <div class="entry-thumbnail">
-                                <div class="embed-responsive embed-responsive-3by2">
-                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
-
-                                        <img src="images/gallery/17.jpg" alt="">
-                                        <div class="media-links"></div>
-                                    </a>
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/16.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
-                                </span>
-
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/19.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                            <article class="vertical-item post format-video text-center">
+
+                                <div class="entry-thumbnail">
+                                    <div class="embed-responsive embed-responsive-3by2">
+                                        <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+
+                                            <img src="images/gallery/17.jpg" alt="">
+                                            <div class="media-links"></div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                    </span>
+
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
+                            <article class="vertical-item post format-standard text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/04.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/19.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
 
-                        <article class="vertical-item post format-standard text-center">
+                            <article class="vertical-item post format-standard text-center">
 
-                            <div class="item-media entry-thumbnail">
-                                <img src="images/gallery/16.jpg" alt="">
-                                <div class="media-links">
-                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/04.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="item-content entry-content">
-                                <h4 class="topmargin_0 bottommargin_20">
-                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
-                                </h4>
-                                <span class="entry-meta text-uppercase fontsize_12">
-                                    <span class="author">Admin</span> |
-                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
-                                </span>
-                                <div class="page_social_icons topmargin_25">
-                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- .item-content.entry-content -->
-                        </article>
+                                <!-- .item-content.entry-content -->
+                            </article>
+
+                            <article class="vertical-item post format-standard text-center">
+
+                                <div class="item-media entry-thumbnail">
+                                    <img src="images/gallery/16.jpg" alt="">
+                                    <div class="media-links">
+                                        <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                    </div>
+                                </div>
+
+                                <div class="item-content entry-content">
+                                    <h4 class="topmargin_0 bottommargin_20">
+                                        <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                    </h4>
+                                    <span class="entry-meta text-uppercase fontsize_12">
+                                        <span class="author">Admin</span> |
+                                        <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                    </span>
+                                    <div class="page_social_icons topmargin_25">
+                                        <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                        <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                        <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                        <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                        <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                    </div>
+                                </div>
+                                <!-- .item-content.entry-content -->
+                            </article>
+                        </div>
+
                     </div>
-
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
 </div>

@@ -15,6 +15,17 @@ app.config(function($routeProvider, $locationProvider) {
             }]
         },
          controller: 'contactusCtrl'
+    }).when('/admin/contactBooking', {
+        templateUrl: 'admin/modules/contactBooking/contactBooking.html',
+        resolve: {
+            user: ['$cookieStore', '$q', function ($cookieStore, $q) {
+                var user = $cookieStore.get("user")
+                if (!user || user == null) {
+                    window.location.href = '/admin';
+                }
+            }]
+        },
+         controller: 'contactBookingCtrl'
     })
      .when('/admin/frontcms/process', {
          templateUrl: 'admin/modules/frontcms/process/process.html',

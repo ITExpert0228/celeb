@@ -14,7 +14,10 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/cookie', {
         templateUrl: 'modules/cookie/cookie.html',
 		controller: 'cookieController'
-    }).when('/performers/:param1/:param2', {
+    }).when('/performers/:param1/:param2/:param3/:param4', {
+        templateUrl: 'modules/performers/performers.html',
+		controller: 'performersController'
+     }).when('/performers/:param1/:param2', {
         templateUrl: 'modules/performers/performers.html',
 		controller: 'performersController'
      }).when('/performers/:param1', {
@@ -29,6 +32,9 @@ app.config(function($routeProvider, $locationProvider) {
     }).when('/request', {
         templateUrl: 'modules/request/request.html',
 		controller: 'requestController'
+    }).when('/sitemap', {
+        templateUrl: 'modules/seo/sitemap/sitemap.html',
+		controller: 'sitemapController'
     })
     .otherwise({ redirectTo: '/' });
 

@@ -45,6 +45,12 @@ app.controller('userCtrl',['$scope','$timeout', '$location','$cookieStore','user
                 dom: "Bfrtip",
                 "scrollX": true,
                 "pageLength": 10,
+                "deferRender": true,
+                'processing': true,
+                'language': {
+                    'loadingRecords': '&nbsp;',
+                    "processing": '<div class="loader"></div>'
+                },
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',

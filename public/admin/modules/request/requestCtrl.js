@@ -150,10 +150,10 @@ app.controller('requestCtrl',['$scope', '$location','$cookieStore','authService'
         });
         
     });
-  $scope.getContactusList = function() {
-    contactusService.getContactusList().then(function(data) {
-        $scope.contactusarray=data;
-        console.log($scope.contactusarray);
+  $scope.getList = function() {
+    Service.getList().then(function(data) {
+        $scope.array=data;
+        console.log($scope.array);
     }, function(err) {
         console.log(err);
     }).finally(function() {

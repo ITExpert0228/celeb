@@ -1,0 +1,41 @@
+<div ng-controller="sitemapController" ng-init="sitemapinit()">
+    <div ng-show="loaderShow" style="background-color:black;width:100%;height:700px;">
+        <div class="loader_make" ></div>
+    </div>
+    <div ng-show="loaderContent">
+            <section class="ds about-page  section_padding_70 section_padding_bottom_60 columns_padding_25">
+                    <div class="container">
+                        <div class="row">
+            
+                            <div class="col-md-12 ">
+                                <div>
+                                    <table>
+                                        <thead>
+                                            <th>No</th>
+                                            <th>URL_Location</th>
+                                            <th>Change Frequency</th>
+                                            <th>Priority</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="staticcontent in staticcontents">
+                                                <td>{{$index+1}}</td>
+                                                <td><a href="{{staticcontent.url}}" ref="" target="_blank">{{staticcontent.url}}</a>   </td>
+                                                <td>{{freq}}</td>
+                                                <td> 1.0</td>
+                                            </tr>
+                                            <tr ng-repeat="content in contents">
+                                                <td>{{$index+8}}</td>
+                                                <td><a href="{{root_path}}model/{{content.id}}" ref="" target="_blank">{{root_path}}model/{{content.id}}</a>   </td>
+                                                <td>{{freq}}</td>
+                                                <td>{{priority}}</td>
+                                            </tr>     
+                                        </tbody>
+                                      </table>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+              </section>
+        <div>
+</div>

@@ -1,0 +1,98 @@
+<div  ng-controller="contactBookingCtrl" ng-init="contactBookingInit()">
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar" style="overflow:auto; width: auto; height: 100%;">
+        <div class="user-profile">
+                <!-- User profile image -->
+                <div > <img style="width:100%; padding:20px" src="/images/adminlogo.png"  />
+                </div>
+        </div>        
+          <!-- User profile -->
+        <div class="user-profile">
+            <!-- User profile image -->
+            <div class="profile-img"> <img src="admin/assets/images/users/profile.png" alt="user" />
+                <!-- this is blinking heartbit-->
+                <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+            </div>
+            <!-- User profile text-->
+            <div class="profile-text">
+                <h5>{{adminName}}</h5>
+                 <a href="" ng-click="logout()" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+               
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="nav-small-cap">Menu</li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactus" aria-expanded="false"><span class="hide-menu">Contact Us Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/contactBooking" aria-expanded="false"><span class="hide-menu">Talent Booking Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/request" aria-expanded="false"><span class="hide-menu">Info Request Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/performers" aria-expanded="false"><span class="hide-menu">Talent Database Management</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/user" aria-expanded="false"><span class="hide-menu">User Data</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/process" aria-expanded="false"><span class="hide-menu">ProcessPage CMS</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/privacy" aria-expanded="false"><span class="hide-menu">PrivacyPage CMS</span></a>
+                </li>
+                <li> <a class=" waves-effect waves-dark" href="admin/frontcms/cookie" aria-expanded="false"><span class="hide-menu">CookiePage CMS</span></a>
+                </li>
+              </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper" style="color:black;font-size: 12px; ">
+   
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="container-fluid"   >
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Talent Booking Data</h4>
+                        <h6 class="card-subtitle"></h6>
+                        <div class="table-responsive">
+                            <table id="example" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                         <th></th>
+                                         <th>Contact_Organization</th>
+                                         <th>First Name</th>
+                                         <th>Last Name</th>
+                                         <th>Contact Email</th>
+                                         <th>Phone Number</th>
+                                         <th>Contact_Address</th>
+                                         <th>Contact_City</th>
+                                         <th>Contact_State</th>
+                                         <th>Contact_Zip</th>
+                                         <th>Contact_Country</th>
+                                         <th>What_The_Booking_Is_For</th>
+                                         <th>Event_Location</th>
+                                         <th>Event Date</th>
+                                         <th>Fee_Range_Min</th>
+                                         <th>Fee_Range_Max</th>
+                                         <th>Additional_Information</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+               
+            </div>
+        </div>
+      
+   
+    </div>
+</div>
+</div>

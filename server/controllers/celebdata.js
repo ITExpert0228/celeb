@@ -20,11 +20,15 @@ exports.celebdata_details = function (req, res,next) {
 exports.celebdata_detailsbycate = function (req, res,next) {
     console.log("cate:"+req.query.Category);
     var Category = req.query.Category;
+    var dict={};
+    dict['$and'] = [
+        {"Category": new RegExp(Category.toString(), "i")}
+    ];
     var id = req.query.id;
-    Celebdata.find({Category: Category}).then((celebdata) => {
+    Celebdata.find(dict).limit(16).then((celebdata) => {
         var celebdata_temp=[];
         var str='';
-         if(celebdata.length>16){
+         if(celebdata.length==16){
          for(var i=0; i<16;i++)
          {
              if(celebdata_temp.length<15)
@@ -49,52 +53,85 @@ exports.celebdata_detailsbycate = function (req, res,next) {
 };
 exports.celebdata_detailsbyname = function (req, res,next) {
     console.log("name:"+req.query.name);
-    var name = req.query.name;
+    console.log("index:"+req.query.index);
+    var name = req.query.name; 
     name=name.toLowerCase();
-    console.log("name:"+name);
-    Celebdata.find({}).then((celebdata) => {
-       var celebdata_temp=[];
-       console.log(celebdata.length);
-         for(var i=0; i<celebdata.length;i++)
-         {
-             var str=celebdata[i].name;
-             str=str.toLowerCase();
-             console.log("str:"+str);
-             console.log(str.search(name));
-            if(str.search(name)!= -1) {
-                console.log("search:"+str);
-                celebdata_temp.push(celebdata[i]);
-            }     
-         }
-          console.log("celebdata_temp.length:"+celebdata_temp.length);
-          res.status(200).send(JSON.stringify(celebdata_temp));
-        }).catch((err) => {
-             res.status(404).send();
-        });
-    
+    var index = req.query.index;
+    var sortstring = req.query.sortstring;
+    var sort=1;
+    if (sortstring=='a') sort=1;
+    else sort=-1;
+    var pageNumber = index;
+    var pageSize = 10;
+
+    var dict = {};
+    var result={};
+     dict['$or'] = [
+        {"name": new RegExp(name.toString(), "i")}
+    ];
+Celebdata.count(dict,function(err,count){
+    console.log("count:"+count);
+     Celebdata.find(dict , null, {
+     sort: {
+       name: sort
+     }
+   }).skip(pageNumber > 0 ? ((pageNumber - 1) * pageSize) : 0).limit(pageSize).exec(function(err, docs) {
+    if(err)
+    res.status(404).send();
+    else {
+        result={data:docs,totalcount:count};
+        console.log("result:"+JSON.stringify(result));
+        res.status(200).send(JSON.stringify(result));
+    }
+    });
+ });
 };
 exports.celebdata_detailsbyalphabeta = function (req, res,next) {
     console.log("name:"+req.query.name);
     var name = req.query.name;
+    var index = req.query.index;
+    var findname = req.query.findname;
+    var Category = req.query.Category;
+    var sortstring = req.query.sortstring;
+    var sort=1;
+    if (sortstring=='a') sort=1;
+    else sort=-1;
+ 
     name=name.toLowerCase();
-    console.log("name:"+name);
-    Celebdata.find({}).then((celebdata) => {
-       var celebdata_temp=[];
-       console.log(celebdata.length);
-         for(var i=0; i<celebdata.length;i++)
-         {
-             var str=celebdata[i].name;
-             str=str.toLowerCase();
-            if(str.indexOf(name)== 0) {
-                console.log("search:"+str);
-                celebdata_temp.push(celebdata[i]);
-            }     
+    findname=findname.toLowerCase();
+    var pageNumber = index;
+    var pageSize = 10;
+    var dict={};
+    console.log("findname:"+findname);
+    if(Category=='Search')
+    {
+        dict['$and'] = [
+            {"name": new RegExp(name.toString(), "i")},
+            {"name": new RegExp('^'+findname.toString(), "i")}
+        ];
+    }else{
+        dict['$and'] = [
+            {"name": new RegExp('^'+findname.toString(), "i")},
+            {"Category": new RegExp(Category.toString(), "i")}
+        ];
+    }
+   
+    Celebdata.count(dict,function(err,count){
+        console.log("count:"+count);
+         Celebdata.find(dict , null, {
+         sort: {
+           name: sort
          }
-          console.log("celebdata_temp.length:"+celebdata_temp.length);
-          res.status(200).send(JSON.stringify(celebdata_temp));
-        }).catch((err) => {
-             res.status(404).send();
+       }).skip(pageNumber > 0 ? ((pageNumber - 1) * pageSize) : 0).limit(pageSize).exec(function(err, docs) {
+        if(err)
+        res.status(404).send();
+        else {
+            result={data:docs,totalcount:count};
+      //      console.log("result:"+JSON.stringify(result));
+            res.status(200).send(JSON.stringify(result));
+        }
         });
+     });
     
 };
 exports.celebdata_alls = function (req, res) {
@@ -128,20 +165,47 @@ exports.celebdata_alls = function (req, res) {
     });
 
 };
-exports.celebdata_allsbycate = function (req, res) {
-    console.log("req.query.Category");
-
-    var Category = req.query.Category;
-    console.log(req.query.Category);
-    if((Category.search("Sports"))>-1){ Category="Sports & Athlete";}
-    console.log("ddd:"+ Category);
-    Celebdata.find({Category: Category}).sort({name:1}).then((celebdata) => {
-  
-      res.status(200).send(JSON.stringify(celebdata));
-    }).catch((err) => {
+exports.celebdata_allsbysitemap = function (req, res) {
+    Celebdata.find({}).select({"_id": 1}).then((celebdata) => {
+        res.status(200).send(JSON.stringify(celebdata));
+        
+     }).catch((err) => {
          res.status(404).send();
     });
 
+};
+exports.celebdata_allsbycate = function (req, res) {
+   var Category = req.query.Category;
+   var index = req.query.index;
+    
+   var dict={};
+    dict['$and'] = [
+        {"Category": new RegExp(Category.toString(), "i")}
+    ];
+    var sortstring = req.query.sortstring;
+    var sort=1;
+    if (sortstring=='a') sort=1;
+    else sort=-1;
+  
+    var pageNumber = index;
+    var pageSize = 10;
+    var result={};
+    Celebdata.count(dict,function(err,count){
+        console.log("count:"+count);
+         Celebdata.find(dict , null, {
+         sort: {
+           name: sort
+         }
+       }).skip(pageNumber > 0 ? ((pageNumber - 1) * pageSize) : 0).limit(pageSize).exec(function(err, docs) {
+        if(err)
+        res.status(404).send();
+        else {
+            result={data:docs,totalcount:count};
+            console.log("result:"+JSON.stringify(result));
+            res.status(200).send(JSON.stringify(result));
+        }
+        });
+     });
 };
 exports.celebdata_setalls = function (req, res) {
     var celebdata = new Celebdata(

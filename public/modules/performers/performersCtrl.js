@@ -1,24 +1,39 @@
 app.controller('performersController',['$scope','$rootScope', '$routeParams','$location', 'performersService', function($scope, $rootScope,$routeParams,$location,performersService) {
     $scope.pager = {};
     $scope.performers = [];
-    $scope.performersall_temp = [];
+    $scope.loaderShow=true;
+    $scope.conent_result=false;
+    $scope.loaderContent=false;
+    $scope.name= ''
+    $scope.Alphabetically=0;
+    $scope.sortstring='a';
     $scope.performersinit=function(){
-        $cate= $routeParams.param1;
-        console.log( $cate);
-        $scope.cate=$cate;
-                
-        if($cate!='Search')
+        $scope.cate= $routeParams.param1;
+        if( $scope.cate!='Search')
         {   
-            if($cate!='Alphabetically')
+            if( $scope.cate!='Alphabetically')
             {
-                performersService.getperformersList( $cate).then(function(data) {
+                performersService.getperformersList(0,  $scope.cate,$scope.sortstring).then(function(data) {
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
                     if(data!=undefined){
-                    $scope.performersall=data.sort();
-                    $scope.performersall_temp=data.sort();
-                    $scope.sortstringindex='a';    
-                    $scope.sortstring='name';
-                    $scope.setPage(1);
-                    console.log(data);
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performer=result.sort();
+                            $scope.sortstring='a';
+                            $scope.totalcount=data.totalcount;
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.conent_result=true;
+                        }else{
+                            $scope.conent_result=false;
+                            $scope.totalPages=0;
+                            $scope.currentPage=0; 
+                            $scope.SearchResult='Result does not exist!';   
+                        }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
                     }
                     }, function(err) {
                         console.log(err);
@@ -26,89 +41,140 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         
                     });
             }else{
-                $scope.SearchResult='';
-                performersService.getmodelsbyalphabeta( $name).then(function(data) {
+             
+                $scope.findname= $routeParams.param2;
+                $scope.category= $routeParams.param3;
+                if($scope.category=='Search')
+                {
+                    $scope.name= $routeParams.param4;
+                }else{
+                    $scope.name= '';
+                }
+                performersService.getmodelsbyalphabeta(0, $scope.findname, $scope.category,$scope.name).then(function(data) {
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
                     if(data!=undefined){
-                        if(data.length>0){
-                            $scope.performersall=data.sort();
-                            $scope.performersall_temp=data.sort();
-                            $scope.sortstringindex='a';    
-                            $scope.sortstring='name';
-                            $scope.setPage(1);
-                            console.log(data);
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performer=result.sort();
+                            $scope.totalcount=data.totalcount;
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.conent_result=true;
                         }else{
                             $scope.totalPages=0;
                             $scope.currentPage=0; 
                             $scope.SearchResult='Result does not exist!';   
-                        }        
+                        }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
                     }
                     }, function(err) {
                         console.log(err);
                     }).finally(function() {
                         
-                    });
+                });
             }
            
         }else{
-            $name= $routeParams.param2;
+            $scope.name= $routeParams.param2;
             $scope.SearchResult='';
-            performersService.getmodelsbyname( $name).then(function(data) {
+            performersService.getmodelsbyname(0, $scope.name,$scope.sortstring).then(function(data) {
+                $scope.conent_result=false;
+                $scope.loaderContent=false;
+                $scope.loaderShow=true;
                 if(data!=undefined){
-                    if(data.length>0){
-                        $scope.performersall=data.sort();
-                        $scope.performersall_temp=data.sort();
-                        $scope.sortstringindex='a';    
-                        $scope.sortstring='name';
+                    var result=data.data;
+                    console.log("result:"+result[0]);
+                    if(result.length>0){
+                        $scope.performer=result.sort();
+                        $scope.totalcount=data.totalcount;
                         $scope.setPage(1);
-                        console.log(data);
+                        $scope.conent_result=true;
                     }else{
                         $scope.totalPages=0;
                         $scope.currentPage=0; 
                         $scope.SearchResult='Result does not exist!';   
-                    }        
+                    }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;        
                 }
                 }, function(err) {
                     console.log(err);
                 }).finally(function() {
                     
-                });
+            });
         }
-   
+       
     }
     $scope.indexOf=function(name){
-        if($scope.performersall_temp.length>0)
-            {
-                var temp=$scope.performersall_temp;
-                $scope.performersall=[];
-                for(var i=0;i<$scope.performersall_temp.length;i++)
-                {
-                    var tempname=temp[i].name;
-                    tempname=tempname.toLowerCase();
-                    if(tempname.indexOf(name)==0)
-                    {
-                        $scope.performersall.push(temp[i]);
+        $scope.findname=name;
+        $scope.Alphabetically=1;
+        if($scope.cate!='Search')
+        {
+                performersService.getmodelsbyalphabeta(0, $scope.findname, $scope.cate,'',$scope.sortstring).then(function(data) {
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        $scope.performers=[];
+                        if(result.length>0){
+                            $scope.performer=result.sort();
+                            $scope.totalcount=data.totalcount;
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.conent_result=true;
+                        }else{
+                            $scope.totalPages=0;
+                            $scope.currentPage=0; 
+                            $scope.SearchResult='Result does not exist!';   
+                        }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
                     }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                 });
+     
+        }else{
+            performersService.getmodelsbyalphabeta(0, $scope.findname, $scope.cate,$scope.name,$scope.sortstring).then(function(data) {
+                $scope.performers=[];
+                $scope.conent_result=false;
+                $scope.loaderContent=false;
+                $scope.loaderShow=true;
+                if(data!=undefined){
+                    var result=data.data;
+                    console.log("result:"+result[0]);
+                    if(result.length>0){
+                        $scope.performer=result.sort();
+                        $scope.totalcount=data.totalcount;
+                        $scope.setPage(1,$scope.totalcount);
+                        $scope.conent_result=true;
+                    }else{
+                        $scope.totalPages=0;
+                        $scope.currentPage=0; 
+                        $scope.SearchResult='Result does not exist!';   
+                    }
+                $scope.loaderContent=true;
+                $scope.loaderShow=false;
                 }
-                if($scope.performersall.length>0){
-                  
-                    $scope.sortstringindex='a';    
-                    $scope.sortstring='name';
-                    $scope.setPage(1);
-                   
-                }else{
-                    $scope.totalPages=0;
-                    $scope.currentPage=0; 
-                    $scope.SearchResult='Result does not exist!';   
-                }  
-            }
+                }, function(err) {
+                    console.log(err);
+                }).finally(function() {
+             });
+
+        }
     }
-    $scope.setPage= function (page) {
+    $scope.setPage= function (page,totalcount) {
         if (page < 1 || page > 10000) {
             return;
         }
-        if($scope.performersall.length>0)
+        if( $scope.totalcount>0)
             {
-                $scope.pager = $scope.GetPager( $scope.performersall.length, page);
+                $scope.pager = $scope.GetPager(  $scope.totalcount, page);
                 $scope.getCelebdataItem(page);
             }
         // get current page of items
@@ -116,34 +182,241 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
     }
     $scope.getCelebdataItem=function(startnumber){
         $scope.performers=[];
-        if(startnumber>0)startnumber=startnumber-1;
-        startIndex=(startnumber)*10;
-        endIndex=(startnumber)*10+9;
-     
-        angular.forEach($scope.performersall, function(value, key){
-            if((key>=startIndex)&&(key<=endIndex) )
+        if($scope.Alphabetically==1)
+        {
+            if($scope.cate!='Search')
             {
-                $scope.performers.push($scope.performersall[key]);
+                    performersService.getmodelsbyalphabeta(startnumber, $scope.findname, $scope.cate,'',$scope.sortstring).then(function(data) {
+                        $scope.performers=[];
+                        $scope.conent_result=false;
+                        $scope.loaderContent=false;
+                        $scope.loaderShow=true;
+                        if(data!=undefined){
+                            var result=data.data;
+                            console.log("result:"+result[0]);
+                            if(result.length>0){
+                                $scope.conent_result=true;
+                                $scope.performers=result.sort();
+                            }else{
+                                $scope.totalPages=0;
+                                $scope.currentPage=0; 
+                                $scope.SearchResult='Result does not exist!';   
+                            }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;
+                        }
+                        }, function(err) {
+                            console.log(err);
+                        }).finally(function() {
+                     });
+         
+            }else{
+                performersService.getmodelsbyalphabeta(startnumber, $scope.findname, $scope.cate,$scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performers=result.sort();
+                           }else{
+                            $scope.totalPages=0;
+                            $scope.currentPage=0; 
+                            $scope.SearchResult='Result does not exist!';   
+                        }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                 });
+    
             }
-        });
+        }else{
+            if($scope.cate=='Search'){
+                performersService.getmodelsbyname(startnumber, $scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.conent_result=true;
+                            $scope.performers=result.sort();
+                        }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;        
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                        
+                });
+            } else if($scope.cate=='Alphabetically'){
+                performersService.getmodelsbyalphabeta(startnumber, $scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performers=result.sort();
+                        }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;        
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                        
+                });
+            }else if($scope.cate!='Alphabetically'){
+            performersService.getperformersList(startnumber, $scope.cate,$scope.sortstring).then(function(data) {
+                $scope.performers=[];
+                if(data!=undefined){
+                    var result=data.data;
+                    console.log("result:"+result[0]);
+                    if(result.length>0){
+                        $scope.performers=result.sort();
+                    }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;        
+                }
+                }, function(err) {
+                    console.log(err);
+                }).finally(function() {
+                    
+            });
+            }
+        }
+        
     }
     $scope.sortName=function(sortstring){
-        //$scope.performersall.sort();
-        if(sortstring=='a'){
-            if($scope.sortstringindex!='a')
+        $scope.sortstring=sortstring;
+        $scope.performers=[];
+        if($scope.Alphabetically==1)
+        {
+            if($scope.cate!='Search')
             {
-                $scope.performersall.reverse();
-                $scope.sortstringindex='a';
+                    performersService.getmodelsbyalphabeta(0, $scope.findname, $scope.cate,'',$scope.sortstring).then(function(data) {
+                        $scope.performers=[];
+                        if(data!=undefined){
+                            var result=data.data;
+                            console.log("result:"+result[0]);
+                            if(result.length>0){
+                                $scope.performers=result.sort();
+                                $scope.setPage(1,$scope.totalcount);
+                            }else{
+                                $scope.totalPages=0;
+                                $scope.currentPage=0; 
+                                $scope.SearchResult='Result does not exist!';   
+                            }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;
+                        }
+                        }, function(err) {
+                            console.log(err);
+                        }).finally(function() {
+                     });
+         
+            }else{
+                performersService.getmodelsbyalphabeta(0, $scope.findname, $scope.cate,$scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performers=result.sort();
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.conent_result=true;
+                           }else{
+                            $scope.totalPages=0;
+                            $scope.currentPage=0; 
+                            $scope.SearchResult='Result does not exist!';   
+                        }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                 });
+    
+            }
+        }else{
+            if($scope.cate=='Search'){
+                performersService.getmodelsbyname(0, $scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.performers=result.sort();
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.conent_result=true;
+                        }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;        
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                        
+                });
+            } else if($scope.cate=='Alphabetically'){
+                performersService.getmodelsbyalphabeta(0, $scope.name,$scope.sortstring).then(function(data) {
+                    $scope.performers=[];
+                    $scope.conent_result=false;
+                    $scope.loaderContent=false;
+                    $scope.loaderShow=true;
+                    if(data!=undefined){
+                        var result=data.data;
+                        console.log("result:"+result[0]);
+                        if(result.length>0){
+                            $scope.conent_result=true;
+                            $scope.setPage(1,$scope.totalcount);
+                            $scope.performers=result.sort();
+                        }
+                        $scope.loaderContent=true;
+                        $scope.loaderShow=false;        
+                    }
+                    }, function(err) {
+                        console.log(err);
+                    }).finally(function() {
+                        
+                });
+            }else if($scope.cate!='Alphabetically'){
+            performersService.getperformersList(0, $scope.cate,$scope.sortstring).then(function(data) {
+                $scope.performers=[];
+                $scope.conent_result=false;
+                $scope.loaderContent=false;
+                $scope.loaderShow=true;
+                if(data!=undefined){
+                    var result=data.data;
+                    console.log("result:"+result[0]);
+                    if(result.length>0){
+                        $scope.performers=result.sort();
+                        $scope.setPage(1,$scope.totalcount);
+                        $scope.conent_result=true;
+                    }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;        
+                }
+                }, function(err) {
+                    console.log(err);
+                }).finally(function() {
+                    
+            });
             }
         }
-        if(sortstring=='z'){
-            if($scope.sortstringindex!='z')
-            {
-                $scope.performersall.reverse();
-                $scope.sortstringindex='z';
-            }
-        }
-        $scope.setPage(1);
+       
     }
     $scope.GetPager=function (totalItems, currentPage, pageSize) {
         // default to first page

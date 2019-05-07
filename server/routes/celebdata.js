@@ -15,6 +15,7 @@ router.get('/getAll', celebdata_controller.celebdata_alls);
 
 router.get('/getAllbyCate', celebdata_controller.celebdata_allsbycate);
 
+router.get('/getAllbysitemap', celebdata_controller.celebdata_allsbysitemap);
 
 router.get('/setAll', celebdata_controller.celebdata_setalls);
 

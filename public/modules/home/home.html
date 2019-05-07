@@ -23,7 +23,7 @@
                                               <li>Current Issues</li>
                                               <li>Awareness</li>
                                           </ul> 
-<p>Booking professional speakers will help cultivate leaders within a company & make your team stronger as a whole.</p>
+                        <p>Booking professional speakers will help cultivate leaders within a company & make your team stronger as a whole.</p>
                                        
                                     </div>
                                  </div>
@@ -1074,25 +1074,31 @@
                 <h2 class="big margin_0">Contact Us</h2>
                 <h2 class="muellerhoff topmargin_5 bottommargin_50 highlight">Contact Form</h2>
 
-                <form class="contact-form" method="post" action="/">
+                <form class="contact-form" method="post" action="">
                     <div class="form-group">
                         <label for="name" class="sr-only">Full Name
                             <span class="required">*</span>
                         </label>
-                        <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control text-center" placeholder="Full name">
+                        <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control text-center" ng-model="name" placeholder="Full name">
                     </div>
                     <div class="form-group">
-                        <label for="phone" class="sr-only">Phone number
+                        <label for="email" class="sr-only">Email
                             <span class="required">*</span>
                         </label>
-                        <input type="text" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control text-center" placeholder="Phone number">
+                        <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control text-center" ng-model="email" placeholder="Email">
                     </div>
+                    <div class="form-group">
+                            <label for="phone" class="sr-only">Phone number
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control text-center" ng-model="phone" placeholder="Phone number">
+                        </div>
                     <div class="form-group bottommargin_30">
                         <label for="message" class="sr-only">Message</label>
-                        <textarea aria-required="true" rows="6" cols="45" name="message" id="message" class="form-control text-center" placeholder="Message"></textarea>
+                        <textarea aria-required="true" rows="6" cols="45" name="message" id="message" class="form-control text-center" ng-model="message" placeholder="Message"></textarea>
                     </div>
-                    <button type="submit" id="contact_form_submit" name="contact_submit" class="theme_button color1 bottommargin_0">Send</button>
-                    <button type="reset" id="contact_form_clear" name="contact_clear" class="theme_button inverse bottommargin_0">Clear</button>
+                    <input type="submit" id="contact_form_submit" name="contact_submit" ng-click="onSubmit()" class="theme_button color1 bottommargin_0" value="Send">
+                    <input type="reset" id="contact_form_clear" name="contact_clear" class="theme_button inverse bottommargin_0" value="Clear">
                 </form>
             </div>
         </div>

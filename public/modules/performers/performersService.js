@@ -4,23 +4,34 @@ app.service('performersService', ['$http','$timeout', function ($http) {
   
     var performers = {};
 
-    performers.getperformersList = function($cate) {
-        var url=performers_ENDPOINT+"/getAllbyCate?Category="+$cate;
+    performers.getperformersList = function($index,$cate,$sortstring) {
+        var url=performers_ENDPOINT+"/getAllbyCate?Category="+$cate+"&index="+$index+"&sortstring="+$sortstring;
         console.log("performers:"+url);
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
         });
     }  
-    performers.getmodelsbyname = function($name) {
-          var url=performers_ENDPOINT+"/getmodelsbyname?name="+$name;
+
+
+    performers.getperformersListbysitemap = function($index,$cate,$sortstring) {
+        var url=performers_ENDPOINT+"/getAllbysitemap";
+        return $http.get(url).then(function(response, status) {
+            if (response.data == null) return null;
+            return response.data;
+        });
+    }  
+
+
+    performers.getmodelsbyname = function($index,$name,$sortstring) {
+          var url=performers_ENDPOINT+"/getmodelsbyname?name="+$name+"&index="+$index+"&sortstring="+$sortstring;
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
         });
     }   
-     performers.getmodelsbyalphabeta = function($name) {
-          var url=performers_ENDPOINT+"/getmodelsbyalphabeta?name="+$name;
+     performers.getmodelsbyalphabeta = function($index,$findname,$category,$name,$sortstring) {
+          var url=performers_ENDPOINT+"/getmodelsbyalphabeta?findname="+$findname+"&index="+$index+"&Category="+$category+"&name="+$name+"&sortstring="+$sortstring;
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;

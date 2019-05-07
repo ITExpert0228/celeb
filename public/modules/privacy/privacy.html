@@ -1,4 +1,8 @@
 <div ng-controller="privacyController"  ng-init="privacyinit()">
+    <div ng-show="loaderShow" style="background-color:black;width:100%;height:700px;">
+        <div class="loader_make" ></div>
+    </div>
+    <div ng-show="loaderContent">
     <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
         <div class="container">
             <div class="row">
@@ -330,5 +334,5 @@
             </div>
         </div>
     </section>
-
+    </div>
 </div>

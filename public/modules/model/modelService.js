@@ -1,7 +1,7 @@
 app.service('modelService', ['$http','$timeout', function ($http) {
     
     const model_ENDPOINT   = '/api/celebdata' ;
-    const contact_ENDPOINT   = '/api/contact' ; 
+    const contactBooking_ENDPOINT   = '/api/contactBooking' ; 
     var model = {};
 
     model.getmodelbyid = function($id) {
@@ -20,10 +20,10 @@ app.service('modelService', ['$http','$timeout', function ($http) {
             return response.data;
         });
     }
-    model.saveContact = function(contactObj) {
-        var url=contact_ENDPOINT+"/create";
+    model.saveContact = function(contactBookingObj) {
+        var url=contactBooking_ENDPOINT+"/create";
         console.log(url);
-        return $http.post(url,{ content: contactObj }).then(function(response, status) {
+        return $http.post(url,{ content: contactBookingObj }).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
         });

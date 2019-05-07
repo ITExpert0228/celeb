@@ -1,5 +1,6 @@
 app.controller('modelController',['$scope','$rootScope', '$routeParams','$location', 'modelService', function($scope, $rootScope,$routeParams,$location,modelService) {
-   
+    $scope.loaderShow=true;
+    $scope.loaderContent=false;
     $scope.modelinit=function(){
         $id= $routeParams.param1;
         if($id==undefined)
@@ -16,6 +17,8 @@ app.controller('modelController',['$scope','$rootScope', '$routeParams','$locati
                         console.log(data1);
                         $scope.modelsbycate=data1; 
                     }
+                    $scope.loaderContent=true;
+                    $scope.loaderShow=false;
                 }, function(err) {
                     console.log(err);
                 }).finally(function() {

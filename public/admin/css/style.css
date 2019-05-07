@@ -3439,7 +3439,7 @@ table.dataTable thead .sorting:after {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-  color: #ffffff !important;
+  color: #000000 !important;
   border: 1px solid #1976d2;
   background-color: #1976d2; }
 
@@ -8176,6 +8176,33 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
   height: 200px;
   left: 30%;
 }
+.loader{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  margin: -30px 0 0 -30px;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .myalertpopup-overlay1.active{
   /*displays pop-up when "active" class is present*/
   visibility:visible;

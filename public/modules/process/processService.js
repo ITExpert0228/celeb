@@ -38,4 +38,4 @@ app.service('processService', ['$http','$timeout', function ($http) {
     // }
 
     return frontcms;
-}]);
+}]); 
