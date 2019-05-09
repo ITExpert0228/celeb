@@ -363,7 +363,21 @@ label {
 }
 
 input[type=checkbox] {
-    visibility: hidden;
+ 
+}
+.search-ca ul {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    margin-top: 5px;
+    padding: 0px;
+}
+.talstep_choicesdiv {
+    float: left;
+    width: 33%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .checkbox input[type=checkbox],
@@ -1191,7 +1205,13 @@ h4 {
 
 p {
     margin-bottom: 15px;
+    color: white;
 }
+
+#popupContainer{
+    position: relative; 
+}
+
 
 blockquote {
     position: relative;
@@ -1330,7 +1350,7 @@ a {
 }
 
 a:hover {
-    color: #fd61e3;
+    color: #1e90ff;
     text-decoration: none;
     -webkit-transition: all 0.15s linear 0s;
     transition: all 0.15s linear 0s;
@@ -1644,8 +1664,8 @@ p > [class*="rt-icon"] + [class*="rt-icon"] {
 
 .theme_buttons.color2 a,
 .theme_button.color2 {
-    background-color: #fd61e3;
-    border-color: #fd61e3;
+    background-color: #1e90ff;
+    border-color: #1e90ff;
 }
 
 .theme_buttons[class*="color"]:hover,
@@ -1768,11 +1788,11 @@ p > [class*="rt-icon"] + [class*="rt-icon"] {
 }
 
 .parallax.cs.main_color2:after {
-    background-color: #fd61e3;
+    background-color: #1e90ff;
 }
 
 .parallax.cs.main_color3:after {
-    background-color: #ff77b8;
+    background-color: #1e90ff;
 }
 
 .parallax.ds:before,
@@ -2241,7 +2261,7 @@ body.boxed {
 }
 
 .ls .highlight2 {
-    color: #fd61e3;
+    color: #1e90ff;
 }
 
 .ls .greylinks a {
@@ -2257,7 +2277,7 @@ body.boxed {
 }
 
 .ls .darklinks a:hover {
-    color: #fd61e3;
+    color: #1e90ff;
 }
 
 /**grey section - light section, muted section - .ls.ms*/
@@ -2475,8 +2495,8 @@ body.boxed {
 
 .ds .theme_buttons.color2 a,
 .ds .theme_button.color2 {
-    background-color: #fd61e3;
-    border-color: #fd61e3;
+    background-color: #1e90ff;
+    border-color: #1e90ff;
 }
 
 .ds .theme_buttons[class*="color"],
@@ -2988,7 +3008,7 @@ body.boxed {
 
 /**color section*/
 .cs.main_color2 {
-    background-color: #fd61e3;
+    background-color: #1e90ff;
 }
 
 .cs.main_color2 .highlight {
@@ -3770,8 +3790,8 @@ a.logo.vertical_logo img {
 }
 
 .page_maincarousel.owl-carousel .vertical-item.content-absolute .item-content {
-    bottom: -200px;
-    opacity: 0;
+    bottom: -194px;
+    opacity: 1;
 }
 
 .page_maincarousel.owl-carousel .vertical-item.content-absolute:hover .item-content {
@@ -3993,7 +4013,6 @@ a.logo.vertical_logo img {
 
 @media (min-width: 1600px) {
     .models_square .isotope-item {
-        width: 20%;
     }
 }
 
@@ -4170,9 +4189,9 @@ a.logo.vertical_logo img {
 }
 
 .theme-owl-carousel .owl-item.center .vertical-item {
-    background: #fd61e3;
-    background: -webkit-linear-gradient(left, #fd61e3, #fd61e3 50%, #ff77b8);
-    background: linear-gradient(to right, #fd61e3, #fd61e3 50%, #ff77b8);
+    background: #1e90ff;
+    background: -webkit-linear-gradient(left, #1e90ff, #1e90ff 50%, #1e90ff);
+    background: linear-gradient(to right, #1e90ff, #1e90ff 50%, #1e90ff);
 }
 
 .ls .theme-owl-carousel .owl-item.center .vertical-item {
@@ -6463,7 +6482,7 @@ aside .widget_tag_cloud a:hover {
 }
 
 .widget_calendar tbody td a:hover {
-    color: #fd61e3;
+    color: #1e90ff;
 }
 
 .widget_calendar th {
@@ -6963,15 +6982,15 @@ aside .widget_tag_cloud a:hover {
 }
 
 .gradient_bg_vert .bg_overlay {
-    background: #fd61e3;
-    background: -webkit-linear-gradient(#fd61e3, #fd61e3 50%, #ff77b8);
-    background: linear-gradient(#fd61e3, #fd61e3 50%, #ff77b8);
+    background: #1e90ff;
+    background: -webkit-linear-gradient(#1e90ff, #1e90ff 50%, #1e90ff);
+    background: linear-gradient(#1e90ff, #1e90ff 50%, #1e90ff);
 }
 
 .gradient_bg_goriz .bg_overlay {
-    background: #fd61e3;
-    background: -webkit-linear-gradient(left, #fd61e3, #fd61e3 50%, #ff77b8);
-    background: linear-gradient(to right, #fd61e3, #fd61e3 50%, #ff77b8);
+    background: #1e90ff;
+    background: -webkit-linear-gradient(left, #1e90ff, #1e90ff 50%, #1e90ff);
+    background: linear-gradient(to right, #1e90ff, #1e90ff 50%, #1e90ff);
 }
 
 .square_teaser .item-media:after {
@@ -7758,8 +7777,8 @@ aside .widget_tag_cloud a:hover {
 }
 
 .highlight2 {
-    color: #fd61e3;
-    border-color: #fd61e3;
+    color: #1e90ff;
+    border-color: #1e90ff;
 }
 
 .red,
@@ -7822,7 +7841,7 @@ aside .widget_tag_cloud a:hover {
 
 .main_bg_color2 {
     color: #ffffff;
-    background-color: #fd61e3;
+    background-color: #1e90ff;
 }
 
 .dark_bg_color {
@@ -8376,9 +8395,9 @@ h2 .muellerhoff {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #fd61e3;
-    background: -webkit-linear-gradient(left, #fd61e3, #fd61e3 50%, #ff77b8);
-    background: linear-gradient(to right, #fd61e3, #fd61e3 50%, #ff77b8);
+    background: #1e90ff;
+    background: -webkit-linear-gradient(left, #1e90ff, #1e90ff 50%, #1e90ff);
+    background: linear-gradient(to right, #1e90ff, #1e90ff 50%, #1e90ff);
     filter: alpha(opacity=0);
     opacity: 0;
     -webkit-transition: all 0.2s linear;
@@ -9087,11 +9106,11 @@ html[xmlns] .slides {
 }
 
 .flex-control-paging li a:hover:before {
-    background-color: #ff77b8;
+    background-color: #1e90ff;
 }
 
 .flex-control-paging li a.flex-active:before {
-    background-color: #ff77b8;
+    background-color: #1e90ff;
 }
 
 .flex-control-thumbs {
@@ -11209,7 +11228,7 @@ isotope portfolio and gallery pos
     width: 30px;
     height: 74px;
     right: 0;
-    background-color: #fd61e3;
+    background-color: #1e90ff;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }

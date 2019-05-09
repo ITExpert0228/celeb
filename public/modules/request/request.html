@@ -1,4 +1,4 @@
-<div ng-controller="requestController">
+<div ng-controller="requestController" id="popupContainer">
     <div>
     <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
         <div class="container">
@@ -53,24 +53,24 @@
                                                                             <td class="tallist_profile_form">Last Name<span class="red-c">*</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td align="left"><input type="text" name="Contact_First_Name" class="textfield" value="" style="width:70% !important;" ng-model="Contact_First_Name"></td>
-                                                                            <td align="left"><input type="text" name="Contact_Last_Name" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Last_Name"></td>
+                                                                            <td align="left"><input type="text" name="Contact_First_Name" class="textfield" value="" ng-model="Contact_First_Name" required></td>
+                                                                            <td align="left"><input type="text" name="Contact_Last_Name" class="textfield" value="" ng-model="Contact_Last_Name" required></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td class="tallist_profile_form">Position<span class="red-c">*</span></td>
                                                                             <td class="tallist_profile_form">Company / Organization:<span class="red-c">*</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td align="left"><input type="text" name="Contact_Title" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Title"></td>
-                                                                            <td align="left"><input type="text" name="Contact_Organization" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Organization"></td>
+                                                                            <td align="left"><input type="text" name="Contact_Title" class="textfield" value="" ng-model="Contact_Title" required></td>
+                                                                            <td align="left"><input type="text" name="Contact_Organization" class="textfield" value="" ng-model="Contact_Organization" required></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td class="tallist_profile_form">Phone<span class="red-c">*</span></td>
                                                                             <td class="tallist_profile_form">Email<span class="red-c">*</span></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td align="left"><input type="number" name="Contact_Office_Phone" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Office_Phone"></td>
-                                                                            <td align="left"><input type="email" name="Contact_Email" class="textfield" value="" style="width:70% !important;" ng-model="Contact_Email"></td>
+                                                                            <td align="left"><input type="number" name="Contact_Office_Phone" class="textfield" value="" ng-model="Contact_Office_Phone" required></td>
+                                                                            <td align="left"><input type="email" name="Contact_Email" class="textfield" value="" ng-model="Contact_Email" required></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
@@ -90,7 +90,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td align="left">
-                                                                            <select name="What_The_Booking_Is_For" ng-model="What_The_Booking_Is_For">
+                                                                            <select name="What_The_Booking_Is_For" style="background-color: #1a1a1a;" ng-model="What_The_Booking_Is_For" required> 
                                                                                 <option value="null">--- Select ---</option>
                                                                                 <option value="College or University">College or University</option>
                                                                                 <option value="Convention or Tradeshow">Convention or Tradeshow</option>
@@ -103,15 +103,15 @@
                                                                                 <option value="Private Party">Private Party</option>
                                                                                 <option value="Public Concert">Public Concert</option>
                                                                             </select></td>
-                                                                        <td align="left"><input type="text" name="Event_Name" class="textfield" value="" style="width:70% !important;" ng-model="Event_Name"></td>
+                                                                        <td align="left"><input type="text" name="Event_Name" class="textfield" value=""  ng-model="Event_Name" required></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="tallist_profile_form">Location<span class="red-c">*</span></td>
                                                                         <td class="tallist_profile_form">Date<span class="red-c">*</span></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td align="left"><input type="text" name="Event_Location" class="textfield" value="" style="width:70% !important;" ng-model="Event_Location"></td>
-                                                                        <td align="left"><input name="Event_Date_1" type="date" class="textfield" value="" id="popup_container_1" style="width:70% !important;" ng-model="Event_Date_1"></td>
+                                                                        <td align="left"><input type="text" name="Event_Location" class="textfield" value="" ng-model="Event_Location" required></td>
+                                                                        <td align="left"><input name="Event_Date_1" type="date" class="textfield" value="" id="popup_container_1" ng-model="Event_Date_1" required></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -128,7 +128,7 @@
                                                                         <tr>
                                                                             <td align="left" class="tallist_profile_form">Fee Range<span class="red-c">*</span></td>
                                                                             <td align="left">$
-                                                                                <select name="Fee_Range_A" ng-model="Fee_Range_A">
+                                                                                <select  name="Fee_Range_A" ng-model="Fee_Range_A" style="background-color: #1a1a1a;" required>
                                                                                     <option value="null">--- Select ---</option>
                                                                                     <option value="10,000">10,000</option>
                                                                                     <option value="20,000">20,000</option>
@@ -146,7 +146,7 @@
                                                                                     <option value="750,000">750,000</option>
                                                                                     <option value="1,000,000">1,000,000</option>
                                                                                 </select> to $
-                                                                                <select name="Fee_Range_B" ng-model="Fee_Range_B">
+                                                                                <select name="Fee_Range_B" ng-model="Fee_Range_B" style="background-color: #1a1a1a;" required>
                                                                                     <option value="null">--- Select ---</option>
                                                                                     <option value="20,000">20,000</option>
                                                                                     <option value="30,000">30,000</option>
@@ -176,7 +176,7 @@
                                                                         <td colspan="2" align="left" class="tallist_profile_form">Please list additional names and/or types of styles of celebrities you are interested in:<span class="red-c">*</span> </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td colspan="2" align="left"><textarea name="Specific_Talent_of_Interest" ng-model="Specific_Talent_of_Interest" class="textarea" style="width:85%; height:50px;">Aaron Taylor-Johnson </textarea></td>
+                                                                        <td colspan="2" align="left"><textarea name="Specific_Talent_of_Interest" ng-model="Specific_Talent_of_Interest" class="textarea" style="width:85%; height:50px;" required>Aaron Taylor-Johnson </textarea></td>
                                                                     </tr>
 
                                                                 </tbody>
@@ -191,7 +191,7 @@
                                                             <table border="0" cellspacing="0" cellpadding="0" width="100%">
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td colspan="2" align="left"><span>Please provide a brief summary of the event and any other details we should know upfront.<span class="red-c">*</span></span><br><textarea name="Additional_Information" class="textarea" ng-model="Additional_Information" style="width:85%; height:50px;"></textarea></td>
+                                                                        <td colspan="2" align="left"><span>Please provide a brief summary of the event and any other details we should know upfront.<span class="red-c">*</span></span><br><textarea name="Additional_Information" class="textarea" ng-model="Additional_Information" style="width:85%; height:50px;" required></textarea></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -200,7 +200,7 @@
 
 
                                                     <div style="padding-top:20px; text-align:center;">
-                                                        <input type="submit" name="Submit" value="Submit" ng-click="onSubmit()" class="theme_button color1 bottommargin_0">
+                                                        <input type="submit" name="Submit" value="Submit" ng-click="onSubmit($event)" class="theme_button color1 bottommargin_0">
                                                     </div>
                                                 </form>
                                             </div>

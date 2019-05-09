@@ -4,8 +4,6 @@ app.controller('processCtrl',['$scope', '$location','$cookieStore','$rootScope',
         
         processService.getProcessList().then(function(data) {
             if(data!=undefined){
-            console.log(data);
-          //  console.log(data[0]);
             $scope.id=data.id;
           //  ckeidtor= angular.element(document.querySelector("#editor1"));
             $scope.editor1=data.process;
@@ -13,26 +11,20 @@ app.controller('processCtrl',['$scope', '$location','$cookieStore','$rootScope',
             CKEDITOR.instances.editor1.setData($scope.editorbuf);
         }
         }, function(err) {
-            console.log(err);
+      //      console.log(err);
         }).finally(function() {
             
         });
     }  
     $scope.saveContent=function(){
         id=$scope.id;
-        // angular.element(document.querySelector("#editor1"));
-        // content= ckeidtor.getData();
-        console.log($scope.content);
         content={data:$scope.content};
         processService.saveContent(id,content).then(function(data) {
             if(data!=undefined){
-            console.log(data);
             alert("Your Data is Saved  correctly in a server!")
             }
         }, function(err) {
-            console.log(err);
         }).finally(function() {
-            
         });
     }  
     $scope.$on('$viewContentLoaded', function(){

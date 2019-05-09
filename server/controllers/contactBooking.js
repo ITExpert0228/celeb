@@ -1,29 +1,52 @@
 var ContactBooking = require('../models/contactBooking');
-
+var nodemailer = require('nodemailer');
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
-exports.contactBooking_create = function (req, res) {
-    console.log(req.body.content);
+exports.contactBooking_create = function (req, res,next) {
+ //   console.log(req.body.content);
     var contactBooking = new ContactBooking(
         req.body.content
     );
-    console.log("contactBooking:"+contactBooking);
+ //   console.log("contactBooking:"+contactBooking);
     contactBooking.save(function (err) {
         if (err) {
             return next(err);
         }
-        res.send('ContactBooking Created successfully');
+        
+        var transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+              user: 'financialforsale@gmail.com',
+              pass: 'Hsj19911020'
+            }
+          });
+          
+          var mailOptions = {
+            from: 'financialforsale@gmail.com',
+            to: 'financialforsale@gmail.com',
+            subject: 'Sending Email from Celeb Site',
+            text: 'You have received a email about Celeb Site Booking!'
+          };
+          
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+                res.send('Request Created successfully');
+                console.log('Email sent: ' + info.response);
+            }
+          });
     })
 };
 
 exports.contactBooking_details = function (req, res,next) {
-    console.log(req.query.id);
+  //  console.log(req.query.id);
     ContactBooking.findById(req.query.id, function (err, contactBooking) {
         if (err) return next(err);
-        console.log(contactBooking);
+//console.log(contactBooking);
         res.send(contactBooking);
     })
 };
@@ -33,7 +56,7 @@ exports.contactBooking_alls = function (req, res) {
     ContactBooking.find({}).then((contactBooking) => {
         //console.log(contactBooking);
     var obj = {  data: contactBooking };
-    console.log(JSON.stringify(obj));
+   // console.log(JSON.stringify(obj));
     res.status(200).send(JSON.stringify(obj));
     }).catch((err) => {
          res.status(404).send();
@@ -41,7 +64,7 @@ exports.contactBooking_alls = function (req, res) {
 
 };
 exports.contactBooking_allsbycate = function (req, res) {
-    console.log(req.query.Category);
+  //  console.log(req.query.Category);
     var Category = req.query.Category;
     ContactBooking.find({Category: Category}).then((contactBooking) => {
     var contactBooking_temp=contactBooking;

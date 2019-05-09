@@ -20,15 +20,16 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
                     }, {
                         label: "Name:",
                         name: "name",
-                    }, {
+                    },
+                     {
                         label: "URL:",
                         name: "url"
                     }, {
                         label: "Category:",
                         name: "Category"
-                    }, {
-                        label: "Type:",
-                        name: "Type",
+                    },{
+                        label: "Style:",
+                        name: "style",
                     },{
                         label: "Profile image:",
                         name: "image",
@@ -37,8 +38,11 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
                         name: "profiletext",
                         type: "textarea"
                     },{
-                        label: "Price:",
-                        name: "pricing"
+                        label: "LowPrice:",
+                        name: "lowPrice"
+                    },{
+                        label: "HighPrice:",
+                        name: "highPrice"
                     },{
                         label: "FAQ question1:",
                         name: "faq1.ques",
@@ -87,8 +91,12 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
                     '<td>'+d.profiletext+'</td>'+
                     '</tr>'+
                     '<tr>'+
-                    '<td>Price:</td>'+
-                    '<td>'+d.pricing+'</td>'+
+                    '<td>lowPrice:</td>'+
+                    '<td>'+d.lowPrice+'</td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td>highPrice:</td>'+
+                    '<td>'+d.highPrice+'</td>'+
                     '</tr>'+
                     '<tr>'+
                     '<td>FAQ question1:</td>'+
@@ -151,10 +159,11 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
           { "data": "name" },
           { "data": "url" },
           { "data": "Category" },
-          { "data": "Type" },
+          { "data": "style" },
           { "data": "image" },
           { "data": "profiletext" },
-          { "data": "pricing" },
+          { "data": "lowPrice" },
+          { "data": "highPrice" },
           { "data": "faq1.ques" },
           { "data": "faq1.answ" },
           { "data": "faq2.ques" },
@@ -220,6 +229,11 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
                      "targets": 15,
                      "orderable": true,
                      "visible": false,
+                  },
+                 {
+                     "targets": 16,
+                     "orderable": true,
+                     "visible": false,
                   }
         ],
         select: {
@@ -246,7 +260,6 @@ app.controller('performersCtrl',['authService','$scope','$rootScope','$cookieSto
 
     $scope.performersInit=function(){
         $scope.username = $cookieStore.get('user');
-        console.log($scope.username);
         $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
     }
 }]);

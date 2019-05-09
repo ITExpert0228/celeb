@@ -1,0 +1,780 @@
+        
+<div ng-controller="customlistController" ng-init="customlistinit()" >
+    <div ng-show="loaderShow" style="background-color:black;width:100%;height:700px;">
+        <div class="loader_make" ></div>
+    </div>
+    <div ng-show="loaderContent">        
+        <section class="page_breadcrumbs changeable ls gradient gorizontal_padding section_padding_20 columns_padding_5 table_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center text-sm-left darklinks">
+                    <h2>Request Information</h2>
+                </div>
+            </div>
+        </div>
+        </section>
+        
+        
+        <section class="ds request-page search-ca section_padding_70 section_padding_bottom_60 columns_padding_25">
+        <div class="container">
+            <div class="row">
+        
+                <div class="col-md-12 col-md-offset-0">
+                    <div class="col-md-12 ">
+        
+                        <h3 class="">General Booking Request Forms</h3>
+        
+                        <div>
+                            <h3 class="bold">Welcome to CTI's headliner, celebrity speaker &amp; major athlete library.</h3>
+                            <h5 >Browse our in-depth database of talent or build a custom list based on your exact needs.</h5>
+                            <hr>
+                            <div style="font-size:14pt; font-weight:bold; padding-top:10px; color:#1e90ff">Build a Refined Custom Talent List</div>
+    
+                            <div class="cwell">
+                                <h3>Category</h3>
+                                <div class="col-lg-12">
+                                    <div class="filters isotope_filters inline-block margin_0">
+                                        <a href="" ng-click="selectModels('Actors')" id="Actors">Actors</a>
+                                        <a href="" ng-click="selectModels('Sports')" id="Sports">Sports</a>
+                                        <a href=""  ng-click="selectModels('Speakers')" id="Speakers">Speakers</a>
+                                        <a href=""  ng-click="selectModels('Performers')" id="Performers">Performers</a>
+                                        <a href=""  ng-click="selectModels('RisingPerformers')" id="RisingPerformers">Rising Performers</a>
+                                        <a href=""  ng-click="selectModels('RisingSpeakers')" id="RisingSpeakers">Rising Speakers</a>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="tab-pane fade in active" id="tab4">
+                                        <div class="cwell">
+                                            <h5>Budget Range</h5>
+                                            <small>Remember: we list the <b><em>minimum average</em></b> fee that the celebrities and their managers <b><em>might</em></b> confirm for. We cannot approach talent if your budget is much lower than published; even if the booking is intended for a charity event, a benefit for a "great cause", and especially not for personal requests by fans. Separately, they may quote a higher fee than what we list. Normally, celebrities only discount for close friends, family, or personal causes, if at all. All international offers must have a higher budget, than a domestic (US) event, to be considered, due to the additional logistics and traveling costs. <br><br>
+        
+                                                <div id="namesforbudgets"><b style="font-size:12pt !important;">Budget Ranges Examples</b><br><b>Lower Cost Names</b>: $5000 to $25,000+ (e.g. Amy Purdy, Rocco Mediate, Jill Ellis, Sydney Leroux, Jason Taylor, McKayla Maroney, Ivan Rodriguez, Bernie Williams)<br><br><b>Medium Level Names</b>: $30K-100k+ (e.g. Alex Morgan, Tony Hawk, Tim Tebow, Simone Biles, Serena Williams)<br><br><b>Higher Cost Names</b>: $125K-$500K+ (e.g. LeBron James, David Beckham, Tom Brady, Derek Jeter, Danica Patrick, Dwight Howard)<br><br></div>
+        
+                                            </small>
+                                            <div id="step2">
+                                                <div class="container">
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-md-5 col-sm-12"><b>Lower Range</b><br>
+                                                                <select name="budget_a" id="budget_a" class="form-control"  ng-model="lowFee" ng-change="talentBudget('lowFee')">
+                                                                    <option value="" selected="selected">- - - Select - - -</option>
+                                                                    <option value="2500">$2,500</option>
+                                                                    <option value="7500">$7,500</option>
+                                                                    <option value="10000">$10,000</option>
+                                                                    <option value="20000">$20,000</option>
+                                                                    <option value="30000">$30,000</option>
+                                                                    <option value="40000">$40,000</option>
+                                                                    <option value="50000">$50,000</option>
+                                                                    <option value="60000">$60,000</option>
+                                                                    <option value="75000">$75,000</option>
+                                                                    <option value="100000">$100,000</option>
+                                                                    <option value="110000">$110,000</option>
+                                                                    <option value="120000">$120,000</option>
+                                                                    <option value="130000">$130,000</option>
+                                                                    <option value="140000">$140,000</option>
+                                                                    <option value="150000">$150,000</option>
+                                                                    <option value="160000">$160,000</option>
+                                                                    <option value="170000">$170,000</option>
+                                                                    <option value="180000">$180,000</option>
+                                                                    <option value="190000">$190,000</option>
+                                                                    <option value="200000">$200,000</option>
+                                                                    <option value="210000">$210,000</option>
+                                                                    <option value="220000">$220,000</option>
+                                                                    <option value="230000">$230,000</option>
+                                                                    <option value="240000">$240,000</option>
+                                                                    <option value="250000">$250,000</option>
+                                                                    <option value="260000">$260,000</option>
+                                                                    <option value="270000">$270,000</option>
+                                                                    <option value="280000">$280,000</option>
+                                                                    <option value="290000">$290,000</option>
+                                                                    <option value="300000">$300,000</option>
+                                                                    <option value="310000">$310,000</option>
+                                                                    <option value="320000">$320,000</option>
+                                                                    <option value="330000">$330,000</option>
+                                                                    <option value="340000">$340,000</option>
+                                                                    <option value="350000">$350,000</option>
+                                                                    <option value="360000">$360,000</option>
+                                                                    <option value="370000">$370,000</option>
+                                                                    <option value="380000">$380,000</option>
+                                                                    <option value="390000">$390,000</option>
+                                                                    <option value="400000">$400,000</option>
+                                                                    <option value="410000">$410,000</option>
+                                                                    <option value="420000">$420,000</option>
+                                                                    <option value="430000">$430,000</option>
+                                                                    <option value="440000">$440,000</option>
+                                                                    <option value="450000">$450,000</option>
+                                                                    <option value="460000">$460,000</option>
+                                                                    <option value="470000">$470,000</option>
+                                                                    <option value="480000">$480,000</option>
+                                                                    <option value="490000">$490,000</option>
+                                                                    <option value="500000">$500,000</option>
+                                                                    <option value="510000">$510,000</option>
+                                                                    <option value="520000">$520,000</option>
+                                                                    <option value="530000">$530,000</option>
+                                                                    <option value="540000">$540,000</option>
+                                                                    <option value="550000">$550,000</option>
+                                                                    <option value="560000">$560,000</option>
+                                                                    <option value="570000">$570,000</option>
+                                                                    <option value="580000">$580,000</option>
+                                                                    <option value="590000">$590,000</option>
+                                                                    <option value="600000">$600,000</option>
+                                                                    <option value="610000">$610,000</option>
+                                                                    <option value="620000">$620,000</option>
+                                                                    <option value="630000">$630,000</option>
+                                                                    <option value="640000">$640,000</option>
+                                                                    <option value="650000">$650,000</option>
+                                                                    <option value="660000">$660,000</option>
+                                                                    <option value="670000">$670,000</option>
+                                                                    <option value="680000">$680,000</option>
+                                                                    <option value="690000">$690,000</option>
+                                                                    <option value="700000">$700,000</option>
+                                                                    <option value="710000">$710,000</option>
+                                                                    <option value="720000">$720,000</option>
+                                                                    <option value="730000">$730,000</option>
+                                                                    <option value="740000">$740,000</option>
+                                                                    <option value="750000">$750,000</option>
+                                                                    <option value="760000">$760,000</option>
+                                                                    <option value="770000">$770,000</option>
+                                                                    <option value="780000">$780,000</option>
+                                                                    <option value="790000">$790,000</option>
+                                                                    <option value="800000">$800,000</option>
+                                                                    <option value="810000">$810,000</option>
+                                                                    <option value="820000">$820,000</option>
+                                                                    <option value="830000">$830,000</option>
+                                                                    <option value="840000">$840,000</option>
+                                                                    <option value="850000">$850,000</option>
+                                                                    <option value="860000">$860,000</option>
+                                                                    <option value="870000">$870,000</option>
+                                                                    <option value="880000">$880,000</option>
+                                                                    <option value="890000">$890,000</option>
+                                                                    <option value="900000">$900,000</option>
+                                                                    <option value="910000">$910,000</option>
+                                                                    <option value="920000">$920,000</option>
+                                                                    <option value="930000">$930,000</option>
+                                                                    <option value="940000">$940,000</option>
+                                                                    <option value="950000">$950,000</option>
+                                                                    <option value="960000">$960,000</option>
+                                                                    <option value="970000">$970,000</option>
+                                                                    <option value="980000">$980,000</option>
+                                                                    <option value="990000">$990,000</option>
+                                                                    <option value="1000000">$1,000,000</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12" style="text-align:center;height:30px; padding-top:20px; color:#3399CC;"><b>- to -</b></div>
+                                                            <div class="col-md-5 col-sm-12"><b>Higher Range</b><br>
+                                                                <select name="budget_b" id="budget_b" class="form-control" ng-model="highFee" ng-change="talentBudget('highFee')">
+                                                                    <option value="" selected="selected">- - - Select - - -</option>
+                                                                    <option value="7499">$7,499</option>
+                                                                    <option value="10000">$10,000</option>
+                                                                    <option value="20000">$20,000</option>
+                                                                    <option value="30000">$30,000</option>
+                                                                    <option value="40000">$40,000</option>
+                                                                    <option value="50000">$50,000</option>
+                                                                    <option value="60000">$60,000</option>
+                                                                    <option value="75000">$75,000</option>
+                                                                    <option value="100000">$100,000</option>
+                                                                    <option value="110000">$110,000</option>
+                                                                    <option value="120000">$120,000</option>
+                                                                    <option value="130000">$130,000</option>
+                                                                    <option value="140000">$140,000</option>
+                                                                    <option value="150000">$150,000</option>
+                                                                    <option value="160000">$160,000</option>
+                                                                    <option value="170000">$170,000</option>
+                                                                    <option value="180000">$180,000</option>
+                                                                    <option value="190000">$190,000</option>
+                                                                    <option value="200000">$200,000</option>
+                                                                    <option value="210000">$210,000</option>
+                                                                    <option value="220000">$220,000</option>
+                                                                    <option value="230000">$230,000</option>
+                                                                    <option value="240000">$240,000</option>
+                                                                    <option value="250000">$250,000</option>
+                                                                    <option value="260000">$260,000</option>
+                                                                    <option value="270000">$270,000</option>
+                                                                    <option value="280000">$280,000</option>
+                                                                    <option value="290000">$290,000</option>
+                                                                    <option value="300000">$300,000</option>
+                                                                    <option value="310000">$310,000</option>
+                                                                    <option value="320000">$320,000</option>
+                                                                    <option value="330000">$330,000</option>
+                                                                    <option value="340000">$340,000</option>
+                                                                    <option value="350000">$350,000</option>
+                                                                    <option value="360000">$360,000</option>
+                                                                    <option value="370000">$370,000</option>
+                                                                    <option value="380000">$380,000</option>
+                                                                    <option value="390000">$390,000</option>
+                                                                    <option value="400000">$400,000</option>
+                                                                    <option value="410000">$410,000</option>
+                                                                    <option value="420000">$420,000</option>
+                                                                    <option value="430000">$430,000</option>
+                                                                    <option value="440000">$440,000</option>
+                                                                    <option value="450000">$450,000</option>
+                                                                    <option value="460000">$460,000</option>
+                                                                    <option value="470000">$470,000</option>
+                                                                    <option value="480000">$480,000</option>
+                                                                    <option value="490000">$490,000</option>
+                                                                    <option value="500000">$500,000</option>
+                                                                    <option value="510000">$510,000</option>
+                                                                    <option value="520000">$520,000</option>
+                                                                    <option value="530000">$530,000</option>
+                                                                    <option value="540000">$540,000</option>
+                                                                    <option value="550000">$550,000</option>
+                                                                    <option value="560000">$560,000</option>
+                                                                    <option value="570000">$570,000</option>
+                                                                    <option value="580000">$580,000</option>
+                                                                    <option value="590000">$590,000</option>
+                                                                    <option value="600000">$600,000</option>
+                                                                    <option value="610000">$610,000</option>
+                                                                    <option value="620000">$620,000</option>
+                                                                    <option value="630000">$630,000</option>
+                                                                    <option value="640000">$640,000</option>
+                                                                    <option value="650000">$650,000</option>
+                                                                    <option value="660000">$660,000</option>
+                                                                    <option value="670000">$670,000</option>
+                                                                    <option value="680000">$680,000</option>
+                                                                    <option value="690000">$690,000</option>
+                                                                    <option value="700000">$700,000</option>
+                                                                    <option value="710000">$710,000</option>
+                                                                    <option value="720000">$720,000</option>
+                                                                    <option value="730000">$730,000</option>
+                                                                    <option value="740000">$740,000</option>
+                                                                    <option value="750000">$750,000</option>
+                                                                    <option value="760000">$760,000</option>
+                                                                    <option value="770000">$770,000</option>
+                                                                    <option value="780000">$780,000</option>
+                                                                    <option value="790000">$790,000</option>
+                                                                    <option value="800000">$800,000</option>
+                                                                    <option value="810000">$810,000</option>
+                                                                    <option value="820000">$820,000</option>
+                                                                    <option value="830000">$830,000</option>
+                                                                    <option value="840000">$840,000</option>
+                                                                    <option value="850000">$850,000</option>
+                                                                    <option value="860000">$860,000</option>
+                                                                    <option value="870000">$870,000</option>
+                                                                    <option value="880000">$880,000</option>
+                                                                    <option value="890000">$890,000</option>
+                                                                    <option value="900000">$900,000</option>
+                                                                    <option value="910000">$910,000</option>
+                                                                    <option value="920000">$920,000</option>
+                                                                    <option value="930000">$930,000</option>
+                                                                    <option value="940000">$940,000</option>
+                                                                    <option value="950000">$950,000</option>
+                                                                    <option value="960000">$960,000</option>
+                                                                    <option value="970000">$970,000</option>
+                                                                    <option value="980000">$980,000</option>
+                                                                    <option value="990000">$990,000</option>
+                                                                    <option value="1000000">$1,000,000</option>
+                                                                    <option value="1010000">$1,010,000</option>
+                                                                    <option value="1020000">$1,020,000</option>
+                                                                    <option value="1030000">$1,030,000</option>
+                                                                    <option value="1040000">$1,040,000</option>
+                                                                    <option value="1050000">$1,050,000</option>
+                                                                    <option value="1060000">$1,060,000</option>
+                                                                    <option value="1070000">$1,070,000</option>
+                                                                    <option value="1080000">$1,080,000</option>
+                                                                    <option value="1090000">$1,090,000</option>
+                                                                    <option value="1100000">$1,100,000</option>
+                                                                    <option value="1110000">$1,110,000</option>
+                                                                    <option value="1120000">$1,120,000</option>
+                                                                    <option value="1130000">$1,130,000</option>
+                                                                    <option value="1140000">$1,140,000</option>
+                                                                    <option value="1150000">$1,150,000</option>
+                                                                    <option value="1160000">$1,160,000</option>
+                                                                    <option value="1170000">$1,170,000</option>
+                                                                    <option value="1180000">$1,180,000</option>
+                                                                    <option value="1190000">$1,190,000</option>
+                                                                    <option value="1200000">$1,200,000</option>
+                                                                    <option value="1210000">$1,210,000</option>
+                                                                    <option value="1220000">$1,220,000</option>
+                                                                    <option value="1230000">$1,230,000</option>
+                                                                    <option value="1240000">$1,240,000</option>
+                                                                    <option value="1250000">$1,250,000</option>
+                                                                    <option value="1260000">$1,260,000</option>
+                                                                    <option value="1270000">$1,270,000</option>
+                                                                    <option value="1280000">$1,280,000</option>
+                                                                    <option value="1290000">$1,290,000</option>
+                                                                    <option value="1300000">$1,300,000</option>
+                                                                    <option value="1310000">$1,310,000</option>
+                                                                    <option value="1320000">$1,320,000</option>
+                                                                    <option value="1330000">$1,330,000</option>
+                                                                    <option value="1340000">$1,340,000</option>
+                                                                    <option value="1350000">$1,350,000</option>
+                                                                    <option value="1360000">$1,360,000</option>
+                                                                    <option value="1370000">$1,370,000</option>
+                                                                    <option value="1380000">$1,380,000</option>
+                                                                    <option value="1390000">$1,390,000</option>
+                                                                    <option value="1400000">$1,400,000</option>
+                                                                    <option value="1410000">$1,410,000</option>
+                                                                    <option value="1420000">$1,420,000</option>
+                                                                    <option value="1430000">$1,430,000</option>
+                                                                    <option value="1440000">$1,440,000</option>
+                                                                    <option value="1450000">$1,450,000</option>
+                                                                    <option value="1460000">$1,460,000</option>
+                                                                    <option value="1470000">$1,470,000</option>
+                                                                    <option value="1480000">$1,480,000</option>
+                                                                    <option value="1490000">$1,490,000</option>
+                                                                    <option value="1500000">$1,500,000</option>
+                                                                    <option value="1510000">$1,510,000</option>
+                                                                    <option value="1520000">$1,520,000</option>
+                                                                    <option value="1530000">$1,530,000</option>
+                                                                    <option value="1540000">$1,540,000</option>
+                                                                    <option value="1550000">$1,550,000</option>
+                                                                    <option value="1560000">$1,560,000</option>
+                                                                    <option value="1570000">$1,570,000</option>
+                                                                    <option value="1580000">$1,580,000</option>
+                                                                    <option value="1590000">$1,590,000</option>
+                                                                    <option value="1600000">$1,600,000</option>
+                                                                    <option value="1610000">$1,610,000</option>
+                                                                    <option value="1620000">$1,620,000</option>
+                                                                    <option value="1630000">$1,630,000</option>
+                                                                    <option value="1640000">$1,640,000</option>
+                                                                    <option value="1650000">$1,650,000</option>
+                                                                    <option value="1660000">$1,660,000</option>
+                                                                    <option value="1670000">$1,670,000</option>
+                                                                    <option value="1680000">$1,680,000</option>
+                                                                    <option value="1690000">$1,690,000</option>
+                                                                    <option value="1700000">$1,700,000</option>
+                                                                    <option value="1710000">$1,710,000</option>
+                                                                    <option value="1720000">$1,720,000</option>
+                                                                    <option value="1730000">$1,730,000</option>
+                                                                    <option value="1740000">$1,740,000</option>
+                                                                    <option value="1750000">$1,750,000</option>
+                                                                    <option value="1760000">$1,760,000</option>
+                                                                    <option value="1770000">$1,770,000</option>
+                                                                    <option value="1780000">$1,780,000</option>
+                                                                    <option value="1790000">$1,790,000</option>
+                                                                    <option value="1800000">$1,800,000</option>
+                                                                    <option value="1810000">$1,810,000</option>
+                                                                    <option value="1820000">$1,820,000</option>
+                                                                    <option value="1830000">$1,830,000</option>
+                                                                    <option value="1840000">$1,840,000</option>
+                                                                    <option value="1850000">$1,850,000</option>
+                                                                    <option value="1860000">$1,860,000</option>
+                                                                    <option value="1870000">$1,870,000</option>
+                                                                    <option value="1880000">$1,880,000</option>
+                                                                    <option value="1890000">$1,890,000</option>
+                                                                    <option value="1900000">$1,900,000</option>
+                                                                    <option value="1910000">$1,910,000</option>
+                                                                    <option value="1920000">$1,920,000</option>
+                                                                    <option value="1930000">$1,930,000</option>
+                                                                    <option value="1940000">$1,940,000</option>
+                                                                    <option value="1950000">$1,950,000</option>
+                                                                    <option value="1960000">$1,960,000</option>
+                                                                    <option value="1970000">$1,970,000</option>
+                                                                    <option value="1980000">$1,980,000</option>
+                                                                    <option value="1990000">$1,990,000</option>
+                                                                    <option value="2000000">$2,000,000</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="cwell" ng-show="TypeShow">
+                                            <h5>Types or Styles</h5>
+                                            <div id="step3">
+                                                <div>
+                                                    <form name="budget">
+                                                        <div class="col-md-4 col-sm-12" ng-repeat="type in types">
+                                                            <ul class="talstep_talentul">
+                                                                <li><input type="checkbox" name="taltop" ng-click="getChecked($index)">&nbsp;{{type}}</li>
+                                                            </ul>
+                                                        </div>
+                                                        
+                                                        <div style="clear:both"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div id="talent_list">
+                                            <div>
+                                                <form  name="taltypes">
+                                                    <div class="cwell">
+                                                        <h5>Results <span class="pull-right"><span style="font-size:12pt !important;"><b>Sort By</b>: <select name="refine_sort" ng-model="refine_sort">
+                                                                        <option value="">--- Select ---</option>
+                                                                        <option value="highPrice">Fee Highest to Lowest</option>
+                                                                        <option value="lowPrice">Fee Lowest to Highest</option>
+                                                                        <option value="name">Alpha A to Z</option>
+                                                                        <option value="-name">Alpha Z to A</option>
+                                                                    </select><span id="reset_refine"></span></span></span></h5>
+                                                        <div id="step3">{{checkedResultsCount}} Profiles Found</div>
+                                                        <div class="talstep_results" ng-repeat="checkedResult in checkedResults">
+                                                            <div style="font-weight:bold; border-bottom:1px solid #777; padding-top:16px; font-size:12pt">{{checkedResult.title}}</div>
+                                                            <div id="talent_results_swimming">
+                                                                <div class="col-md-4 col-sm-4" ng-repeat="result in checkedResult.result | orderBy:refine_sort">
+                                                                    <ul class="talstep_talentul">
+                                                                        <li style="list-style-type: none;">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>&nbsp;<a href="/model/{{result.id}}" title="Book Adam Peaty for your next event." style="font-size:8pt;" data-target="#myModal" data-toggle="modal">
+                                                                                            <b>{{result.name}}</b></a>
+                                                                                            <span style="font-size:8pt; font-weight:normal; color:#008000"> | ${{result.lowPrice}}-${{result.highPrice}}</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </li>
+                                                                    </ul>   
+                                                                <div style="clear:both;"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="clear:both"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- <div align="right" class="pagination-c"><b>Browse Alphabetically</b><br><a href="A&amp;cid=6">A</a> |
+                                            <a href="B&amp;cid=6">B</a> |
+                                            <a href="C&amp;cid=6">C</a> |
+                                            <a href="D&amp;cid=6">D</a> |
+                                            <a href="E&amp;cid=6">E</a> |
+                                            <a href="F&amp;cid=6">F</a> |
+                                            <a href="G&amp;cid=6">G</a> |
+                                            <a href="H&amp;cid=6">H</a> |
+                                            <a href="I&amp;cid=6">I</a> |
+                                            <a href="J&amp;cid=6">J</a> |
+                                            <a href="K&amp;cid=6">K</a> |
+                                            <a href="L&amp;cid=6">L</a> |
+                                            <a href="M&amp;cid=6">M</a> |
+                                            <a href="N&amp;cid=6">N</a> |
+                                            <a href="O&amp;cid=6">O</a> |
+                                            <a href="P&amp;cid=6">P</a> |
+                                            <a href="Q&amp;cid=6">Q</a> |
+                                            <a href="R&amp;cid=6">R</a> |
+                                            <a href="S&amp;cid=6">S</a> |
+                                            <a href="T&amp;cid=6">T</a> |
+                                            <a href="U&amp;cid=6">U</a> |
+                                            <a href="V&amp;cid=6">V</a> |
+                                            <a href="W&amp;cid=6">W</a> |
+                                            <a href="">X</a> |
+                                            <a href="">Y</a> |
+                                            <a href="">Z</a> 
+                                        </div>
+                                   </div>  -->
+                                </div>
+
+                            </div>
+
+                            <div class="modal fade bs-example-modal-lg" id="ctiyt_modal" tabindex="-1" role="dialog" aria-labelledby="ctiyt_modalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="ctiyt_modalLabel"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="ctiyt_results"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        </section>
+        
+        
+        <section class="ds ms section_padding_top_80 columns_padding_0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+        
+                    <div class="owl-carousel blog-carousel theme-owl-carousel" data-margin="30" data-nav="false" data-dots="true" data-center="true" data-loop="true" data-items="5" data-autoplay="false" data-responsive-xs="1" data-responsive-sm="2" data-responsive-md="4" data-responsive-lg="5" data-responsive-xlg="5">
+        
+                        <article class="vertical-item post format-video text-center">
+        
+                            <div class="entry-thumbnail">
+                                <div class="embed-responsive embed-responsive-3by2">
+                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+        
+                                        <img src="images/gallery/17.jpg" alt="">
+                                        <div class="media-links"></div>
+                                    </a>
+                                </div>
+        
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                </span>
+        
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-slider text-center">
+        
+                            <div class="entry-thumbnail">
+        
+                                <div id="carousel-generic" class="carousel slide">
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="images/gallery/18.jpg" alt="image">
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/gallery/03.jpg" alt="image">
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/gallery/04.jpg" alt="image">
+                                        </div>
+                                    </div>
+        
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
+                                        <span class="icon-prev"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-generic" data-slide="next">
+                                        <span class="icon-next"></span>
+                                    </a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Sediam nonumy eirmod tempor invidunt ut labore</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">23 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/19.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/04.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/16.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+        
+                        <article class="vertical-item post format-video text-center">
+        
+                            <div class="entry-thumbnail">
+                                <div class="embed-responsive embed-responsive-3by2">
+                                    <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
+        
+                                        <img src="images/gallery/17.jpg" alt="">
+                                        <div class="media-links"></div>
+                                    </a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
+                                </span>
+        
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/19.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/04.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+        
+                        <article class="vertical-item post format-standard text-center">
+        
+                            <div class="item-media entry-thumbnail">
+                                <img src="images/gallery/16.jpg" alt="">
+                                <div class="media-links">
+                                    <a class="abs-link" title="" href="blog-single-right.html"></a>
+                                </div>
+                            </div>
+        
+                            <div class="item-content entry-content">
+                                <h4 class="topmargin_0 bottommargin_20">
+                                    <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
+                                </h4>
+                                <span class="entry-meta text-uppercase fontsize_12">
+                                    <span class="author">Admin</span> |
+                                    <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
+                                </span>
+                                <div class="page_social_icons topmargin_25">
+                                    <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
+                                    <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
+                                    <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
+                                    <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
+                                    <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
+                                </div>
+                            </div>
+                            <!-- .item-content.entry-content -->
+                        </article>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+</div>

@@ -39,8 +39,14 @@ app.use(['/uploads', '/uploads/*'], uploads);
 app.set("view options", {layout: false});
 app.use(express.static(__dirname + '/public'));
 
+app.get('/sitemap.xml', function (req, res) {
+  res.sendFile('sitemap.xml',{ root: __dirname + '/uploads' });
+});
+app.get('/rule.xsl', function (req, res) {
+  res.sendFile('rule.xsl',{ root: __dirname + '/uploads' });
+});
 app.all('/*', function(req, res, next) {
-  res.sendFile('index.html', { root: __dirname + '/public' });
+   res.sendFile('index.html', { root: __dirname + '/public' });
 });
 
 // catch 404

@@ -6,8 +6,7 @@ app.service('cookieService', ['$http','$timeout', function ($http) {
 
     frontcms.getProcessList = function() {
         var url=frontcms_process_ENDPOINT+"/getAll?index=cookie";
-        console.log(url);
-        return $http.get(url).then(function(response, status) {
+            return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
         });

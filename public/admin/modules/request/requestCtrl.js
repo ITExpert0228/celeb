@@ -153,9 +153,7 @@ app.controller('requestCtrl',['$scope', '$location','$cookieStore','authService'
   $scope.getList = function() {
     Service.getList().then(function(data) {
         $scope.array=data;
-        console.log($scope.array);
     }, function(err) {
-        console.log(err);
     }).finally(function() {
         
     });
@@ -163,7 +161,6 @@ app.controller('requestCtrl',['$scope', '$location','$cookieStore','authService'
 
 $scope.requestInit=function(){
     $scope.username = $cookieStore.get('user');
-    console.log($scope.username);
     $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
 }
 

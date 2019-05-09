@@ -8,7 +8,7 @@ app.controller('privacyCtrl',['$scope', '$location','$rootScope','authService','
         
         privacyService.getProcessList().then(function(data) {
             if(data!=undefined){
-            console.log(data);
+         //   console.log(data);
           //  console.log(data[0]);
             $scope.id=data.id;
           //  ckeidtor= angular.element(document.querySelector("#editor1"));
@@ -17,7 +17,7 @@ app.controller('privacyCtrl',['$scope', '$location','$rootScope','authService','
             CKEDITOR.instances.editor1.setData($scope.editorbuf);
         }
         }, function(err) {
-            console.log(err);
+         //   console.log(err);
         }).finally(function() {
             
         });
@@ -26,15 +26,15 @@ app.controller('privacyCtrl',['$scope', '$location','$rootScope','authService','
         id=$scope.id;
         // angular.element(document.querySelector("#editor1"));
         // content= ckeidtor.getData();
-        console.log($scope.content);
+       // console.log($scope.content);
         content={data:$scope.content};
         privacyService.saveContent(id,content).then(function(data) {
             if(data!=undefined){
-            console.log(data);
+   //         console.log(data);
             alert("Your Data is Saved  correctly in a server!")
             }
         }, function(err) {
-            console.log(err);
+     //       console.log(err);
         }).finally(function() {
             
         });

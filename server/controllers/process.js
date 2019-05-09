@@ -2,11 +2,10 @@ var Process = require('../models/process');
 
 
 exports.process_alls = function (req, res) {
-    console.log('process_alls');
-    console.log(req.query.index);
+
     var index= req.query.index;
     Process.findOne({}).then((process) => {
-         console.log(process);
+     //    console.log(process);
         if(index=='process')
         res.status(200).send(process);
         if(index=='privacy')
@@ -21,7 +20,7 @@ exports.process_alls = function (req, res) {
 };
 
 exports.process_process_update = function (req, res,next) {
-    console.log( req.body.data);
+   // console.log( req.body.data);
     Process.findByIdAndUpdate(req.params.id, {$set:{process: req.body.data}}, function (err, process) {
         if (err) return next(err);
         res.send('process udpated.');
@@ -45,13 +44,8 @@ exports.process_cookie_update = function (req, res,next) {
 };
 
 exports.process_save = function (req, res,next) {
-    console.log(req.body);
-  //  console.log(req.params);
 
-    // res.status(200).send();return;
-  //  console.log(req.body.data[0][id]);
      var process = JSON.stringify(req.body);
-     console.log(process)
    
   };
 

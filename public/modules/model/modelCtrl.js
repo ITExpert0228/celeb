@@ -1,4 +1,4 @@
-app.controller('modelController',['$scope','$rootScope', '$routeParams','$location', 'modelService', function($scope, $rootScope,$routeParams,$location,modelService) {
+app.controller('modelController',['$scope','$rootScope', '$routeParams','$location', 'modelService','$mdDialog', function($scope, $rootScope,$routeParams,$location,modelService,$mdDialog) {
     $scope.loaderShow=true;
     $scope.loaderContent=false;
     $scope.modelinit=function(){
@@ -9,30 +9,30 @@ app.controller('modelController',['$scope','$rootScope', '$routeParams','$locati
         }
         modelService.getmodelbyid($id).then(function(data) {
            if(data!=undefined){
-            console.log(data);
+     //       console.log(data);
             $scope.model=data; 
 
                 modelService.getmodelsbycate(data.Category,data._id).then(function(data1){
                     if(data1!=undefined){
-                        console.log(data1);
+       //                 console.log(data1);
                         $scope.modelsbycate=data1; 
                     }
                     $scope.loaderContent=true;
                     $scope.loaderShow=false;
                 }, function(err) {
-                    console.log(err);
+      //              console.log(err);
                 }).finally(function() {
                     
                 });   
 
             }
             }, function(err) {
-                console.log(err);
+        //        console.log(err);
             }).finally(function() {
                 
         });
     }
-    $scope.onSubmit=function(){
+    $scope.onSubmit=function(ev){
         
       //  if($scope.Contact_Organization==undefined){return;}
         if($scope.Contact_First_Name==undefined){return;}
@@ -71,11 +71,20 @@ app.controller('modelController',['$scope','$rootScope', '$routeParams','$locati
           };
           modelService.saveContact(contactObj).then(function(data) {
             if(data!=undefined){
-            console.log(data);
-            alert(data);
+        //    console.log(data);
+            $mdDialog.show(
+                $mdDialog.alert()
+                  .parent(angular.element(document.querySelector('#popupContainer')))
+                  .clickOutsideToClose(true)
+                  .title('Request State')
+                  .textContent('Your Request has sent correctly to the server!.')
+                  .ariaLabel('Alert Dialog Demo')
+                  .ok('OK!')
+                  .targetEvent(ev)
+              );
             }
             }, function(err) {
-                console.log(err);
+        //        console.log(err);
             }).finally(function() {
                 
         });

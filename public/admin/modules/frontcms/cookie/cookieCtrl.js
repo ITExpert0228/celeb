@@ -8,7 +8,7 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
         
         cookieService.getProcessList().then(function(data) {
             if(data!=undefined){
-            console.log(data);
+       //     console.log(data);
           //  console.log(data[0]);
             $scope.id=data.id;
           //  ckeidtor= angular.element(document.querySelector("#editor1"));
@@ -17,7 +17,7 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
           CKEDITOR.instances.editor1.setData($scope.editorbuf);
         }
         }, function(err) {
-            console.log(err);
+   //         console.log(err);
         }).finally(function() {
             
         });
@@ -26,15 +26,15 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
         id=$scope.id;
         // angular.element(document.querySelector("#editor1"));
         // content= ckeidtor.getData();
-        console.log($scope.content);
+     //   console.log($scope.content);
         content={data:$scope.content};
         cookieService.saveContent(id,content).then(function(data) {
             if(data!=undefined){
-            console.log(data);
+    //        console.log(data);
             alert("Your Data is Saved  correctly in a server!")
             }
         }, function(err) {
-            console.log(err);
+     //       console.log(err);
         }).finally(function() {
             
         });
@@ -50,7 +50,7 @@ app.controller('cookieCtrl',['$scope', '$location','$rootScope','authService','c
           colorButton_enableAutomatic: false
         } );
         $(document).ready(function() {
-            console.log('abc');
+        //    console.log('abc');
              ckeidtor.on('instanceReady', function(evt) {
                 $scope.$apply(function() {
                //     ckeidtor.setData($scope.editorbuf);

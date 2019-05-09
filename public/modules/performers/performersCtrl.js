@@ -19,7 +19,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+               //         
                         if(result.length>0){
                             $scope.performer=result.sort();
                             $scope.sortstring='a';
@@ -36,7 +36,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                     });
@@ -56,7 +56,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.performer=result.sort();
                             $scope.totalcount=data.totalcount;
@@ -71,7 +71,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                 });
@@ -86,7 +86,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                 $scope.loaderShow=true;
                 if(data!=undefined){
                     var result=data.data;
-                    console.log("result:"+result[0]);
+                    
                     if(result.length>0){
                         $scope.performer=result.sort();
                         $scope.totalcount=data.totalcount;
@@ -101,7 +101,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;        
                 }
                 }, function(err) {
-                    console.log(err);
+                    
                 }).finally(function() {
                     
             });
@@ -119,7 +119,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         $scope.performers=[];
                         if(result.length>0){
                             $scope.performer=result.sort();
@@ -135,7 +135,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                  });
      
@@ -147,7 +147,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                 $scope.loaderShow=true;
                 if(data!=undefined){
                     var result=data.data;
-                    console.log("result:"+result[0]);
+                    
                     if(result.length>0){
                         $scope.performer=result.sort();
                         $scope.totalcount=data.totalcount;
@@ -162,7 +162,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                 $scope.loaderShow=false;
                 }
                 }, function(err) {
-                    console.log(err);
+                    
                 }).finally(function() {
              });
 
@@ -193,7 +193,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=true;
                         if(data!=undefined){
                             var result=data.data;
-                            console.log("result:"+result[0]);
+                            
                             if(result.length>0){
                                 $scope.conent_result=true;
                                 $scope.performers=result.sort();
@@ -206,7 +206,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;
                         }
                         }, function(err) {
-                            console.log(err);
+                            
                         }).finally(function() {
                      });
          
@@ -215,7 +215,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.performers=[];
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.performers=result.sort();
                            }else{
@@ -227,7 +227,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                  });
     
@@ -241,7 +241,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.conent_result=true;
                             $scope.performers=result.sort();
@@ -250,7 +250,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;        
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                 });
@@ -259,7 +259,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.performers=[];
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.performers=result.sort();
                         }
@@ -267,7 +267,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;        
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                 });
@@ -276,7 +276,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                 $scope.performers=[];
                 if(data!=undefined){
                     var result=data.data;
-                    console.log("result:"+result[0]);
+                    
                     if(result.length>0){
                         $scope.performers=result.sort();
                     }
@@ -284,7 +284,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;        
                 }
                 }, function(err) {
-                    console.log(err);
+                    
                 }).finally(function() {
                     
             });
@@ -303,7 +303,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.performers=[];
                         if(data!=undefined){
                             var result=data.data;
-                            console.log("result:"+result[0]);
+                            
                             if(result.length>0){
                                 $scope.performers=result.sort();
                                 $scope.setPage(1,$scope.totalcount);
@@ -316,7 +316,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;
                         }
                         }, function(err) {
-                            console.log(err);
+                            
                         }).finally(function() {
                      });
          
@@ -328,7 +328,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.performers=result.sort();
                             $scope.setPage(1,$scope.totalcount);
@@ -342,7 +342,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                  });
     
@@ -356,7 +356,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.performers=result.sort();
                             $scope.setPage(1,$scope.totalcount);
@@ -366,7 +366,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;        
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                 });
@@ -378,7 +378,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=true;
                     if(data!=undefined){
                         var result=data.data;
-                        console.log("result:"+result[0]);
+                        
                         if(result.length>0){
                             $scope.conent_result=true;
                             $scope.setPage(1,$scope.totalcount);
@@ -388,7 +388,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                         $scope.loaderShow=false;        
                     }
                     }, function(err) {
-                        console.log(err);
+                        
                     }).finally(function() {
                         
                 });
@@ -400,7 +400,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                 $scope.loaderShow=true;
                 if(data!=undefined){
                     var result=data.data;
-                    console.log("result:"+result[0]);
+                    
                     if(result.length>0){
                         $scope.performers=result.sort();
                         $scope.setPage(1,$scope.totalcount);
@@ -410,7 +410,7 @@ app.controller('performersController',['$scope','$rootScope', '$routeParams','$l
                     $scope.loaderShow=false;        
                 }
                 }, function(err) {
-                    console.log(err);
+                    
                 }).finally(function() {
                     
             });

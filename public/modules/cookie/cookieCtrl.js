@@ -12,8 +12,7 @@ app.controller('cookieController',['$scope','$rootScope', '$sce','$location', 'c
             $scope.loaderShow=false;
 
         }, function(err) {
-            console.log(err);
-        }).finally(function() {
+         }).finally(function() {
             
         });
     }        

@@ -178,16 +178,16 @@ app.controller('contactBookingCtrl',['$scope', '$location','$cookieStore','conta
   $scope.getContactBookingList = function() {
     contactBookingService.getContactusList().then(function(data) {
         $scope.contactBookingarray=data;
-        console.log($scope.contactBookingarray);
+   //     console.log($scope.contactBookingarray);
     }, function(err) {
-        console.log(err);
+  //      console.log(err);
     }).finally(function() {
         
     });
 }
 $scope.contactBookingInit=function(){
     $scope.username = $cookieStore.get('user');
-    console.log($scope.username);
+   // console.log($scope.username);
     $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
 }
 $scope.logout = function() {

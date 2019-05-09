@@ -4,9 +4,9 @@ app.controller('sitemapController',['$scope','$rootScope', '$sce','$location', '
     $scope.sitemapinit=function(){
         performersService.getperformersListbysitemap().then(function(data) {
             if(data!=undefined){
-             console.log(data);
+            // console.log(data);
              $scope.contents=data;   
-             $scope.root_path = 'http://localhost:3000/';
+             $scope.root_path = 'http://54.215.207.132:3000/';
 
 
              $scope.staticcontents=[];
@@ -33,14 +33,14 @@ app.controller('sitemapController',['$scope','$rootScope', '$sce','$location', '
 
 
 
-
+                 console.log(xml);
                 
-               $scope.sitemapContent= $sce.trustAsHtml(xml);
+          //     $scope.sitemapContent= $sce.trustAsHtml(xml);
         }
         $scope.loaderShow=false;
         $scope.loaderContent=true;
         }, function(err) {
-            console.log(err);
+          //  console.log(err);
         }).finally(function() {
             
         });

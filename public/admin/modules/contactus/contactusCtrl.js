@@ -88,9 +88,9 @@ app.controller('contactusCtrl',['$scope', '$location','$cookieStore','contactusS
   $scope.getContactBookingList = function() {
     contactusService.getContactusList().then(function(data) {
         $scope.contactusarray=data;
-        console.log($scope.contactusarray);
+    //    console.log($scope.contactusarray);
     }, function(err) {
-        console.log(err);
+    //    console.log(err);
     }).finally(function() {
         
     });

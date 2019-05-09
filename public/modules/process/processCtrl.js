@@ -10,7 +10,7 @@ app.controller('processController',['$scope','$rootScope', '$sce','$location', '
            $scope.loaderContent=true;
            $scope.loaderShow=false;
         }, function(err) {
-            console.log(err);
+        //    console.log(err);
         }).finally(function() {
             
         });

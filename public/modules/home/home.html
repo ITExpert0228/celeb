@@ -1,1030 +1,193 @@
-<div ng-controller="homeController">
-<section class="ds ms intro_section page_mainslider">
-    <div class="flexslider">
-        <ul class="slides ds">
-
-            <li>
-                <img class="hidden-xs hidden-sm" src="images/top_slider_01.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="slide_description_wrapper">
-                                <div class="slide_description">
-                                   <div class="col-md-4">
-                                    <div class="intro-layer" data-animation="expandUp">
-                                        <h2 class="highlight text-uppercase">SPEAKERS</h2>
-                                        <!--<h3 class="extra-big text-uppercase">Olivia Torney</h3>-->
-                                        <p>Your event attendees need to depart feeling enthused & prepared to use their newly gained knowledge & drive, to make your organization or business more successful than ever.</p>
-                                        
-                                          <ul>
-                                              <li>Addressing corporate topics like</li>
-                                              <li>Team Building</li>
-                                              <li>Motivation & Innovation</li>
-                                              <li>Current Issues</li>
-                                              <li>Awareness</li>
-                                          </ul> 
-                        <p>Booking professional speakers will help cultivate leaders within a company & make your team stronger as a whole.</p>
-                                       
-                                    </div>
-                                 </div>
-                                    <div class="col-md-8">
-                                            <div class="intro-layer" data-animation="fadeIn">
-                                        <div class="model-parameters topmargin_40 bottommargin_40">
-                                            <div class="sm-box">
-                                               <img src="img/speakers/WilliamShatner.jpg" alt="">
-                                                <span class="bold">William Shatner</span>
-                                                <br>
-                                                <span>William Shatner is an actor, director, novelist, singer and cultural icon. In 2009, William Shatner became the host of "William Shatner's Raw Nerve" on the Biography Channel...</span>
-                                                
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                            <div class="sm-box">
-                                               <img src="img/speakers/MarthaStewart.jpg" alt="">
-                                                <span class="bold">Martha Stewart</span>
-                                                <br>
-                                                <span>When America wants to learn how to make the perfect pie crust, plant an herb garden, create a beautiful flower arrangement, or fix a broken windowpane, they turn to Martha...</span>
-                                                 
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                            <div class="sm-box">
-                                               <img src="img/speakers/SuzeOrman.jpg" alt="">
-                                                <span class="bold">Suze Orman</span>
-                                                <br>
-                                                <span>Suze Orman has been called a force in the world of personal finance and a one-woman financial advice powerhouse by USA Today. A two-time Emmy Award-winning television host, New York...</span>
-                                                 
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                        </div>
-
-                                       <!-- <a href="gallery-fullwidth-4-cols.html" class="theme_button inverse">View Gallery</a> -->
-                                    </div>
-                                   
-                                    </div>
-                                </div>
-                                <!-- eof .slide_description -->
-                            </div>
-                            <!-- eof .slide_description_wrapper -->
-                        </div>
-                        <!-- eof .col-* -->
+<div ng-controller="homeController" ng-init="homeinit()" id="popupContainer">
+<div ng-show="loaderShow" style="background-color:black;width:100%;height:700px;">
+    <div class="loader_make" ></div>
+</div>
+<div ng-show="loaderContent">
+<section class="ds ms intro_section page_mainslider" style="background-color: black;">
+    <div class="owl-carousel page_maincarousel" style="background-color: black;" data-margin="0" data-nav="true">
+       <div style="background-color: black;">
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelActor.image}}" style="height:500px;object-fit:cover;" alt="">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelActor.id}}"></a>
                     </div>
-                    <!-- eof .row -->
                 </div>
-                <!-- eof .container -->
-            </li>
-            <li>
-                <img class="hidden-xs hidden-sm" src="images/top_slider_01.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="slide_description_wrapper">
-                                <div class="slide_description">
-                                   <div class="col-md-4">
-                                    <div class="intro-layer" data-animation="expandUp">
-                                        <h2 class="highlight text-uppercase">Athletes and Sports</h2>
-                                        <!--<h3 class="extra-big text-uppercase">Olivia Torney</h3>-->
-                                        <p>CTI can offer you many options for golf tournaments, speaking events and personal appearances.</p>
-                                        <p>There are many types events where sports figures add high value, like...</p>
-                                          <ul>
-                                              <li>PGA Golfers</li>
-                                              <li>Football Players</li>
-                                              <li>Baseball Players</li>
-                                              <li>Hockey Players</li>
-                                              <li>Basketball</li>
-                                              <li>Olympians</li>
-                                          </ul> 
-<p>Booking professional athletes are usually very open to pose for photos, sign autographs and books.</p>
-                                       
-                                    </div>
-                                 </div>
-                                    <div class="col-md-8">
-                                            <div class="intro-layer" data-animation="expandUp">
-                                        <div class="model-parameters topmargin_40 bottommargin_40">
-                                            <div class="sm-box">
-                                               <img src="img/sports/Mike%20Ditka.jpg" alt="">
-                                                <span class="bold">Mike Ditka</span>
-                                                <br>
-                                                <span>Mike Ditka proved to be a superior blocker but he also became one of the first tight ends to catch a large number of passes. He earned All-NFL® honors four straight...</span>
-                                                
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                            <div class="sm-box">
-                                               <img src="img/sports/Derek%20Jeter.jpg" alt="">
-                                                <span class="bold">Derek Jeter</span>
-                                                <br>
-                                                <span>By the time he stepped away from baseball, after a historic 20-year career with the New York Yankees, Derek Jeter had established himself as one of the most...</span>
-                                                 
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                            <div class="sm-box">
-                                               <img src="img/sports/Brett%20Favre.jpg" alt="">
-                                                <span class="bold">Brett Favre</span>
-                                                <br>
-                                                <span>The starting quarterback for the Green Bay Packers from 1992-2007, Brett Favre has thrown more touchdown passes than any quarterback in NFL® history...</span>
-                                                 
-                                        <a href="model.html" class="theme_button color1">Read More</a>
-                                            </div>
-                                        </div>
-
-                                       <!-- <a href="gallery-fullwidth-4-cols.html" class="theme_button inverse">View Gallery</a> -->
-                                    </div>
-                                   
-                                    </div>
-                                </div>
-                                <!-- eof .slide_description -->
-                            </div>
-                            <!-- eof .slide_description_wrapper -->
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelActor.id}}">{{topModelActor.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelActor.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelActor.profiletext}}</p> 
                         </div>
-                        <!-- eof .col-* -->
                     </div>
-                    <!-- eof .row -->
                 </div>
-                <!-- eof .container -->
-            </li>
-
-
-        </ul>
-    </div>
-    <!-- eof flexslider -->
-</section>
+            </div>
+        </div>
+        <div >
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelPerformer.image}}" style="height:500px;object-fit:cover;" alt="">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelPerformer.id}}"></a>
+                    </div>
+                </div>
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelPerformer.id}}">{{topModelPerformer.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelPerformer.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelPerformer.profiletext}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelSpeaker.image}}" alt="" style="height:500px;object-fit:cover;">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelSpeaker.id}}"></a>
+                    </div>
+                </div>
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelSpeaker.id}}">{{topModelSpeaker.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelSpeaker.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelSpeaker.profiletext}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelSport.image}}" style="height:500px;object-fit:cover;" alt="">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelSport.id}}"></a>
+                    </div>
+                </div>
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelSport.id}}">{{topModelSport.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelSport.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelSport.profiletext}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelRisingPerformer.image}}" style="height:500px;object-fit:cover;" alt="">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelRisingPerformer.id}}"></a>
+                    </div>
+                </div>
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelRisingPerformer.id}}">{{topModelRisingPerformer.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelRisingPerformer.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelRisingPerformer.profiletext}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="vertical-item maincarousel-item content-absolute cs" style="background-color: black;">
+                <div class="item-media">
+                    <img src="{{topModelRisingSpeaker.image}}" style="height:500px;object-fit:cover;" alt="">
+                    <div class="media-links">
+                        <a class="abs-link" title="" href="/model/{{topModelRisingSpeaker.id}}"></a>
+                    </div>
+                </div>
+                <div class="item-content text-center grey gradient_bg_goriz">
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <h2>
+                            <a href="/model/{{topModelRisingSpeaker.id}}">{{topModelRisingSpeaker.name}}</a>
+                        </h2>
+                        <h2><strong>{{topModelRisingSpeaker.Type}}</strong> </h2>
+                        <div>
+                            <p style="height:100px;overflow: hidden;">{{topModelRisingSpeaker.profiletext}}</p> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>    
 
 <section class="ds page_models models_square gorizontal_padding section_padding_70 columns_padding_0">
     <div class="container-fluid">
         <div class="row bottommargin_50 boxed-padding">
-            <div class="col-lg-7">
+            <div class="col-lg-12">
                 <div class="filters isotope_filters inline-block margin_0">
-                    <a href="#" data-filter="*" class="selected">All</a>
-                    <a href="#" data-filter=".fashion">SPEAKERS</a>
-                    <a href="#" data-filter=".studio">Athletes</a>
-                    <a href="#" data-filter=".session">Actors</a>
+                    <a href="" ng-click="selectModels('Speakers')" id="Speakers">Speakers</a>
+                    <a href="" ng-click="selectModels('Performers')" id="Performers">Performers</a>
+                    <a href="" ng-click="selectModels('Actors')" id="Actors">Actors</a>
+                    <a href="" ng-click="selectModels('Sports')" id="Sports">Sports</a>
+                    <a href="" ng-click="selectModels('RisingPerformers')" id="RisingPerformers">Rising Performers</a>
+                    <a href="" ng-click="selectModels('RisingSpeakers')" id="RisingSpeakers">Rising Speakers</a>
                 </div>
             </div>
-            <div class="col-lg-5 text-lg-right">
-                <form class="form-inline models-orderby">
-                    <div class="form-group select-group">
-                        <label class="sr-only" for="orderby">Sort By:</label>
-                        <select class="form-control orderby" name="orderby" id="orderby">
-                            <option value="default" selected="">Default sorting</option>
-                            <option value="name">Sort by name</option>
-                            <option value="date">Sort by date</option>
-                            <option value="random">Random sorting</option>
-                        </select>
-                        <i class="rt-icon2-chevron-thin-down form-button"></i>
-                    </div>
-
-                    <div class="form-group select-group">
-                        <label class="sr-only" for="orderby1">Sort By:</label>
-                        <select class="form-control orderby" name="orderby1" id="orderby1">
-                            <option value="descending" selected="">Descending</option>
-                            <option value="ascending">Ascending</option>
-                        </select>
-                        <i class="rt-icon2-chevron-thin-down form-button"></i>
-                    </div>
-                </form>
-            </div>
+      
         </div>
-
-        <div class="isotope_container isotope row masonry-layout bottommargin_20" data-filters=".isotope_filters">
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 fashion">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/13861100.jpg" alt="">
-                        <div class="media-links">
-                        </div>
+        <div class="row bottommargin_50 boxed-padding">
+        <div class="isotope-item col-lg-2 col-md-2 col-sm-6 col-xl-2 col-6" ng-repeat="selectedModel in topSelectedModels">
+            <div class="vertical-item content-absolute">
+                <div class="item-media">
+                    <img src="{{selectedModel.image}}" style="height:300px;width:100%;object-fit:cover;" alt="">
+                    <div class="media-links">
                     </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Samantha Hawk</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/13861100.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="item-content text-center before_cover cs">
+                    <div class="links-wrap">
+                        <a class="p-link" style="width:50%;overflow: hidden;" title="" href="">{{selectedModel.name}}</a>
+                        <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="/model/{{selectedModel.id}}"></a>
+                    </div>
+                    <div class="bg_overlay"></div>
+                    <div class="model-parameters">
+                        <div>
+                            <p style="height:50px;overflow: hidden;">{{selectedModel.profiletext}}</p> 
+                        </div> 
                     </div>
                 </div>
             </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 studio">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/02.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Lana Anderson</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/02.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 session">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/03.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Pamela Stonem</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/03.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 fashion">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/04.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Naomy Olsen</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/04.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 studio">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/05.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Gillian Rowe</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/05.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 session">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/06.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Sonya Smith</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/06.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 fashion">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/07.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Rachel Smalders</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/07.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 studio">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/08.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Joanne Irwin</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/08.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 session">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/09.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Sarah Quinn</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/09.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="isotope-item col-lg-2 col-md-2 col-sm-6 fashion">
-                <div class="vertical-item content-absolute">
-                    <div class="item-media">
-                        <img src="images/models_square/10.jpg" alt="">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content text-center before_cover cs">
-                        <div class="links-wrap">
-                            <a class="p-link" title="" href="model.html">Barbara Serney</a>
-                            <a class="p-view prettyPhoto pull-right" title="" data-gal="prettyPhoto[gal]" href="images/models_square/10.jpg"></a>
-                        </div>
-                        <div class="bg_overlay"></div>
-                        <div class="model-parameters">
-                            <div>
-                                <span class="bold">Height</span>
-                                <br>
-                                <span>185</span>
-                            </div>
-                            <div>
-                                <span class="bold">Bust</span>
-                                <br>
-                                <span>79</span>
-                            </div>
-                            <div>
-                                <span class="bold">Waist</span>
-                                <br>
-                                <span>59</span>
-                            </div>
-                            <div>
-                                <span class="bold">Hips</span>
-                                <br>
-                                <span>87</span>
-                            </div>
-                            <div>
-                                <span class="bold">Shoe</span>
-                                <br>
-                                <span>39</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        </div> 
         </div>
-
-        <div class="row">
-            <div class="col-sm-12 text-center margin_0">
-                <ul class="pagination ">
-                    <li>
-                        <a href="#">
-                            <span class="sr-only">Prev</span>
-                            <i class="rt-icon2-chevron-thin-left"></i>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="sr-only">Next</span>
-                            <i class="rt-icon2-chevron-thin-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!--   <section class="ds column_margin_0 section_padding_bottom_80">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="flexslider banner-slider">
-                    <ul class="slides">
-                        <li class="gradient_bg_goriz">
-                            <div class="bg_overlay"></div>
-                            <img src="images/banner_slide_01.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" href="#"></a>
-                            </div>
-                        </li>
-                        <li class="gradient_bg_goriz">
-                            <div class="bg_overlay"></div>
-                            <img src="images/banner_slide_02.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" href="#"></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<section class="ds parallax calltoaction section_padding_100" style="background-image: url('./images/parallax/call_to_action_2.jpg')">
-    <div class="container">
-        <div class="row topmargin_60 bottommargin_60">
-            <div class="col-sm-12 text-center">
-                <h2 class="extra-big topmargin_0 bottommargin_30">Do You want to be a
-                    <span class="highlight">Model?</span>
-                </h2>
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8 text-center">
-                        <p class="fontsize_20">
-                            If you are 5ft 8in and above women and think you have what it takes to be a model send us headshot and full length shot along with your age, contact details, height, bust, waist and hip measurements.
-                        </p>
+        <div class="row boxed-padding">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class="text-center load-btn">
+                            <a class="theme_button inverse bottommargin_0" href="" ng-click="selectCategory()"><h4>Find Out More Talents</h4></a>
                     </div>
                 </div>
-                <div class="widget widget_mailchimp topmargin_20">
-                    <form class="signup form-inline" action="/" method="get">
-                        <div class="form-group">
-                            <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email address">
-                        </div>
-                        <button type="submit" class="theme_button input_button">Send</button>
-                        <div class="response"></div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
-<section class="ds ms section_padding_top_80 columns_padding_0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-
-                <div class="owl-carousel blog-carousel theme-owl-carousel" 
-                    data-margin="30" 
-                    data-nav="false" 
-                    data-dots="true" 
-                    data-center="true" 
-                    data-loop="true" 
-                    data-items="5" 
-                    data-autoplay="false" 
-                    data-responsive-xs="1" 
-                    data-responsive-sm="2" 
-                    data-responsive-md="4" 
-                    data-responsive-lg="5" 
-                    data-responsive-xlg="5">
-
-                    <article class="vertical-item post format-video text-center">
-
-                        <div class="entry-thumbnail">
-                            <div class="embed-responsive embed-responsive-3by2">
-                                <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
-
-                                    <img src="images/gallery/17.jpg" alt="">
-                                    <div class="media-links"></div>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
-                            </span>
-
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-slider text-center">
-
-                        <div class="entry-thumbnail">
-
-                            <div id="carousel-generic" class="carousel slide">
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <img src="images/gallery/18.jpg" alt="image">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/gallery/03.jpg" alt="image">
-                                    </div>
-                                    <div class="item">
-                                        <img src="images/gallery/04.jpg" alt="image">
-                                    </div>
-                                </div>
-
-                                <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-generic" data-slide="prev">
-                                    <span class="icon-prev"></span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-generic" data-slide="next">
-                                    <span class="icon-next"></span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Sediam nonumy eirmod tempor invidunt ut labore</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">23 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/19.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/04.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/16.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-
-                    <article class="vertical-item post format-video text-center">
-
-                        <div class="entry-thumbnail">
-                            <div class="embed-responsive embed-responsive-3by2">
-                                <a href="https://www.youtube.com/embed/mcixldqDIEQ" class="embed-placeholder">
-
-                                    <img src="images/gallery/17.jpg" alt="">
-                                    <div class="media-links"></div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Lorem ipsum dolor sit amet consetetur</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">20 December 2015</time>
-                            </span>
-
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/19.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Aliquyam erat, sed diam voluptua vero eoset</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">24 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/04.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Lorem ipsum dolor sitamet lorem ipsum dolor sit amet</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">11 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-
-                    <article class="vertical-item post format-standard text-center">
-
-                        <div class="item-media entry-thumbnail">
-                            <img src="images/gallery/16.jpg" alt="">
-                            <div class="media-links">
-                                <a class="abs-link" title="" href="blog-single-right.html"></a>
-                            </div>
-                        </div>
-
-                        <div class="item-content entry-content">
-                            <h4 class="topmargin_0 bottommargin_20">
-                                <a href="blog-single-right.html">Et justo duo dolores et ea rebum clita kasd gubergren</a>
-                            </h4>
-                            <span class="entry-meta text-uppercase fontsize_12">
-                                <span class="author">Admin</span> |
-                                <time datetime="2016-09-03T15:05:23+00:00">17 December 2015</time>
-                            </span>
-                            <div class="page_social_icons topmargin_25">
-                                <a class="social-icon color-icon soc-facebook" href="#" title="Facebook"></a>
-                                <a class="social-icon color-icon soc-twitter" href="#" title="Twitter"></a>
-                                <a class="social-icon color-icon soc-google" href="#" title="Google"></a>
-                                <a class="social-icon color-icon soc-linkedin" href="#" title="LinkedIn"></a>
-                                <a class="social-icon color-icon soc-pinterest" href="#" title="Pinterest"></a>
-                            </div>
-                        </div>
-                        <!-- .item-content.entry-content -->
-                    </article>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="ds parallax contacts section_padding_50" style="background-image: url('images/parallax/map2.jpg')">
     <div class="container">
@@ -1067,41 +230,43 @@
     </div>
 </section>
 
+
 <section class="ds section_padding_70 parallax" style="background-image: url('images/parallax/map2.jpg')">
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 text-center">
                 <h2 class="big margin_0">Contact Us</h2>
                 <h2 class="muellerhoff topmargin_5 bottommargin_50 highlight">Contact Form</h2>
 
-                <form class="contact-form" method="post" action="">
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name" class="sr-only">Full Name
                             <span class="required">*</span>
                         </label>
-                        <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control text-center" ng-model="name" placeholder="Full name">
+                        <input type="text"  size="30" value="" name="name" id="name" class="form-control text-center" ng-model="name" placeholder="Full name" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="sr-only">Email
                             <span class="required">*</span>
                         </label>
-                        <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control text-center" ng-model="email" placeholder="Email">
+                        <input type="email"  size="30" value="" name="email" id="email" class="form-control text-center" ng-model="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                             <label for="phone" class="sr-only">Phone number
                                 <span class="required">*</span>
                             </label>
-                            <input type="number" aria-required="true" size="30" value="" name="phone" id="phone" class="form-control text-center" ng-model="phone" placeholder="Phone number">
+                            <input type="number"  size="30" value="" name="phone" id="phone" class="form-control text-center" ng-model="phone" placeholder="Phone number" required>
                         </div>
                     <div class="form-group bottommargin_30">
                         <label for="message" class="sr-only">Message</label>
-                        <textarea aria-required="true" rows="6" cols="45" name="message" id="message" class="form-control text-center" ng-model="message" placeholder="Message"></textarea>
+                        <textarea  rows="6" cols="45" name="message" id="message" class="form-control text-center" ng-model="message" placeholder="Message" required></textarea>
                     </div>
-                    <input type="submit" id="contact_form_submit" name="contact_submit" ng-click="onSubmit()" class="theme_button color1 bottommargin_0" value="Send">
-                    <input type="reset" id="contact_form_clear" name="contact_clear" class="theme_button inverse bottommargin_0" value="Clear">
+                    <input type="submit" id="contact_form_submit" name="contact_submit" ng-click="onSubmit($event)" class="theme_button color1 bottommargin_0" value="Send"/>
+                    <input type="reset" id="contact_form_clear" name="contact_clear" ng-click="onReset()" class="theme_button inverse bottommargin_0" value="Clear"/>
                 </form>
             </div>
         </div>
     </div>
 </section>
+</div>
 </div>

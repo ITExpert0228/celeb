@@ -11,9 +11,15 @@ router.get('/test', celebdata_controller.test);
 
 router.post('/create', celebdata_controller.celebdata_create);
 
+router.get('/getAllforhome', celebdata_controller.celebdata_allsforhome);
+
+router.get('/getAllforcustomlist', celebdata_controller.celebdata_allsforcustomlist);
+
 router.get('/getAll', celebdata_controller.celebdata_alls);
 
 router.get('/getAllbyCate', celebdata_controller.celebdata_allsbycate);
+
+router.get('/getAllbyStyle', celebdata_controller.celebdata_allsbystyle);
 
 router.get('/getAllbysitemap', celebdata_controller.celebdata_allsbysitemap);
 

@@ -1,4 +1,5 @@
 var ContactUs = require('../models/contactus');
+var nodemailer = require('nodemailer');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
@@ -6,25 +7,48 @@ exports.test = function (req, res) {
 };
 
 exports.contactus_create = function (req, res,next) {
-    console.log(req.body.content);
+  //  console.log(req.body.content);
     var contactus = new ContactUs(
         req.body.content
     );
-    console.log("contactus:"+contactus);
+  //  console.log("contactus:"+contactus);
     contactus.save(function (err) {
         if (err) {
             return next(err);
         }
-        console.log("ok");
-        res.send('ContactUs Created successfully');
+    //    console.log("ok");
+    
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: 'financialforsale@gmail.com',
+          pass: 'Hsj19911020'
+        }
+      });
+      
+      var mailOptions = {
+        from: 'financialforsale@gmail.com',
+        to: 'financialforsale@gmail.com',
+        subject: 'Sending Email from Celeb Site',
+        text: 'You have received a email about Celeb Site Contact Us!'
+      };
+      
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+            res.send('Request Created successfully');
+            console.log('Email sent: ' + info.response);
+        }
+      });
     })
 };
 
 exports.contactus_details = function (req, res,next) {
-    console.log(req.query.id);
+   // console.log(req.query.id);
     ContactUs.findById(req.query.id, function (err, contactus) {
         if (err) return next(err);
-        console.log(contactus);
+//console.log(contactus);
         res.send(contactus);
     })
 };
@@ -32,10 +56,8 @@ exports.contactus_details = function (req, res,next) {
 
 exports.contactus_alls = function (req, res) {
     ContactUs.find({}).then((contactus) => {
-        //console.log(contactus);
     var obj = {  data: contactus };
-    console.log(JSON.stringify(obj));
-    res.status(200).send(JSON.stringify(obj));
+     res.status(200).send(JSON.stringify(obj));
     }).catch((err) => {
          res.status(404).send();
     });

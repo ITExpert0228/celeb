@@ -274,7 +274,7 @@
 					success: function(data, status) {
 
 						if(data.message) {
-							console.log(data.message);
+						//	console.log(data.message);
 						}
 
 						var response = data.response;

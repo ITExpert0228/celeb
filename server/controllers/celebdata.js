@@ -1,4 +1,7 @@
 var Celebdata = require('../models/celebdata');
+var async = require('async');
+
+
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
@@ -10,15 +13,15 @@ exports.celebdata_create = function (req, res) {
 };
 
 exports.celebdata_details = function (req, res,next) {
-    console.log(req.query.id);
+   // console.log(req.query.id);
     Celebdata.findById(req.query.id, function (err, celebdata) {
         if (err) return next(err);
-        console.log(celebdata);
+    //    console.log(celebdata);
         res.send(celebdata);
     })
 };
 exports.celebdata_detailsbycate = function (req, res,next) {
-    console.log("cate:"+req.query.Category);
+   // console.log("cate:"+req.query.Category);
     var Category = req.query.Category;
     var dict={};
     dict['$and'] = [
@@ -44,7 +47,7 @@ exports.celebdata_detailsbycate = function (req, res,next) {
                 celebdata_temp.push(celebdata[i]);   
              }  
         }
-          console.log(celebdata_temp);
+        //  console.log(celebdata_temp);
           res.status(200).send(JSON.stringify(celebdata_temp));
         }).catch((err) => {
              res.status(404).send();
@@ -52,8 +55,8 @@ exports.celebdata_detailsbycate = function (req, res,next) {
     
 };
 exports.celebdata_detailsbyname = function (req, res,next) {
-    console.log("name:"+req.query.name);
-    console.log("index:"+req.query.index);
+    //console.log("name:"+req.query.name);
+   // console.log("index:"+req.query.index);
     var name = req.query.name; 
     name=name.toLowerCase();
     var index = req.query.index;
@@ -70,7 +73,7 @@ exports.celebdata_detailsbyname = function (req, res,next) {
         {"name": new RegExp(name.toString(), "i")}
     ];
 Celebdata.count(dict,function(err,count){
-    console.log("count:"+count);
+    //("count:"+count);
      Celebdata.find(dict , null, {
      sort: {
        name: sort
@@ -80,14 +83,14 @@ Celebdata.count(dict,function(err,count){
     res.status(404).send();
     else {
         result={data:docs,totalcount:count};
-        console.log("result:"+JSON.stringify(result));
+    //    console.log("result:"+JSON.stringify(result));
         res.status(200).send(JSON.stringify(result));
     }
     });
  });
 };
 exports.celebdata_detailsbyalphabeta = function (req, res,next) {
-    console.log("name:"+req.query.name);
+   // console.log("name:"+req.query.name);
     var name = req.query.name;
     var index = req.query.index;
     var findname = req.query.findname;
@@ -102,7 +105,7 @@ exports.celebdata_detailsbyalphabeta = function (req, res,next) {
     var pageNumber = index;
     var pageSize = 10;
     var dict={};
-    console.log("findname:"+findname);
+    //console.log("findname:"+findname);
     if(Category=='Search')
     {
         dict['$and'] = [
@@ -117,7 +120,7 @@ exports.celebdata_detailsbyalphabeta = function (req, res,next) {
     }
    
     Celebdata.count(dict,function(err,count){
-        console.log("count:"+count);
+       // console.log("count:"+count);
          Celebdata.find(dict , null, {
          sort: {
            name: sort
@@ -144,8 +147,9 @@ exports.celebdata_alls = function (req, res) {
                 url:celebdata[i].url,
                 image:celebdata[i].image,
                 profiletext:celebdata[i].profiletext,
-                pricing:celebdata[i].pricing,
-                Type:celebdata[i].Type,
+                lowPrice:celebdata[i].lowPrice,
+                highPrice:celebdata[i].highPrice,
+                style:celebdata[i].style,
                 Category:celebdata[i].Category,
                 faq:celebdata[i].faq,
                 name:celebdata[i].name,
@@ -158,6 +162,7 @@ exports.celebdata_alls = function (req, res) {
          }
         
         var obj = {  data: celebdata_temp };
+        console.log(JSON.stringify(obj));
         res.status(200).send(JSON.stringify(obj));
 
      }).catch((err) => {
@@ -173,6 +178,52 @@ exports.celebdata_allsbysitemap = function (req, res) {
          res.status(404).send();
     });
 
+};
+exports.celebdata_allsforhome = function (req, res) {
+    var autocomplete = {
+        Actor: [],
+        Performer: [],
+        Speaker: [],
+        Sports: [],
+        RisingPerformer: [],
+        RisingSpeaker: []
+    };
+
+    // Call .exec() on each query without a callback to return its promise.
+    Promise.all([Celebdata.find({Category:'Actor'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({highPrice:-1}).limit(12).exec(),
+    Celebdata.find({Category:'Performer'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({highPrice:-1}).limit(12).exec(),
+    Celebdata.find({Category:'Speaker'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({highPrice:-1}).limit(12).exec(),
+    Celebdata.find({Category:'Sports & Athlete'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({highPrice:-1}).limit(12).exec(),
+    Celebdata.find({Category:'Rising Performer'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({highPrice:-1}).limit(12).exec(),
+    Celebdata.find({Category:'Rising Speaker'}).$where('this.image!="https://www.celebritytalent.net/sampletalent/photos/sm/nopic.jpg"').sort({hgihPrice:-1}).limit(12).exec()])
+        .then(results => {
+            // results is an array of the results of each promise, in order.
+            autocomplete.Actor = results[0];
+            autocomplete.Performer = results[1];
+            autocomplete.Speaker = results[2];
+            autocomplete.Sports = results[3];
+            autocomplete.RisingPerformer = results[4];
+            autocomplete.RisingSpeaker = results[5];
+            console.log(JSON.stringify(autocomplete));
+            res.status(200).send(JSON.stringify(autocomplete));
+        })
+        .catch(err => {
+            throw err; // res.sendStatus(500) might be better here.
+        });
+};
+exports.celebdata_allsforcustomlist = function (req, res) {
+    var style = req.query.style;
+    var lowFee = req.query.lowFee;
+     var highFee = req.query.highFee;
+     console.log("style:"+style);
+     console.log("lowFee:"+lowFee);
+     console.log("highFee:"+highFee);
+     Celebdata.find({"style":style}).where('lowPrice').gt(lowFee).where('highPrice').lt(highFee).then((celebdata) => {
+    //   console.log(celebdata);
+        res.status(200).send(JSON.stringify(celebdata));
+     }).catch((err) => {
+         res.status(404).send();
+    });
 };
 exports.celebdata_allsbycate = function (req, res) {
    var Category = req.query.Category;
@@ -191,7 +242,7 @@ exports.celebdata_allsbycate = function (req, res) {
     var pageSize = 10;
     var result={};
     Celebdata.count(dict,function(err,count){
-        console.log("count:"+count);
+      //  console.log("count:"+count);
          Celebdata.find(dict , null, {
          sort: {
            name: sort
@@ -201,7 +252,40 @@ exports.celebdata_allsbycate = function (req, res) {
         res.status(404).send();
         else {
             result={data:docs,totalcount:count};
-            console.log("result:"+JSON.stringify(result));
+   //         console.log("result:"+JSON.stringify(result));
+            res.status(200).send(JSON.stringify(result));
+        }
+        });
+     });
+};
+exports.celebdata_allsbystyle = function (req, res) {
+   var style = req.query.style;
+   var index = req.query.index;
+    
+   var dict={};
+    dict['$and'] = [
+        {"style": new RegExp(style.toString(), "i")}
+    ];
+    var sortstring = req.query.sortstring;
+    var sort=1;
+    if (sortstring=='a') sort=1;
+    else sort=-1;
+  
+    var pageNumber = index;
+    var pageSize = 10;
+    var result={};
+    Celebdata.count(dict,function(err,count){
+      //  console.log("count:"+count);
+         Celebdata.find(dict , null, {
+         sort: {
+           name: sort
+         }
+       }).skip(pageNumber > 0 ? ((pageNumber - 1) * pageSize) : 0).limit(pageSize).exec(function(err, docs) {
+        if(err)
+        res.status(404).send();
+        else {
+            result={data:docs,totalcount:count};
+   //         console.log("result:"+JSON.stringify(result));
             res.status(200).send(JSON.stringify(result));
         }
         });
@@ -224,7 +308,7 @@ exports.celebdata_setalls = function (req, res) {
 
 };
 exports.celebdata_saveContent = function (req, res,next) {
-    console.log(req.body);
+    //console.log(req.body);
     //  console.log(req.params);
   
       // res.status(200).send();return;
@@ -236,10 +320,11 @@ exports.celebdata_saveContent = function (req, res,next) {
       var name;
       var url;
       var Category;
-      var Type;
+      var style;
       var image;
       var profiletext;
-      var pricing;
+      var lowPrice;
+      var highPrice;
       var faq1ques;
       var faq1answ;
       var faq2ques;
@@ -288,12 +373,12 @@ exports.celebdata_saveContent = function (req, res,next) {
                           return false;
                       }
                   }
-                  if (x.includes("Type"))
+                  if (x.includes("style"))
                   {
                       if(buf_celebdatatmp[x]!=''){
-                        Type=buf_celebdatatmp[x];
+                        style=buf_celebdatatmp[x];
                       }else{
-                          var message= {"fieldErrors":[{"name":"Type is Not a valid"}],"data":[]};
+                          var message= {"fieldErrors":[{"name":"style is Not a valid"}],"data":[]};
                           res.status(200).send(message);
                           return false;
                       }
@@ -318,17 +403,27 @@ exports.celebdata_saveContent = function (req, res,next) {
                           return false;
                       }
                   }
-                  if (x.includes("pricing"))
+                  if (x.includes("lowPrice"))
                   {
                       if(buf_celebdatatmp[x]!=''){
-                        pricing=buf_celebdatatmp[x];
+                        lowPrice=buf_celebdatatmp[x];
                       }else{
-                          var message= {"fieldErrors":[{"name":"pricing","status":"pricing is Not a valid"}],"data":[]};
+                          var message= {"fieldErrors":[{"name":"lowPrice","status":"lowPrice is Not a valid"}],"data":[]};
                           res.status(200).send(message);
                           return false;
                       }
                   }
-                  console.log("celeb:"+x);
+                  if (x.includes("highPrice"))
+                  {
+                      if(buf_celebdatatmp[x]!=''){
+                        highPrice=buf_celebdatatmp[x];
+                      }else{
+                          var message= {"fieldErrors":[{"name":"highPrice","status":"highPrice is Not a valid"}],"data":[]};
+                          res.status(200).send(message);
+                          return false;
+                      }
+                  }
+              //    console.log("celeb:"+x);
                   if ((x.includes("faq1"))&&(x.includes("ques")))
                   {
                       if(buf_celebdatatmp[x]!=''){
@@ -411,20 +506,15 @@ exports.celebdata_saveContent = function (req, res,next) {
                   }
           }
         }
-   
-      console.log("celebdatatmp:  "+id);
-      console.log("celebdatatmp:faq1ques  "+faq1ques);
-      console.log("celebdatatmp:faq2ques  "+faq2ques);
-      console.log("celebdatatmp:faq3ques  "+faq3ques);
-      console.log("celebdatatmp:  "+celebdatatmp);
-      if(action=="create"){
+     if(action=="create"){
           var celebdatatmp = new Celebdata(
             {
                 url:url,
                 image:image,
                 profiletext:profiletext,
-                pricing:pricing,
-                Type:Type,
+                lowPrice:lowPrice,
+                highPrice:highPrice,
+                style:style,
                 Category:Category,
                 name:name,
                 faq:[
@@ -443,13 +533,13 @@ exports.celebdata_saveContent = function (req, res,next) {
                     ]
                }
           );
-          console.log("celebdatatmp:  "+celebdatatmp);
+        //  console.log("celebdatatmp:  "+celebdatatmp);
           celebdatatmp.save(function (err, ncelebdatatmp) {
              
               if (err) {
                   return next(err);
               } 
-              console.log("ncelebdatatmp:"+celebdatatmp);
+         //     console.log("ncelebdatatmp:"+celebdatatmp);
               var retArr = [celebdatatmp];
               res.status(200).send(JSON.stringify({data:retArr}));
               // res.send('celebdatatmp Created successfully');
@@ -469,14 +559,13 @@ exports.celebdata_saveContent = function (req, res,next) {
             ques:  faq4ques,
             answ:  faq4answ} 
         ]
-          console.log("celebdatatmp: edit");
-          console.log("celebdatatmp: edit"+id);
-          Celebdata.findByIdAndUpdate(id,{$set: {
+                Celebdata.findByIdAndUpdate(id,{$set: {
                 url:url,
                 image:image,
                 profiletext:profiletext,
-                pricing:pricing,
-                Type:Type,
+                lowPrice:lowPrice,
+                highPrice:highPrice,
+                style:style,
                 Category:Category,
                 name:name,
                 faq:faqtmp
@@ -485,13 +574,11 @@ exports.celebdata_saveContent = function (req, res,next) {
               Celebdata.findById(id, function (err, ncelebdatatmp) {
                   if (err) return next(err);
                   var retArr = [ncelebdatatmp];
-                  console.log(ncelebdatatmp);
                   res.status(200).send(JSON.stringify({data:retArr}));
               })
           });
       }else if(action=="remove"){
-          console.log("removeid:"+id);
-          Celebdata.findByIdAndRemove(id, function (err) {
+               Celebdata.findByIdAndRemove(id, function (err) {
             if (err) return next(err);
             var retArr = [];
             res.status(200).send(JSON.stringify({data:retArr}));

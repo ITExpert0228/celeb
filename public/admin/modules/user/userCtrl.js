@@ -90,7 +90,6 @@ app.controller('userCtrl',['$scope','$timeout', '$location','$cookieStore','user
   $scope.getuserList = function() {
     userService.getuserList().then(function(data) {
         $scope.userarray=[];
-        console.log($scope.userarray);
         $count=0;
         angular.forEach(data, function(value, key){
         if($count<200)
@@ -101,7 +100,6 @@ app.controller('userCtrl',['$scope','$timeout', '$location','$cookieStore','user
         });
        $timeout($('.table').trigger('footable_redraw'), 300);
     }, function(err) {
-        console.log(err);
     }).finally(function() {
         
     });
@@ -115,7 +113,6 @@ app.controller('userCtrl',['$scope','$timeout', '$location','$cookieStore','user
 }
 $scope.userInit=function(){
     $scope.username = $cookieStore.get('user');
-    console.log($scope.username);
     $scope.adminName= $scope.username.firstName+" "+$scope.username.lastName;
 }
 //   $scope.SetData=function(_id,title,profileurl,tag,eventstype,reason,location,vediosrc,images,Biography,PreviousClients,Testimonials,SetList){

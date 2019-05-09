@@ -6,7 +6,7 @@ app.service('modelService', ['$http','$timeout', function ($http) {
 
     model.getmodelbyid = function($id) {
         var url=model_ENDPOINT+"/getmodel?id="+$id;
-        console.log(url);
+   //     console.log(url);
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
@@ -14,7 +14,7 @@ app.service('modelService', ['$http','$timeout', function ($http) {
     }
     model.getmodelsbycate = function($cate,$id) {
         var url=model_ENDPOINT+"/getmodelsbycate?Category="+$cate+"&id="+$id;
-        console.log(url);
+  //      console.log(url);
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;
@@ -22,7 +22,7 @@ app.service('modelService', ['$http','$timeout', function ($http) {
     }
     model.saveContact = function(contactBookingObj) {
         var url=contactBooking_ENDPOINT+"/create";
-        console.log(url);
+   //     console.log(url);
         return $http.post(url,{ content: contactBookingObj }).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;

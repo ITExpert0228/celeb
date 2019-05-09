@@ -6,7 +6,7 @@ app.service('performersService', ['$http','$timeout', function ($http) {
 
     performers.getperformersList = function($index,$cate,$sortstring) {
         var url=performers_ENDPOINT+"/getAllbyCate?Category="+$cate+"&index="+$index+"&sortstring="+$sortstring;
-        console.log("performers:"+url);
+   //     console.log("performers:"+url);
         return $http.get(url).then(function(response, status) {
             if (response.data == null) return null;
             return response.data;

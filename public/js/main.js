@@ -141,11 +141,11 @@ function documentReadyInit() {
 	if (jQuery().superfish) {
 		jQuery('ul.sf-menu').superfish({
 			popUpSelector: 'ul:not(.mega-menu ul), .mega-menu ',
-			delay:       0,
-			animation:   {opacity:'show', marginTop: 1},
-			animationOut: {opacity: 'hide',  marginTop: 5},
+			delay:       50,
+			animation:   {opacity:'show', marginTop: 0},
+			animationOut: {opacity: 'hide',  marginTop: 0},
 			speed:       0,
-			speedOut:    0,
+			speedOut:    50,
 			disableHI:   false,
 			cssArrows:   true,
 			autoArrows:  true
@@ -153,11 +153,11 @@ function documentReadyInit() {
 		});
 		jQuery('ul.sf-menu-side').superfish({
 			popUpSelector: 'ul:not(.mega-menu ul), .mega-menu ',
-			delay:       0,
+			delay:       50,
 			animation:   {opacity:'show', height: '100%'},
 			animationOut: {opacity: 'hide',  height: 0},
 			speed:       0,
-			speedOut:    0,
+			speedOut:    50,
 			disableHI:   false,
 			cssArrows:   true,
 			autoArrows:  true

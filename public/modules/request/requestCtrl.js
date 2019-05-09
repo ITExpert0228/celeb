@@ -1,7 +1,7 @@
-app.controller('requestController',['$scope','$rootScope', '$sce','$location', 'requestService', function($scope, $rootScope,$sce,$location,requestService) {
+app.controller('requestController',['$scope','$rootScope', '$sce','$location', 'requestService','$mdDialog', function($scope, $rootScope,$sce,$location,requestService,$mdDialog) {
    
   
-    $scope.onSubmit=function(){
+    $scope.onSubmit=function(ev){
         
       //  if($scope.Contact_Organization==undefined){return;}
         if($scope.Contact_First_Name==undefined){return;}
@@ -36,11 +36,20 @@ app.controller('requestController',['$scope','$rootScope', '$sce','$location', '
           };
           requestService.saveContact(contactObj).then(function(data) {
             if(data!=undefined){
-            console.log(data);
-            alert(data);
+           // console.log(data);
+            $mdDialog.show(
+              $mdDialog.alert()
+                .parent(angular.element(document.querySelector('#popupContainer')))
+                .clickOutsideToClose(true)
+                .title('Request State')
+                .textContent('Your Request has sent correctly to the server!.')
+                .ariaLabel('Alert Dialog Demo')
+                .ok('OK!')
+                .targetEvent(ev)
+            );
             }
             }, function(err) {
-                console.log(err);
+            //    console.log(err);
             }).finally(function() {
                 
         });

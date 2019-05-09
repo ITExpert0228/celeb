@@ -2,6 +2,7 @@
 	mongoDB Schema for altusdb
 */
 const mongoose = require ('mongoose');
+mongoose.Promise = global.Promise;
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
@@ -10,6 +11,10 @@ var CelebdataSchema = new Schema({
        type: String,
        default: ''
     },
+    style: {
+      type: String,
+      default: '' 
+   },
     image: {
         type: String,
         default: '' 
@@ -18,10 +23,14 @@ var CelebdataSchema = new Schema({
         type: String,
         default: '' 
      },
-     pricing: {
-        type: String,
-        default: '' 
+     lowPrice: {
+        type: Number,
+        default: 0 
      },
+     highPrice: {
+      type: Number,
+      default: 0 
+   },
      Type: {
         type: String,
         default: '' 
